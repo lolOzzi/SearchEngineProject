@@ -13,21 +13,17 @@ public:
 void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, IStore *store) {
     std::ifstream file;
     file.open (filename);
-    if (!file.good()) {
+    if (!file.good() || !file.is_open()) {
         printf("Error reading file");
-        return nullptr;
-    }
-    if (!file.is_open()) {
-        printf("No file is open");
         return nullptr;
     }
 
     Doc document{};
     std::string word;
     std::string line;
+
     short take_next = 1;
     long long before_first_word = file.tellg();
-    //std::vector<std::string> patterns = {"\xE3\x80\x80", "\xE2\x80\x89"};
 
     int dbcounter = 0;
     while (std::getline(file, line)) {

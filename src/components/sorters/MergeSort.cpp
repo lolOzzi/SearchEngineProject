@@ -1,6 +1,12 @@
 #include "../../core/interfaces.h"
 
-void merge (std::vector<ScoredDoc>& A, int l, int m, int r, std::vector<ScoredDoc>& tmp) {
+class MergeSort : public ISorter {
+public:
+  ~MergeSort() = default;
+  void sort(std::vector<ScoredDoc> &A) override;
+};
+
+void _merge (std::vector<ScoredDoc>& A, int l, int m, int r, std::vector<ScoredDoc>& tmp) {
   int i = l;
   int j = m + 1;
   int k = l;
@@ -33,19 +39,19 @@ void merge (std::vector<ScoredDoc>& A, int l, int m, int r, std::vector<ScoredDo
   }
 }
 
-void sort(std::vector<ScoredDoc>& A, int l, int r, std::vector<ScoredDoc>& tmp) {
+void _sort(std::vector<ScoredDoc>& A, int l, int r, std::vector<ScoredDoc>& tmp) {
   if (l >= r) {
     return;
   }
   int mid = (l + r) / 2; // hopefully it rounds down
-  sort(A, l, mid, tmp);
-  sort(A, mid+1, r, tmp);
-  return merge(A, l, mid, r, tmp);
+  _sort(A, l, mid, tmp);
+  _sort(A, mid+1, r, tmp);
+  return _merge(A, l, mid, r, tmp);
 }
 
 
-void MergeSort(std::vector<ScoredDoc> &A) {
+void MergeSort::sort(std::vector<ScoredDoc> &A) {
   int n = A.size();
   std::vector<ScoredDoc> tmp(n);
-  sort(A, 0, n-1, tmp);
+  _sort(A, 0, n-1, tmp);
 }

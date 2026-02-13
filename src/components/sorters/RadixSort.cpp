@@ -1,5 +1,10 @@
 #include "../../core/interfaces.h";
 #include <list>;
+class RadixSort : public ISorter {
+public:
+    ~RadixSort() = default;
+    void sort(std::vector<ScoredDoc> &A) override;
+};
 
 int getDigit(const int &d, const int &num) {
     int digit = num;
@@ -18,7 +23,7 @@ int getDigit(const int &d, const int &num) {
     return digit % 10;
 }
 
-void RadixSort(std::vector<ScoredDoc> &A) {
+void RadixSort::sort(std::vector<ScoredDoc> &A) {
     int num_digits = 3;
     for (int d = 0; d < num_digits; ++d) {
         std::list<ScoredDoc> radix[10];

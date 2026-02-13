@@ -9,6 +9,8 @@
 #include "components/searchers/BooleanSearcher.cpp"
 #include "components/stores/BasicHashTable.cpp"
 #include "components/rankers/MostMatchesRanker.cpp"
+#include "components/rankers/TFIDFRanker.cpp"
+#include "components/sorters/MergeSort.cpp"
 
 /*
 */
@@ -21,8 +23,9 @@ int main(int argc, char* argv[]) {
     //BooleanSearcher searcher;
     BasicSearcher searcher;
     BasicHashTable store = BasicHashTable(300'000, &hasher);
-    MostMatchesRanker MMRanker;
-    Index index = Index(&store, &preprocessor, &hasher, &searcher, &MMRanker);
+    TFIDFRANKER TFIDFRanker;
+    MergeSort sorter;
+    Index index = Index(&store, &preprocessor, &hasher, &searcher, &TFIDFRanker, &sorter);
 
     printf("Started preprocessing \n");
     std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
@@ -58,14 +61,14 @@ int main(int argc, char* argv[]) {
     }
 
 
-    /*
+
     printf("Started Ranking \n");
-    std::vector<ScoredDoc> res_scored = index.rank(res, qy, filename);
+    std::vector<ScoredDoc> res_scored = index.rank(res, q.q, filename);
     printf("Finished Ranking \n");
     for (std::vector<ScoredDoc>::iterator it = res_scored.begin(); it != res_scored.end(); it++) {
         std::cout << it->title << " " << it->score << endl;
     }
-    */
+
 
 
     return 0;

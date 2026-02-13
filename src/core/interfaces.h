@@ -54,14 +54,19 @@ public:
     virtual ~ISearcher() = default;
     virtual std::vector<Doc> search(SearchQuery q, IStore* store) = 0;
 };
-
+class ISorter {
+public:
+    virtual ~ISorter() = default;
+    virtual void sort(std::vector<ScoredDoc> &A) = 0;
+};
 class IRanker {
 public:
     virtual ~IRanker() = default;
     virtual std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates,
                                         std::string& query, IStore* store,
-                                        std::string& filename) = 0;
+                                        std::string& filename, ISorter* sorter) = 0;
 };
+
 
 class Index {
 private:
@@ -70,14 +75,16 @@ private:
     IHash* hash;
     ISearcher* searcher;
     IRanker* ranker;
+    ISorter* sorter;
 
 public:
-    Index(IStore* store, IPreprocessor* preprocessor, IHash* hash, ISearcher* searcher, IRanker* ranker) {
+    Index(IStore* store, IPreprocessor* preprocessor, IHash* hash, ISearcher* searcher, IRanker* ranker, ISorter* sorter) {
         this->store = store;
         this->preprocessor = preprocessor;
         this->hash = hash;
         this->searcher = searcher;
         this->ranker = ranker;
+        this->sorter = sorter;
     }
 
     void preprocess(std::string filename) {
@@ -88,6 +95,6 @@ public:
         return searcher->search(q, this->store);
     }
     std::vector<ScoredDoc> rank(std::vector<Doc>& docs, std::string& q, std::string& fn) {
-        return ranker->rank(docs, q, this->store, fn);
+        return ranker->rank(docs, q, this->store, fn, this->sorter);
     };
 };

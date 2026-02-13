@@ -1,5 +1,7 @@
+#include <string>
 #include "../../core/interfaces.h"
 #include <fstream>
+
 
 static std::string extractFileSection(std::string filename, long long start, long long end) {
   std::string contents;
@@ -83,4 +85,21 @@ static void getWordsFromLine(std::string &line, std::vector<std::string> &words)
       tmp_word = "";
     }
   }
+}
+
+
+static int getDocumentCountFromFile(const std::string &filename) {
+  const std::string END = "---END.OF.DOCUMENT---";
+  int counter = 0;
+  std::ifstream file;
+  file.open (filename);
+  if (!file.good() || !file.is_open()) {
+    printf("Error reading file");
+    return counter;
+  }
+  std::string line;
+  while (std::getline(file, line)) {
+    if (line == END) counter++;
+  }
+  return counter;
 }
