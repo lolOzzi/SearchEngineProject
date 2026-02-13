@@ -1,18 +1,58 @@
 #include <memory>
 #include "../../core/interfaces.h"
 
+
 class DictWord {
 public:
     std::string word;
-    std::vector<Doc> documents_in;
+    std::vector<DocId> documents_in;
 
     DictWord(){
         this->word = "";
-        documents_in = std::vector<Doc>{};
+        documents_in = std::vector<DocId>{};
     }
     explicit DictWord(const std::string &word) {
         this->word = word;
-        documents_in = std::vector<Doc>{};
+        documents_in = std::vector<DocId>{};
+    }
+};
+
+class DocHolder {
+private:
+    Doc* arr;
+    int n;
+public:
+    DocHolder() {
+        arr = new Doc[100'000];
+        n = 0;
+    }
+    ~DocHolder() {
+        delete[] arr;
+    }
+    void AddDoc(Doc doc) {
+        assert(n < 100'000);
+        arr[n] = doc;
+        n++;
+    }
+    DocId GetDocId(Doc* doc) {
+        for (int i = n-1; i >= 0; i--) {
+            if (arr[i].title == doc->title) {
+                return {i};
+            }
+        }
+        assert(false);
+    }
+    Doc* GetDoc(DocId id) {
+        return &arr[id.id];
+    }
+
+    std::vector<Doc> GetDocVector(std::vector<DocId>* ids) {
+
+        std::vector<Doc> return_vector = std::vector<Doc>{};
+        for(DocId id : *ids) {
+            return_vector.push_back(arr[id.id]);
+        }
+        return return_vector;
     }
 };
 
@@ -28,8 +68,8 @@ public:
     CollisionFree();
     explicit CollisionFree(int size);
     void new_hash();
-    DictWord* add(const std::string& word);
-    DictWord* get(const std::string &word);
+    DictWord* add(std::string& word);
+    DictWord* get(std::string &word);
     void DoNew(DictWord *new_word, int old_arr_size);
 };
 
@@ -38,12 +78,14 @@ private:
     int numBuckets;
     CollisionFree** buckets;
     IHash* hash_function;
-    DictWord* get_word(const std::string& word);
+    DocHolder doc_holder;
+    DictWord* get_word(std::string& word);
 public:
     ~DynamicFKS() override = default;
     DynamicFKS(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
-    std::vector<Doc>* get(std::string word) override;
+    void add_document(Doc document) override;
+    std::vector<Doc> get(std::string word) override;
 };
 
 DynamicFKS::DynamicFKS(int n, IHash* hash_function) {
@@ -56,40 +98,45 @@ DynamicFKS::DynamicFKS(int n, IHash* hash_function) {
     }
 }
 
-DictWord *DynamicFKS::get_word(const std::string& word) {
+DictWord *DynamicFKS::get_word(std::string& word) {
     std::uint64_t index = hash_function->hash(word, numBuckets);
     DictWord* got_word = buckets[index]->get(word);
     return got_word;
 }
 
-void DynamicFKS::add(const std::string word, const Doc document) {
+void DynamicFKS::add_document(Doc document) {
+    doc_holder.AddDoc(document);
+}
+
+
+void DynamicFKS::add(std::string word, Doc document) {
 
     if (word == "") return;
-
     std::uint64_t index = hash_function->hash(word, numBuckets);
     DictWord* word_in_document = buckets[index]->get(word);
+    DocId id = doc_holder.GetDocId(&document);
 
     if (!word_in_document || word_in_document->word == "") {
         buckets[index]->add(word);
         word_in_document = buckets[index]->get(word);
-        word_in_document->documents_in.push_back(document);
+        word_in_document->documents_in.push_back(id);
         return;
     }
 
     if (!word_in_document->documents_in.empty()) {
-        if (word_in_document->documents_in[word_in_document->documents_in.size() - 1].title == document.title) {
+        if (word_in_document->documents_in[word_in_document->documents_in.size() - 1].id == id.id) {
             return;
         }
     }
 
-    word_in_document->documents_in.push_back(document);
+    word_in_document->documents_in.push_back(id);
 }
 
-std::vector<Doc>* DynamicFKS::get(std::string word) {
+std::vector<Doc> DynamicFKS::get(std::string word) {
     auto index = hash_function->hash(word, numBuckets);
     DictWord* res = buckets[index]->get(word);
-    if (res == nullptr) return nullptr;
-    return &res->documents_in;
+    if (res == nullptr) return std::vector<Doc>{};
+    return doc_holder.GetDocVector(&res->documents_in);
 }
 
 CollisionFree::CollisionFree() {
@@ -155,7 +202,7 @@ void CollisionFree::DoNew(DictWord* new_word, int old_arr_size) {
     }
 }
 
-DictWord* CollisionFree::add(const std::string& word) {
+DictWord* CollisionFree::add(std::string& word) {
     n++;
     DictWord new_word = DictWord(word);
     if (n > size) {
@@ -176,7 +223,7 @@ DictWord* CollisionFree::add(const std::string& word) {
     return &arr[index];
 }
 
-DictWord* CollisionFree::get(const std::string& word) {
+DictWord* CollisionFree::get(std::string& word) {
     auto index = hasher.hash(word, arr_size);
     if (arr[index].word == word)
         return &arr[index];

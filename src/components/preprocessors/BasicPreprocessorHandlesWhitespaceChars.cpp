@@ -41,6 +41,7 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
                     document.title.erase(document.title.size() - 1);
                 }
                 document.start_loc = before_first_word;
+                store->add_document(document);
             }
             char last_char = word.back();
             if (last_char == ',' || last_char == '.' || last_char == '?') {

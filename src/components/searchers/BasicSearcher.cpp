@@ -9,6 +9,6 @@ public:
 
 std::vector<Doc> BasicSearcher::search(SearchQuery q, IStore *store) {
     if (!store) return {};
-    std::vector<Doc>* docs = store->get(q.q);
-    return docs == nullptr ? std::vector<Doc>{} : *docs;
+    std::vector<Doc> docs = store->get(q.q);
+    return docs;
 }

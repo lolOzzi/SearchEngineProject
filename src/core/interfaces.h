@@ -11,9 +11,14 @@ public:
     std::string title;
     long long start_loc;
 };
+
 class ScoredDoc : public Doc {
 public:
     int score{};
+};
+class DocId {
+public:
+    int id;
 };
 
 enum class boolOperator {
@@ -28,13 +33,12 @@ public:
     std::vector<boolOperator> mode;
 };
 
-
-
 class IStore {
 public:
     virtual ~IStore() = default;
     virtual void add(std::string word, Doc document) = 0;
-    virtual std::vector<Doc>* get(std::string word) = 0;
+    virtual void add_document(Doc document) = 0;
+    virtual std::vector<Doc> get(std::string word) = 0;
 };
 
 class IPreprocessor {
