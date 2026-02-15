@@ -44,12 +44,15 @@ private:
     DictWord* get_word(std::string& word);
     Node* last_document_node_added;
     std::string last_document_title_added;
+
 public:
     ~DynamicFKS() override = default;
     DynamicFKS(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
     void add_document(Doc document) override;
     std::vector<Doc> get(std::string word) override;
+    int words_added = 0;
+    int documents_added = 0;
 };
 
 DynamicFKS::DynamicFKS(int n, IHash* hash_function) {
@@ -72,6 +75,7 @@ DictWord *DynamicFKS::get_word(std::string& word) {
 void DynamicFKS::add_document(Doc document) {
     last_document_node_added = doc_holder.add(document.title);
     last_document_title_added = document.title;
+    documents_added++;
 }
 
 
@@ -82,6 +86,7 @@ void DynamicFKS::add(std::string word, Doc document) {
     DictWord* word_in_document = buckets[index]->get(word);
 
     if (!word_in_document || word_in_document->word == "") {
+        words_added++;
         buckets[index]->add(word);
         word_in_document = buckets[index]->get(word);
         word_in_document->documents_in.push_back(last_document_node_added);
