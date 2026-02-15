@@ -33,5 +33,6 @@ bin/
 /data
 
 /cmake-build-debug
+/cmake-build-debug-coverage
 src/components/test/test_100MB.txt
 test.txt
