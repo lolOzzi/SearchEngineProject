@@ -1,6 +1,7 @@
 #include <string>
 #include "../../core/interfaces.h"
 #include <fstream>
+#include <regex>
 
 
 static std::string extractFileSection(std::string filename, long long start, long long end) {
@@ -67,6 +68,15 @@ static void replace_any_simple(std::string &s, const std::vector<std::string> &p
 }
 static int isSpace(char32_t c) {
   return c == U' ' || c == U'\u3000' || c == U'\n' || c == U'\r' || c == U'\t';;
+}
+
+static std::string cleanString(const std::string &word) {
+  static const std::regex pattern(R"([\(\)!.,\[\]\{\}\";:_\-@£$€?`´*^'¨])");
+  std::string clean = std::regex_replace(word, pattern, "");
+  for (char &c : clean) {
+    c = std::tolower(static_cast<unsigned char>(c));
+  }
+  return clean;
 }
 
 static void getWordsFromLine(std::string &line, std::vector<std::string> &words) {

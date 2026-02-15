@@ -4,10 +4,10 @@
 #include "components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp"
 #include "components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp"
 
-#include "components/hashers/BasicHasher.cpp"
+#include "components/hashers/SimpleFingerprint.cpp"
 #include "components/searchers/BasicSearcher.cpp"
 #include "components/searchers/BooleanSearcher.cpp"
-#include "components/stores/BasicHashTable.cpp"
+#include "components/stores/DynamicFKSRadixTree.cpp"
 #include "components/rankers/MostMatchesRanker.cpp"
 #include "components/rankers/TFIDFRanker.cpp"
 #include "components/sorters/MergeSort.cpp"
@@ -19,11 +19,12 @@ int main(int argc, char* argv[]) {
     printf("main \n");
 
     BasicPreprocessorHandlesWhitespaceChars preprocessor;
-    BasicHasher hasher;
+    SimpleFingerprint hasher;
     //BooleanSearcher searcher;
     BasicSearcher searcher;
-    BasicHashTable store = BasicHashTable(300'000, &hasher);
+    DynamicFKS store = DynamicFKS(300'000, &hasher);
     TFIDFRANKER TFIDFRanker;
+
     MergeSort sorter;
     Index index = Index(&store, &preprocessor, &hasher, &searcher, &TFIDFRanker, &sorter);
 
@@ -32,43 +33,14 @@ int main(int argc, char* argv[]) {
     index.preprocess(filename);
     printf("Finished preprocessing \n");
 
-    /* testing for non-boolean search
-    printf("Started Testing \n");
-    test(&index);
-    printf("Finished Testing \n");
-    */
     printf("Start searching \n");
     SearchQuery q;
-    q.q = "totally";
-    /*
-    std::vector<std::string> words;
-    words.emplace_back("hiking");
-    words.emplace_back("jumping");
-    words.emplace_back("fishing");
-    words.emplace_back("swimming");
-    q.queries = words;
-    std::vector<boolOperator> operations;
-    operations.push_back(boolOperator::_or);
-    operations.push_back(boolOperator::_or);
-    operations.push_back(boolOperator::_or);
-
-    q.mode = operations;
-    */
+    q.q = "albedo";
     std::vector<Doc> res = index.search(q);
     printf("Finished searching \n");
     for (std::vector<Doc>::iterator it = res.begin(); it != res.end(); ++it) {
         std::cout << it->title << " "  << endl;
     }
-
-
-
-    printf("Started Ranking \n");
-    std::vector<ScoredDoc> res_scored = index.rank(res, q.q, filename);
-    printf("Finished Ranking \n");
-    for (std::vector<ScoredDoc>::iterator it = res_scored.begin(); it != res_scored.end(); it++) {
-        std::cout << it->title << " " << it->score << endl;
-    }
-
 
 
     return 0;

@@ -6,8 +6,8 @@ class BasicPreprocessorHandlesWhitespaceChars : public IPreprocessor {
 public:
     ~BasicPreprocessorHandlesWhitespaceChars() override = default;
     void* preprocess(std::string filename, IStore* store) override;
-};
 
+};
 
 
 void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, IStore *store) {
@@ -47,7 +47,7 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
             if (last_char == ',' || last_char == '.' || last_char == '?') {
                 word.erase(word.size() - 1);
             }
-            store->add(word, document);
+            store->add(cleanString(word), document);
             take_next = word == END;
         }
         before_first_word = file.tellg();
