@@ -5,15 +5,15 @@
 
 class DictWord {
 public:
-    std::string word;
+    Node* word;
     std::vector<Node*> documents_in;
 
     DictWord(){
-        this->word = "";
+        this->word = nullptr;
         documents_in = std::vector<Node*>{};
     }
-    explicit DictWord(const std::string &word) {
-        this->word = word;
+    explicit DictWord(Node* node) {
+        this->word = node;
         documents_in = std::vector<Node*>{};
     }
 };
@@ -25,10 +25,10 @@ private:
     int arr_size;
     DictWord* arr;
     SimpleFingerprint hasher;
+    RadixTree* tree;
 public:
     ~CollisionFree() = default;
-    CollisionFree();
-    explicit CollisionFree(int size);
+    explicit CollisionFree(int size, RadixTree* tree);
     void new_hash();
     DictWord* add(std::string& word);
     DictWord* get(std::string &word);
@@ -59,11 +59,11 @@ DynamicFKS::DynamicFKS(int n, IHash* hash_function) {
     numBuckets = n;
     this->hash_function = hash_function;
     buckets = new CollisionFree*[numBuckets];
-
-    for (int i = 0; i < numBuckets; i++) {
-        buckets[i] = new CollisionFree(4);
-    }
     doc_holder = RadixTree();
+    for (int i = 0; i < numBuckets; i++) {
+        buckets[i] = new CollisionFree(4, &doc_holder);
+    }
+
 }
 
 DictWord *DynamicFKS::get_word(std::string& word) {
@@ -85,7 +85,7 @@ void DynamicFKS::add(std::string word, Doc document) {
     std::uint64_t index = hash_function->hash(word, numBuckets);
     DictWord* word_in_document = buckets[index]->get(word);
 
-    if (!word_in_document || word_in_document->word == "") {
+    if (!word_in_document || word_in_document->word == nullptr) {
         words_added++;
         buckets[index]->add(word);
         word_in_document = buckets[index]->get(word);
@@ -117,23 +117,12 @@ std::vector<Doc> DynamicFKS::get(std::string word) {
     return temp;
 }
 
-CollisionFree::CollisionFree() {
-    this->n = 0;
-    this->size = 4;
-    arr_size = size*size;
-    this->arr = new DictWord[arr_size];
-    for (int i = 0; i < arr_size; i++) {
-        arr[i] = DictWord();
-    }
-    hasher = SimpleFingerprint();
-    new_hash();
-}
-
-CollisionFree::CollisionFree(int size) {
+CollisionFree::CollisionFree(int size, RadixTree* tree) {
     this->n = 0;
     this->size = size;
     arr_size = size*size;
     this->arr = new DictWord[arr_size];
+    this->tree = tree;
     for (int i = 0; i < arr_size; i++) {
         arr[i] = DictWord();
     }
@@ -156,11 +145,11 @@ void CollisionFree::DoNew(DictWord* new_word, int old_arr_size) {
         new_hash();
         bool continue_after = false;
         for (int i = 0; i < old_arr_size; i++) {
-            if (arr[i].word == "") continue;
-            int new_index = hasher.hash(arr[i].word, arr_size);
+            if (arr[i].word == nullptr) continue;
+            int new_index = hasher.hash(get_string_from_node(arr[i].word), arr_size);
             assert(new_index >= 0 && new_index < arr_size);
 
-            if (new_arr[new_index].word != "") {
+            if (new_arr[new_index].word != nullptr) {
                 continue_after = true;
                 break;
             }
@@ -169,8 +158,8 @@ void CollisionFree::DoNew(DictWord* new_word, int old_arr_size) {
         if (continue_after) {
             continue;
         }
-        int new_index = hasher.hash(new_word->word, arr_size);
-        if (new_arr[new_index].word != "") continue;
+        int new_index = hasher.hash(get_string_from_node(new_word->word), arr_size);
+        if (new_arr[new_index].word != nullptr) continue;
 
         assert(new_index >= 0 && new_index < arr_size);
         new_arr[new_index] = *new_word;
@@ -182,7 +171,8 @@ void CollisionFree::DoNew(DictWord* new_word, int old_arr_size) {
 
 DictWord* CollisionFree::add(std::string& word) {
     n++;
-    DictWord new_word = DictWord(word);
+    Node* node = tree->add(word);
+    DictWord new_word = DictWord(node);
     if (n > size) {
         int old_size = arr_size;
         size = size*2;
@@ -192,7 +182,7 @@ DictWord* CollisionFree::add(std::string& word) {
     }
 
     auto index = hasher.hash(word, arr_size);
-    if (arr[index].word != "") {
+    if (arr[index].word != nullptr) {
         DoNew(&new_word, arr_size);
         return get(word);
     }
@@ -203,7 +193,7 @@ DictWord* CollisionFree::add(std::string& word) {
 
 DictWord* CollisionFree::get(std::string& word) {
     auto index = hasher.hash(word, arr_size);
-    if (arr[index].word == word)
+    if (arr[index].word != nullptr && get_string_from_node(arr[index].word) == word)
         return &arr[index];
     return nullptr;
 }

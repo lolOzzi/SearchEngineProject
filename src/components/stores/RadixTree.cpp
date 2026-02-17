@@ -1,26 +1,41 @@
 static int has_prefix(std::string prefix, std::string word) {
-    for (int i = 0; i < prefix.size(); i++) {
+    int max_its = min(prefix.size(), word.size());
+    for (int i = 0; i < max_its; i++) {
         if (prefix[i] != word[i]) return i;
     }
-    return prefix.size();
+    return max_its;
 }
 
 class Node {
 public:
     std::string label;
-    // Store unique pointers so node addresses in memory never change
     std::vector<std::unique_ptr<Node>> targets;
     Node* parent;
 
     Node(std::string label = "") : label(label), parent(nullptr) {}
 
-    // Helper method (assuming you have something like this)
-    static int has_prefix(const std::string& a, const std::string& b) {
-        int i = 0;
-        while (i < a.size() && i < b.size() && a[i] == b[i]) {
-            i++;
+    static Node* create_parent(std::unique_ptr<Node>* child_to_be, std::string parent_string, const std::string &child_string) {
+        Node* child_node = child_to_be->get();
+
+        std::unique_ptr<Node> parent_node = std::make_unique<Node>(parent_string);
+        child_node->label = child_string;
+
+        parent_node->parent = child_node->parent;
+        child_node->parent = parent_node.get();
+        parent_node->targets.push_back(std::move(*child_to_be));
+
+        for (auto it = parent_node->parent->targets.begin(); it != parent_node->parent->targets.end(); ) {
+            if (it->get() == nullptr) {
+                it = parent_node->parent->targets.erase(it);
+                break;
+            } else {
+                ++it;
+            }
         }
-        return i;
+
+        parent_node->parent->targets.push_back(std::move(parent_node));
+
+        return child_node;
     }
 
     Node* AddTarget(std::string word) {
@@ -35,31 +50,32 @@ public:
             no_prefix = false;
 
             if (num_shared_chars == node.label.size()) {
+                if (word == node.label) {
+                    return node_ptr.get();
+                }
                 std::string sub = word.substr(num_shared_chars);
                 return node.AddTarget(sub);
+            }
+
+            if (num_shared_chars == word.size()) {
+                std::string new_string = node.label.substr(num_shared_chars);
+                Node* new_child_node = create_parent(&node_ptr, word, new_string);
+
+                return new_child_node->parent;
             }
 
             std::string split_string = node.label.substr(0, num_shared_chars);
             std::string new_string = node.label.substr(num_shared_chars);
 
-            auto new_child_with_this_info = std::make_unique<Node>(new_string);
-            new_child_with_this_info->parent = &node;
-            new_child_with_this_info->targets = std::move(node.targets);
-            for (auto& grandchild : new_child_with_this_info->targets) {
-                grandchild->parent = new_child_with_this_info.get();
-            }
-
-            node.targets.clear();
-            node.targets.push_back(std::move(new_child_with_this_info));
-
+            Node* new_child_node = create_parent(&node_ptr, split_string, new_string);
             std::string other_new_string = word.substr(num_shared_chars);
-            auto new_child_node = std::make_unique<Node>(other_new_string);
-            new_child_node->parent = &node;
-            Node* result = new_child_node.get();
-            node.targets.push_back(std::move(new_child_node));
 
-            node.label = split_string;
-            return result;
+            std::unique_ptr<Node> other_child_node = std::make_unique<Node>(other_new_string);
+            other_child_node->parent = new_child_node->parent;
+            Node* word_node_res = other_child_node.get();
+            new_child_node->parent->targets.push_back(std::move(other_child_node));
+
+            return word_node_res;
         }
 
         if (no_prefix) {
@@ -96,6 +112,9 @@ public:
     }
 
     Node* add(std::string word) {
+        if (word == "Alf") {
+            int i = 1;
+        }
         return root.AddTarget(word);
     }
 };
