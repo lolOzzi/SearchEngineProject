@@ -3,6 +3,7 @@
 #include "./RadixTree.cpp"
 
 
+
 class DictWord {
 public:
     Node* word;
@@ -110,7 +111,8 @@ std::vector<Doc> DynamicFKS::get(std::string word) {
     std::vector<Doc> temp = std::vector<Doc>{};
 
     for (Node* node : res->documents_in) {
-        Doc new_doc = Doc(get_string_from_node(node));
+        Doc new_doc;
+        new_doc.title = get_string_from_node(node);
         temp.push_back(new_doc);
     }
 
