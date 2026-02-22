@@ -1,4 +1,6 @@
 #include <string>
+//position of Most Significant Bit of 8 bytes in little endian
+#define MSB 0x8000000000000000
 
 static int has_prefix(std::string prefix, std::string word) {
     int max_its = std::min(prefix.size(), word.size());
@@ -14,7 +16,7 @@ union Text {
 
 struct Label {
     Text text{};
-    bool is_pointer(){return (text.large & 0x8000000000000000);}
+    bool is_pointer(){return (text.large & MSB);}
 
     Label() {
         std::strcpy(text.small, "");
@@ -29,7 +31,7 @@ struct Label {
 
             uintptr_t ptr = reinterpret_cast<uintptr_t>(newString);
             //set the flag
-            text.large = ptr | 0x8000000000000000;
+            text.large = ptr | MSB;
 
         } else {
             text.large = 0;
@@ -40,7 +42,7 @@ struct Label {
     char* get() {
         if (is_pointer()) {
             uintptr_t cleaned = text.large;
-            cleaned = cleaned & ~0x8000000000000000;
+            cleaned = cleaned & ~MSB;
             return reinterpret_cast<char*>(cleaned);
         } else {
             return text.small;
@@ -55,7 +57,7 @@ struct Label {
 
     ~Label() {
         if (is_pointer()) {
-            uintptr_t cleaned = text.large & ~0x8000000000000000;
+            uintptr_t cleaned = text.large & ~MSB;
             delete[] reinterpret_cast<char*>(cleaned);
         }
     }
