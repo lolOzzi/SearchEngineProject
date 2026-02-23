@@ -21,6 +21,10 @@ struct Label {
     void set(const char* string) {
         size_t len = std::strlen(string);
 
+        if (is_pointer()) {
+            delete [] get();
+        }
+
         if (len > 7) {
             char* newString = new char[len + 1];
             std::strcpy(newString, string);
