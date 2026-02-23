@@ -49,11 +49,6 @@ struct Label {
         }
     }
 
-    bool equal(Label other) {
-        const char* otherText = other.get();
-        const char* thisText = get();
-        return std::strcmp(otherText,thisText) == 0;
-    }
 
     ~Label() {
         if (is_pointer()) {
