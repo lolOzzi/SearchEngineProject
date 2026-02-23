@@ -89,7 +89,12 @@ void DynamicFKS::add(std::string word, Doc document) {
     if (!word_in_document || word_in_document->word == nullptr) {
         words_added++;
         buckets[index]->add(word);
+        if (word == "and")
+        {
+            int asdsada = 1;
+        }
         word_in_document = buckets[index]->get(word);
+        assert(word_in_document->word != nullptr);
         word_in_document->documents_in.push_back(last_document_node_added);
         return;
     }
@@ -195,6 +200,7 @@ DictWord* CollisionFree::add(std::string& word) {
 
 DictWord* CollisionFree::get(std::string& word) {
     auto index = hasher.hash(word, arr_size);
+
     if (arr[index].word != nullptr && get_string_from_node(arr[index].word) == word)
         return &arr[index];
     return nullptr;

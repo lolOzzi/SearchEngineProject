@@ -45,7 +45,7 @@ public:
         return child_node;
     }
 
-    Node* AddTarget(std::string word) {
+    Node* AddTarget(const std::string& word) {
         bool no_prefix = true;
 
         for (auto& node_ptr : targets) {
@@ -105,13 +105,36 @@ public:
 
 
 static std::string get_string_from_node(Node* node) {
+    /*
     std::string full_string = node->label.get();
     Node* loop_node = node->parent;
     while (loop_node) {
         full_string.insert(0, loop_node->label.get());
         loop_node = loop_node->parent;
     }
+
     return full_string;
+    */
+
+    char* val = node->label.get();
+    size_t val_len = strlen(val);
+    char* dest = new char[val_len + 100]();
+    std::memcpy(dest, val, val_len);
+    size_t dest_len = std::strlen(dest);
+
+    Node* loop_node = node->parent;
+    while (loop_node) {
+        char* prefix = loop_node->label.get();
+        size_t prefix_len = std::strlen(prefix);
+        std::memmove(dest + prefix_len, dest, dest_len + 1);
+        std::memcpy(dest, prefix, prefix_len);
+        dest_len += prefix_len;
+        loop_node = loop_node->parent;
+    }
+    std::string converted = dest;
+    delete[] dest;
+    return converted;
+
 }
 
 class RadixTree {

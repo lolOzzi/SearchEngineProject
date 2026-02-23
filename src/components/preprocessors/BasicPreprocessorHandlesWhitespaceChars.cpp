@@ -28,7 +28,7 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
     int dbcounter = 0;
     while (std::getline(file, line)) {
         std::vector<std::string> words;
-        getWordsFromLine(line, words);
+        getWordsFromLine(line, patterns, words);
 
         for (int i = 0;i < words.size(); ++i) {
             word = words[i];
@@ -47,7 +47,7 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
             if (last_char == ',' || last_char == '.' || last_char == '?') {
                 word.erase(word.size() - 1);
             }
-            store->add(cleanString(word), document);
+            store->add(word, document);
             take_next = word == END;
         }
         before_first_word = file.tellg();

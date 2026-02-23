@@ -39,7 +39,7 @@ std::vector<ScoredDoc> TFIDFRANKER::rank(const std::vector<Doc>& candidates,
         int word_counter = 0;
         while (std::getline(file, line)) {
             std::vector<std::string> words;
-            getWordsFromLine(line, words);
+            getWordsFromLine(line, patterns, words);
             for (int wi = 0; wi < words.size(); ++wi) {
                 word = words[wi];
                 char last_char = word.back();
