@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     Index index = Index(&store, &preprocessor, &hasher, &searcher, &TFIDFRanker, &sorter);
 
     printf("Started preprocessing \n");
-    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_10MB.txt";
     index.preprocess(filename);
     printf("Finished preprocessing \n");
 
