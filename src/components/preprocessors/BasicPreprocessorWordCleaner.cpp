@@ -2,15 +2,15 @@
 
 #include <fstream>
 
-class BasicPreprocessorHandlesWhitespaceChars : public IPreprocessor {
+class BasicPreprocessorWordCleaner : public IPreprocessor {
 public:
-    ~BasicPreprocessorHandlesWhitespaceChars() override = default;
+    ~BasicPreprocessorWordCleaner() override = default;
     void* preprocess(std::string filename, IStore* store) override;
 
 };
 
 
-void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, IStore *store) {
+void* BasicPreprocessorWordCleaner::preprocess(std::string filename, IStore *store) {
     std::ifstream file;
     file.open (filename);
     if (!file.good() || !file.is_open()) {
@@ -47,13 +47,19 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
             if (last_char == ',' || last_char == '.' || last_char == '?') {
                 word.erase(word.size() - 1);
             }
-            store->add(word, document);
+
+            std::vector<std::string> clean_words;
+            cleanString(word, clean_words);
+            for (const std::string& clean_word : clean_words) {
+                store->add(remove_unwanted_and_trim(&clean_word), document);
+            }
+
             take_next = word == END;
         }
         before_first_word = file.tellg();
 
     }
-    std::cout << dbcounter;
+    std::cout << dbcounter << std::endl;
     file.close();
     return nullptr;
 }

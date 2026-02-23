@@ -24,30 +24,25 @@ public:
         child_node->parent = parent_node.get();
         parent_node->targets.push_back(std::move(*child_to_be));
 
+
         for (auto it = parent_node->parent->targets.begin(); it != parent_node->parent->targets.end(); ) {
             if (it->get() == nullptr) {
                 it = parent_node->parent->targets.erase(it);
                 break;
-            } else {
-                ++it;
             }
+            ++it;
         }
-
         parent_node->parent->targets.push_back(std::move(parent_node));
 
         return child_node;
     }
 
     Node* AddTarget(std::string word) {
-        bool no_prefix = true;
-
         for (auto& node_ptr : targets) {
             Node& node = *node_ptr;
             int num_shared_chars = has_prefix(node.label, word);
 
             if (num_shared_chars == 0) continue;
-
-            no_prefix = false;
 
             if (num_shared_chars == node.label.size()) {
                 if (word == node.label) {
@@ -78,28 +73,30 @@ public:
             return word_node_res;
         }
 
-        if (no_prefix) {
-            auto new_target = std::make_unique<Node>(word);
-            new_target->parent = this;
-            Node* result = new_target.get();
-            targets.push_back(std::move(new_target));
-            return result;
-        }
-
-        assert(false);
-        return nullptr;
+        auto new_target = std::make_unique<Node>(word);
+        new_target->parent = this;
+        Node* result = new_target.get();
+        targets.push_back(std::move(new_target));
+        return result;
     }
 };
 
 
 
 static string get_string_from_node(Node* node) {
-    std::string full_string = node->label;
-    Node* loop_node = node->parent;
+    std::string full_string = "";
+    Node* loop_node = node;
+    std::vector<std::string> string_arr = std::vector<std::string>{};
+
     while (loop_node) {
-        full_string.insert(0, loop_node->label);
+        string_arr.push_back(loop_node->label);
         loop_node = loop_node->parent;
     }
+
+    for (auto it = string_arr.rbegin(); it != string_arr.rend(); ++it) {
+        full_string.append(*it);
+    }
+
     return full_string;
 }
 
@@ -112,9 +109,6 @@ public:
     }
 
     Node* add(std::string word) {
-        if (word == "Alf") {
-            int i = 1;
-        }
         return root.AddTarget(word);
     }
 };

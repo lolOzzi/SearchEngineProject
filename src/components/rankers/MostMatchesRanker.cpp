@@ -30,7 +30,7 @@ std::vector<ScoredDoc> MostMatchesRanker::rank(const std::vector<Doc>& candidate
         int counter = 0;
         while (std::getline(file, line)) {
             std::vector<std::string> words;
-            getWordsFromLine(line, words);
+            getWordsFromLine(line, patterns, words);
             for (int wi = 0; wi < words.size(); ++wi) {
                 word = words[wi];
                 char last_char = word.back();

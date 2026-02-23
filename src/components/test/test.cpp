@@ -65,6 +65,10 @@ void CompareResult(std::string query, std::vector<Doc> index_res, std::vector<st
     std::sort(index_res_as_strings.begin(), index_res_as_strings.end());
     std::sort(benchmark_res.begin(), benchmark_res.end());
 
+    if (query == "abandon") {
+        int di = 1;
+    }
+
 
     for (int i = 0; i < benchmark_res.size(); i++) {
         if (benchmark_res[i] == " [Pivot] ++ % Use the anonymous fun (here named 'Smaller') to test the 'Pivo") continue;

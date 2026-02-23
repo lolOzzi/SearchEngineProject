@@ -3,18 +3,31 @@
 #include "./RadixTree.cpp"
 
 
+class DictDocument {
+public:
+    Node* word;
+    long long start_loc;
+    DictDocument() {
+        word = nullptr;
+        start_loc = 0;
+    }
+    DictDocument(Node* node, long long start_loc) {
+        this->word = node;
+        this->start_loc = start_loc;
+    }
+};
+
 class DictWord {
 public:
     Node* word;
-    std::vector<Node*> documents_in;
-
+    std::vector<DictDocument> documents_in;
     DictWord(){
         this->word = nullptr;
-        documents_in = std::vector<Node*>{};
+        documents_in = std::vector<DictDocument>{};
     }
     explicit DictWord(Node* node) {
         this->word = node;
-        documents_in = std::vector<Node*>{};
+        documents_in = std::vector<DictDocument>{};
     }
 };
 
@@ -42,7 +55,7 @@ private:
     IHash* hash_function;
     RadixTree doc_holder;
     DictWord* get_word(std::string& word);
-    Node* last_document_node_added;
+    DictDocument last_document_added;
     std::string last_document_title_added;
 
 public:
@@ -58,12 +71,11 @@ public:
 DynamicFKS::DynamicFKS(int n, IHash* hash_function) {
     numBuckets = n;
     this->hash_function = hash_function;
-    buckets = new CollisionFree*[numBuckets];
+    buckets = new CollisionFree *[numBuckets];
     doc_holder = RadixTree();
     for (int i = 0; i < numBuckets; i++) {
         buckets[i] = new CollisionFree(4, &doc_holder);
     }
-
 }
 
 DictWord *DynamicFKS::get_word(std::string& word) {
@@ -73,15 +85,17 @@ DictWord *DynamicFKS::get_word(std::string& word) {
 }
 
 void DynamicFKS::add_document(Doc document) {
-    last_document_node_added = doc_holder.add(document.title);
+    Node* doc_word = doc_holder.add(document.title);
+    last_document_added = DictDocument(doc_word, document.start_loc);
     last_document_title_added = document.title;
     documents_added++;
 }
 
 
+static const std::regex reg_pattern(R"([^a-z0-9])");
 void DynamicFKS::add(std::string word, Doc document) {
-
     if (word == "") return;
+
     std::uint64_t index = hash_function->hash(word, numBuckets);
     DictWord* word_in_document = buckets[index]->get(word);
 
@@ -89,17 +103,17 @@ void DynamicFKS::add(std::string word, Doc document) {
         words_added++;
         buckets[index]->add(word);
         word_in_document = buckets[index]->get(word);
-        word_in_document->documents_in.push_back(last_document_node_added);
+        word_in_document->documents_in.push_back(last_document_added);
         return;
     }
 
     if (!word_in_document->documents_in.empty()) {
-        if (word_in_document->documents_in[word_in_document->documents_in.size() - 1] == last_document_node_added) {
+        if (word_in_document->documents_in[word_in_document->documents_in.size() - 1].word == last_document_added.word) {
             return;
         }
     }
 
-    word_in_document->documents_in.push_back(last_document_node_added);
+    word_in_document->documents_in.push_back(last_document_added);
 }
 
 std::vector<Doc> DynamicFKS::get(std::string word) {
@@ -109,8 +123,9 @@ std::vector<Doc> DynamicFKS::get(std::string word) {
 
     std::vector<Doc> temp = std::vector<Doc>{};
 
-    for (Node* node : res->documents_in) {
-        Doc new_doc = Doc(get_string_from_node(node));
+    for (DictDocument doc : res->documents_in) {
+        Doc new_doc = Doc(get_string_from_node(doc.word));
+        new_doc.start_loc = doc.start_loc;
         temp.push_back(new_doc);
     }
 
