@@ -50,13 +50,17 @@ const std::vector<std::string> patterns = {
 
 const std::vector<std::string> patterns_to_space = {
   /* dashes and hyphens */
-  "\xE2\x80\x95",       // HORIZONTAL BAR U+2015
+  "\xE2\x80\x95",     // HORIZONTAL BAR U+2015
   "\xE2\x80\x94",     // EM DASH U+2014
-  //"\xE2\x80\x93",     // EN DASH U+2013
-  //"\xE2\x80\x92",     // FIGURE DASH U+2012
+  "\xE2\x80\x93",     // EN DASH U+2013
+  "\xE2\x80\x92",     // FIGURE DASH U+2012
   "\xE2\x80\x90",     // HYPHEN U+2010
-  "\xE2\x80\x91"      // NON-BREAKING HYPHEN U+2011
-  "\x2D",               // HYPHEN-MINUS U+002D
+  "\xE2\x80\x91",     // NON-BREAKING HYPHEN U+2011
+  "\x2D",             // HYPHEN-MINUS U+002D
+  "\xE2\x88\x92",       // MINUS SIGN U+2212
+  "\xCB\x97",           // MODIFIER LETTER MINUS SIGN U+02D7
+  "\xE2\x81\xBB",       // SUPERSCRIPT MINUS U+207B
+  "\xE2\x82\x8B",       // SUBSCRIPT MINUS U+208B
   // COLONS
   "\x3A",               // COLON U+003A
   "\xEF\xBC\x9A",       // FULLWIDTH COLON U+FF1A
@@ -77,7 +81,29 @@ const std::vector<std::string> patterns_to_space = {
   "\xE2\x81\x84",       // FRACTION SLASH U+2044
   "\xE2\x88\x95",       // DIVISION SLASH U+2215
   "\xEF\xBC\x8F",       // FULLWIDTH SOLIDUS U+FF0F
-  "\xE2\xA7\xB8"        // BIG SOLIDUS U+29F8
+  "\xE2\xA7\xB8",        // BIG SOLIDUS U+29F8
+  // QUESTION MARKS
+  "\x3F",               // QUESTION MARK U+003F
+  "\xEF\xBC\x9F",       // FULLWIDTH QUESTION MARK U+FF1F
+  "\xE2\xB8\xAE",       // DOUBLE QUESTION MARK U+2E2E
+  // EQUALS SIGNS
+  "\x3D",               // EQUALS SIGN U+003D
+  "\xEF\xBC\x9D",       // FULLWIDTH EQUALS SIGN U+FF1D
+  "\xE2\x81\xBC",       // DOUBLE VERTICAL LINE EQUALS U+2A75
+  // PERIODS (FULL STOPS)
+  "\x2E",               // FULL STOP U+002E
+  "\xEF\xBC\x8E",       // FULLWIDTH FULL STOP U+FF0E
+  "\xE2\x80\xA4",       // ONE DOT LEADER U+2024
+  "\xD6\x89",           // ARMENIAN FULL STOP U+0589
+  // EXCLAMATION MARKS
+  "\x21",               // EXCLAMATION MARK U+0021
+  "\xEF\xBC\x81",       // FULLWIDTH EXCLAMATION MARK U+FF01
+  "\xC7\x83",           // LATIN LETTER RETROFLEX CLICK (looks like !) U+01C3
+  // TILDES
+  "\x7E",               // TILDE U+007E
+  "\xEF\xBD\x9E",       // FULLWIDTH TILDE U+FF5E
+  "\xCB\x9C",           // SMALL TILDE U+02DC
+  "\xE2\x88\xBC",       // TILDE OPERATOR U+223C
 };
 
 
@@ -156,15 +182,15 @@ const std::vector<std::string> patterns_to_remove = {
 // ACUTE ACCENT
 "\xC2\xB4",             // ACUTE ACCENT U+00B4
 // APOSTROPHES / QUOTES
-  "\x22"                 // QUOTATION MARK U+0022
+"\x22",                 // QUOTATION MARK U+0022
 "\x27",                 // APOSTROPHE U+0027
 "\xE2\x80\x98",         // LEFT SINGLE QUOTATION MARK U+2018
 "\xE2\x80\x99",         // RIGHT SINGLE QUOTATION MARK U+2019
 "\xEF\xBC\x87"          // FULLWIDTH APOSTROPHE U+FF07
 };
 
-static void replace_any_simple(std::string &s, const std::vector<std::string> &patterns, const std::string& new_val) {
-  for (const auto &pat : patterns) {
+static void replace_any_simple(std::string &s, const std::vector<std::string> &given_patterns, const std::string& new_val) {
+  for (const auto &pat : given_patterns) {
     if (pat.empty()) continue;
     std::size_t pos = 0;
     while ((pos = s.find(pat, pos)) != std::string::npos) {
@@ -179,10 +205,10 @@ static int isSpace(char32_t c) {
 }
 
 const std::string rep_white_val = " ";
-static void getWordsFromLine(std::string &line, const std::vector<std::string> &patterns, std::vector<std::string> &words) {
+static void getWordsFromLine(std::string &line, const std::vector<std::string> &given_patterns, std::vector<std::string> &words) {
   std::string tmp_word;
 
-  replace_any_simple(line, patterns, rep_white_val);
+  replace_any_simple(line, given_patterns, rep_white_val);
 
   for (int i = 0; i < line.length(); ++i) {
     if (!isSpace(line[i]) ) {
