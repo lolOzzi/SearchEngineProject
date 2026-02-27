@@ -51,6 +51,7 @@ public:
     DynamicFKS(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
     void add_document(Doc document) override;
+    int get_num_docs() override;
     std::vector<Doc> get(std::string word) override;
     int words_added = 0;
     int documents_added = 0;
@@ -137,7 +138,7 @@ CollisionFree::CollisionFree(int size, RadixTree* tree) {
     new_hash();
 }
 
-void CollisionFree::new_hash() {
+void CollisionFree::new_SimpleFingerprinthash() {
     hasher.init();
 }
 
@@ -204,4 +205,8 @@ DictWord* CollisionFree::get(std::string& word) {
     if (arr[index].word != nullptr && get_string_from_node(arr[index].word) == word)
         return &arr[index];
     return nullptr;
+}
+int DynamicFKS::get_num_docs() {
+    printf("Not implemented yet \n");
+    return -1;
 }

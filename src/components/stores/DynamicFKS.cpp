@@ -23,14 +23,14 @@ private:
     int n;
 public:
     DocHolder() {
-        arr = new Doc[100'000];
+        arr = new Doc[5'000'000];
         n = 0;
     }
     ~DocHolder() {
         delete[] arr;
     }
     void AddDoc(Doc doc) {
-        assert(n < 100'000);
+        assert(n < 5'000'000);
         arr[n] = doc;
         n++;
     }
@@ -44,6 +44,9 @@ public:
     }
     Doc* GetDoc(DocId id) {
         return &arr[id.id];
+    }
+    int get_num_docs() {
+        return n+1;
     }
 
     std::vector<Doc> GetDocVector(std::vector<DocId>* ids) {
@@ -85,6 +88,7 @@ public:
     DynamicFKS(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
     void add_document(Doc document) override;
+    int get_num_docs() override;
     std::vector<Doc> get(std::string word) override;
 };
 
@@ -107,7 +111,6 @@ DictWord *DynamicFKS::get_word(std::string& word) {
 void DynamicFKS::add_document(Doc document) {
     doc_holder.AddDoc(document);
 }
-
 
 void DynamicFKS::add(std::string word, Doc document) {
 
@@ -228,4 +231,7 @@ DictWord* CollisionFree::get(std::string& word) {
     if (arr[index].word == word)
         return &arr[index];
     return nullptr;
+}
+int DynamicFKS::get_num_docs() {
+    return this->doc_holder.get_num_docs();
 }
