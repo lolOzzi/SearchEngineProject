@@ -1,5 +1,15 @@
 #include "../../core/interfaces.h"
 
+#include <string>
+#include <vector>
+
+class BlockTable {
+  private:
+      vector<vector<int>> abe;
+    public:
+
+}
+
 class Word {
 public:
     Word(std::string word) {
@@ -12,7 +22,7 @@ public:
     Word* next;
 };
 
-class BasicHashTable : public IStore {
+class DocBlock : public IStore {
 private:
     int numBuckets;
     Word** buckets;
@@ -20,22 +30,23 @@ private:
     Word* get_word(std::string word);
     int num_docs;
 public:
-    ~BasicHashTable() override;
-    BasicHashTable(int n, IHash* hash_function);
+    ~DocBlock() override;
+    DocBlock(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
     void add_document(Doc document) override;
     int get_num_docs() override;
     std::vector<Doc> get(std::string word) override;
 };
 
-BasicHashTable::BasicHashTable(int n, IHash* hash_function) {
+
+DocBlock::DocBlock(int n, IHash* hash_function) {
     numBuckets = n;
     buckets = new Word*[n];
     for (int i = 0; i < numBuckets; ++i) buckets[i] = nullptr;
     this->hash_function = hash_function;
 }
 
-BasicHashTable::~BasicHashTable() {
+DocBlock::~DocBlock() {
     if (!buckets) return;
     for (int i = 0; i < numBuckets; ++i) {
         Word* cur = buckets[i];
@@ -49,7 +60,7 @@ BasicHashTable::~BasicHashTable() {
     buckets = nullptr;
 }
 
-Word *BasicHashTable::get_word(std::string word) {
+Word *DocBlock::get_word(std::string word) {
     std::uint64_t index = hash_function->hash(word, numBuckets);
     Word* curr_word = buckets[index];
     while (curr_word) {
@@ -62,7 +73,7 @@ Word *BasicHashTable::get_word(std::string word) {
 }
 
 
-void BasicHashTable::add(const std::string word, const Doc document) {
+void DocBlock::add(const std::string word, const Doc document) {
     std::uint64_t index = hash_function->hash(word, numBuckets);
     Word* word_in_document = get_word(word);
 
@@ -80,15 +91,15 @@ void BasicHashTable::add(const std::string word, const Doc document) {
     word_in_document->documents_in.push_back(document);
 }
 
-void BasicHashTable::add_document(Doc document) {
+void DocBlock::add_document(Doc document) {
     this->num_docs++;
 }
 
-int BasicHashTable::get_num_docs() {
-  return this->num_docs;
+int DocBlock::get_num_docs() {
+    return this->num_docs;
 }
 
-std::vector<Doc> BasicHashTable::get(std::string word) {
+std::vector<Doc> DocBlock::get(std::string word) {
     Word* result = get_word(word);
     return result ? result->documents_in : std::vector<Doc> {};
 }

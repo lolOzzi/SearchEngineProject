@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "../extras/helpers/FileHelpers.cpp"
+#include "../extras/basic/ChainSet.cpp"
 const static std::string END = "---END.OF.DOCUMENT---";
 
 class Doc {
@@ -39,6 +40,7 @@ public:
     virtual void add(std::string word, Doc document) = 0;
     virtual void add_document(Doc document) = 0;
     virtual std::vector<Doc> get(std::string word) = 0;
+    virtual int get_num_docs() = 0;
 };
 
 class IPreprocessor {

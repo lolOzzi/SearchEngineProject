@@ -9,17 +9,17 @@ public:
     std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates, std::string& query, IStore* store, std::string& filename, ISorter* sorter) override;
 };
 
-static int tf_idf(std::string& query, int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
+static int tf_idf(int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
   double tf = query_count_in_doc /(double) words_in_doc;
   double idf = log(num_docs /(double) num_docs_containing_query);
   std::cout << tf*idf;
-  return tf*idf*100;
+  return (tf*idf*100);
 }
 
 std::vector<ScoredDoc> TFIDFRANKER::rank(const std::vector<Doc>& candidates,
                                         std::string& query, IStore* store,
                                         std::string& filename, ISorter* sorter) {
-  	int doc_count = getDocumentCountFromFile(filename);
+  	int doc_count = store->get_num_docs();
     std::vector<ScoredDoc> scoredDocs(candidates.size());
     std::ifstream file;
     file.open (filename);
@@ -54,7 +54,7 @@ std::vector<ScoredDoc> TFIDFRANKER::rank(const std::vector<Doc>& candidates,
 
         scoredDocs[i].title = candidates[i].title;
         scoredDocs[i].start_loc = candidates[i].start_loc;
-        scoredDocs[i].score = tf_idf(query, query_counter, word_counter, doc_count, candidates.size());
+        scoredDocs[i].score = tf_idf(query_counter, word_counter,doc_count, candidates.size());
     }
     file.close();
     sorter->sort(scoredDocs);
