@@ -116,7 +116,7 @@ private:
     GenericCollisionFree<T, U>** buckets;
 public:
     GenericFKSDictionary(int num_buckets, IHashFamily<T>* hash_family);
-    void add(T key, U val);
+    U* add(T key, U val);
     U* get(T key);
 };
 template<typename T, typename U>
@@ -129,9 +129,9 @@ GenericFKSDictionary<T, U>::GenericFKSDictionary(int num_buckets, IHashFamily<T>
     }
 }
 template<typename T, typename U>
-void GenericFKSDictionary<T, U>::add(T key, U val) {
+U *GenericFKSDictionary<T, U>::add(T key, U val) {
     uint64_t index = hash_family->hash(key, num_buckets);
-    buckets[index]->add(key, val);
+    return buckets[index]->add(key, val);
 }
 template<typename T, typename U>
 U *GenericFKSDictionary<T, U>::get(T key) {

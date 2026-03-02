@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include "../extras/helpers/FileHelpers.cpp"
-#include "../extras/basic/ChainSet.cpp"
 const static std::string END = "---END.OF.DOCUMENT---";
 
 class Doc {

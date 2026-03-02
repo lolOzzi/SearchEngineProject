@@ -30,6 +30,9 @@ private:
 public:
     ~CollisionFree() = default;
     explicit CollisionFree(int size, RadixTree* tree);
+
+    void new_SimpleFingerprinthash();
+
     void new_hash();
     DictWord* add(std::string& word);
     DictWord* get(std::string &word);
@@ -138,7 +141,7 @@ CollisionFree::CollisionFree(int size, RadixTree* tree) {
     new_hash();
 }
 
-void CollisionFree::new_SimpleFingerprinthash() {
+void CollisionFree::new_hash() {
     hasher.init();
 }
 
