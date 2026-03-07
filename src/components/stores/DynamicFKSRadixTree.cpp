@@ -141,9 +141,9 @@ namespace  DynamicFKSRadixTreeNS {
         new_hash();
     }
 
-    void CollisionFree::new_SimpleFingerprinthash() {
-        hasher.init();
-    }
+void CollisionFree::new_hash() {
+    hasher.init();
+}
 
     void CollisionFree::DoNew(DictWord* new_word, int old_arr_size) {
         bool did_new_success = false;

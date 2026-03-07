@@ -43,12 +43,6 @@ public:
     virtual int get_num_docs() = 0;
 };
 
-class IFuzzyStore : IStore {
-public:
-    virtual ~IFuzzyStore() = default;
-};
-
-
 class IPreprocessor {
 public:
     virtual ~IPreprocessor() = default;

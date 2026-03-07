@@ -85,7 +85,6 @@ bool GenericCollisionFree<T, U>::remove(T &key) {
     if (!(arr[index].key == key)) return false;
 
     arr[index].used = false;
-    // (optional) destroy val explicitly: arr[index].val = U();
     --n;
     return true;
 }
@@ -144,7 +143,7 @@ private:
     GenericCollisionFree<T, U>** buckets;
 public:
     GenericFKSDictionary(int num_buckets, IHashFamily<T>* hash_family);
-    void add(T key, U val);
+    U* add(T key, U val);
     U* get(T key);
     void remove(T key);
     int size();
@@ -159,12 +158,13 @@ GenericFKSDictionary<T, U>::GenericFKSDictionary(int num_buckets, IHashFamily<T>
     }
 }
 template<typename T, typename U>
-void GenericFKSDictionary<T, U>::add(T key, U val) {
+U *GenericFKSDictionary<T, U>::add(T key, U val) {
     uint64_t index = hash_family->hash(key, num_buckets);
     int pre_n = buckets[index]->get_num_elements();
 
-    buckets[index]->add(key, std::move(val));
+    auto ret = buckets[index]->add(key, std::move(val));
     size_ +=  buckets[index]->get_num_elements() - pre_n;
+    return ret;
 }
 template<typename T, typename U>
 U *GenericFKSDictionary<T, U>::get(T key) {

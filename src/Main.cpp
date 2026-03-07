@@ -1,11 +1,13 @@
+#include <chrono>
+
 #include "core/Index5.h"
 #include "components/test/test.cpp"
-#include "components/preprocessors/BasicPreprocessor.cpp"
-#include "components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp"
-#include "components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp"
+#include "components/preprocessors/BasicPreprocessorWordCleaner.cpp"
 
 #include "components/hashers/SimpleFingerprint.cpp"
 #include "components/searchers/BasicSearcher.cpp"
+#include "components/stores/GenericFKSWithDocId.cpp"
+//#include "components/stores/DynamicFKSRadixTree.cpp"
 #include "components/searchers/BooleanSearcher.cpp"
 #include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
 //#include "components/stores/TreeWrapper.cpp"
@@ -22,36 +24,33 @@
 int main(int argc, char* argv[]) {
     printf("main \n");
 
-    BasicPreprocessorHandlesWhitespaceChars preprocessor;
+    BasicPreprocessorWordCleaner preprocessor;
     SimpleFingerprint hasher;
-    //BooleanSearcher searcher;
     BasicSearcher searcher;
-    fuzzy::FuzzyDynamicFKS store = fuzzy::FuzzyDynamicFKS{300'000, &hasher};
-    TFIDFRANKER TFIDFRanker;
+    GenericFKSWithDocId store = GenericFKSWithDocId(3'000'000, &hasher);
 
-    MergeSort sorter;
-    Index index = Index(&store, &preprocessor, &hasher, &searcher, &TFIDFRanker, &sorter);
-
+    Index index = Index(&store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
+    // 57408850400
+    // 348283157567 ns, fuzzy
     printf("Started preprocessing \n");
     auto t0 = chrono::steady_clock::now();
-    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt"; // 348283157567 ns, fuzzy
-    //std::string filename = "data/WestburyLab.wikicorp.201004.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
     index.preprocess(filename);
     auto t1 = chrono::steady_clock::now();
     auto elapsed = duration_cast<chrono::nanoseconds>(t1 - t0).count();
     std::cout << " elapsed=" << elapsed << " ns\n";
     printf("Finished preprocessing \n");
 
-    //test(&index);
     printf("Start searching \n");
     SearchQuery q;
-    q.q = "albado";
+    q.q = "albedo";
     std::vector<Doc> res = index.search(q);
     printf("Finished searching \n");
     for (std::vector<Doc>::iterator it = res.begin(); it != res.end(); ++it) {
         std::cout << it->title << " "  << endl;
     }
 
+    test(&index);
 
     return 0;
 }
