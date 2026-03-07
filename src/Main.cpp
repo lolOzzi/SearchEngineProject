@@ -7,7 +7,7 @@
 #include "components/hashers/SimpleFingerprint.cpp"
 #include "components/searchers/BasicSearcher.cpp"
 #include "components/searchers/BooleanSearcher.cpp"
-//#include "components/stores/DynamicFKSRadixTree.cpp"
+#include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
 //#include "components/stores/TreeWrapper.cpp"
 #include <chrono>
 
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     SimpleFingerprint hasher;
     //BooleanSearcher searcher;
     BasicSearcher searcher;
-    FuzzyTreeWrapper store = FuzzyTreeWrapper(&hasher);
+    fuzzy::FuzzyDynamicFKS store = fuzzy::FuzzyDynamicFKS{300'000, &hasher};
     TFIDFRANKER TFIDFRanker;
 
     MergeSort sorter;

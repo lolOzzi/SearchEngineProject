@@ -1,5 +1,7 @@
+#pragma once
 #include <string>
-#include "./Label.cpp"
+#include "./Label.h"
+
 
 static int has_prefix(std::string prefix, std::string word) {
     int max_its = std::min(prefix.size(), word.size());

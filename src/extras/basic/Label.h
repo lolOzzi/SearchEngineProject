@@ -1,4 +1,6 @@
+#pragma once
 #include <cstdint>
+#include <cstring>
 #include <string>
 //position of Most Significant Bit of 8 bytes in little endian
 #define MSB 0x8000000000000000

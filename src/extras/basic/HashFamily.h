@@ -1,3 +1,7 @@
+#pragma once
+#include <cstdint>
+#include <string>
+#include <cassert>
 template <typename T>
 class IHashFamily {
 public:
@@ -7,7 +11,7 @@ public:
     virtual IHashFamily<T>* clone() const = 0;
 };
 
-class StringHashFamily : public IHashFamily<string> {
+class StringHashFamily : public IHashFamily<std::string> {
 private:
 public:
     std::uint64_t p;
@@ -39,6 +43,40 @@ std::uint64_t StringHashFamily::hash(std::string key, uint64_t max_val) {
     for (int i = 0; i < n; i++) {
         sum = (sum * z + key[i]) % p;
     }
+    std::uint64_t ret_val = sum % max_val;
+    assert(ret_val < max_val);
+    return ret_val;
+}
+
+class CharHashFamily : public IHashFamily<char> {
+private:
+public:
+    std::uint64_t p;
+    std::uint64_t z;
+    CharHashFamily();
+    CharHashFamily(const CharHashFamily& other) {
+        this->p = other.p;
+        this->z = other.z;
+    };
+    std::uint64_t hash(char key, uint64_t max_val) override;
+    void get_new_hash() override;
+    IHashFamily<char>* clone() const override {
+        return new CharHashFamily(*this);
+    }
+};
+
+CharHashFamily::CharHashFamily() {
+    p = 2147483647;
+    CharHashFamily::get_new_hash();
+}
+void CharHashFamily::get_new_hash() {
+    z = rand() % p;
+}
+std::uint64_t CharHashFamily::hash(char key, uint64_t max_val) {
+    if (max_val == 0) return 0;
+    assert(max_val > 0);
+    std::uint64_t sum = 0;
+    sum = z * key % p;
     std::uint64_t ret_val = sum % max_val;
     assert(ret_val < max_val);
     return ret_val;

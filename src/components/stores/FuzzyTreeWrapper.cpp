@@ -1,9 +1,10 @@
 #include <string>
-#include <vector>
 #include "../../core/interfaces.h"
 #include <cmath>
 #include "./RadixTreeWithPostings.cpp"
 // MAJORLY WORK IN PROGRESS!!!
+using RadixTreeWithPostings = RadixTreeWithPostingsNS::RadixTreeWithPostings;
+using RTPNode = RadixTreeWithPostingsNS::Node;
 
 
 
@@ -11,7 +12,7 @@ class FuzzyTreeWrapper : public IStore {
 private:
     RadixTreeWithPostings tree;
 
-    std::vector<Node*> doc_nodes;
+    std::vector<RTPNode*> doc_RTPNodes;
     IHash* hash_function;
 
     uint32_t next_doc_id = 0;
@@ -23,20 +24,20 @@ public:
     ~FuzzyTreeWrapper() override = default;
 
     void add_document(Doc document) override {
-        Node* docNode = tree.add(document.title);
+        RTPNode* docRTPNode = tree.add(document.title);
         if (debug_counter == 10000 ) {
             std::cout << next_doc_id << "\n";
             debug_counter = 0;
         }
 
-        if (docNode->doc_id == UINT32_MAX) {
+        if (docRTPNode->doc_id == UINT32_MAX) {
             uint32_t id = next_doc_id++;
             debug_counter++;
-            doc_nodes.push_back(docNode);
-            docNode->doc_id = id;
+            doc_RTPNodes.push_back(docRTPNode);
+            docRTPNode->doc_id = id;
             last_doc_id = id;
         } else {
-            last_doc_id = docNode->doc_id;
+            last_doc_id = docRTPNode->doc_id;
         }
     }
 
@@ -44,23 +45,23 @@ public:
         if (word.empty()) return;
         if (last_doc_id == UINT32_MAX) return;
 
-        Node* wordNode = tree.add(word);
-        auto &plist = wordNode->postings;
+        RTPNode* wordRTPNode = tree.add(word);
+        auto &plist = wordRTPNode->postings;
         if (plist.empty() || plist.back() != last_doc_id) {
             plist.push_back(last_doc_id);
         }
         auto delVars = create_variants(word, 1);
         for (int i = 0; i < delVars.size(); ++i) {
-            auto delNode = tree.add(delVars[i]);
-            if (!delNode->original.empty() && delNode->original.back() == wordNode) continue;
-            delNode->original.push_back(wordNode);
+            auto delRTPNode = tree.add(delVars[i]);
+            if (!delRTPNode->original.empty() && delRTPNode->original.back() == wordRTPNode) continue;
+            delRTPNode->original.push_back(wordRTPNode);
         }
     }
     
     void insert_postings_into_set(const std::vector<uint32_t>& plist, SimpleSet<Doc>& res_set) const {
         for (uint32_t docid : plist) {
-            if (docid < doc_nodes.size()) {
-                res_set.insert({ get_string_from_node(doc_nodes[docid]) });
+            if (docid < doc_RTPNodes.size()) {
+                res_set.insert({ get_string_from_node(doc_RTPNodes[docid]) });
             }
         }
     }
@@ -71,12 +72,12 @@ public:
 
         if (word.empty()) return res;
 
-        // handle exact-word node
-        Node* wordNode = tree.find(word);
-        if (wordNode) {
-            insert_postings_into_set(wordNode->postings, res_set);
+        // handle exact-word RTPNode
+        RTPNode* wordRTPNode = tree.find(word);
+        if (wordRTPNode) {
+            insert_postings_into_set(wordRTPNode->postings, res_set);
 
-            for (Node* delOrig : wordNode->original) {
+            for (RTPNode* delOrig : wordRTPNode->original) {
                 insert_postings_into_set(delOrig->postings, res_set);
             }
         }
@@ -84,11 +85,10 @@ public:
         // handle deletion variants
         const auto delVars = create_variants(word, 1);
         for (const auto& var : delVars) {
-            Node* wordNodeDel = tree.find(var);
-            if (!wordNodeDel) continue;
+            RTPNode* wordRTPNodeDel = tree.find(var);
+            if (!wordRTPNodeDel) continue;
 
-            // original behavior only inserts postings of the 'original' nodes
-            for (Node* delOrig : wordNodeDel->original) {
+            for (RTPNode* delOrig : wordRTPNodeDel->original) {
                 insert_postings_into_set(delOrig->postings, res_set);
             }
         }
@@ -99,7 +99,7 @@ public:
     int funny() {return 3;};
 
     int get_num_docs() override {
-        return static_cast<int>(doc_nodes.size());
+        return static_cast<int>(doc_RTPNodes.size());
     }
 
 
