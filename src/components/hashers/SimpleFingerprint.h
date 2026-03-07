@@ -1,4 +1,6 @@
+#pragma once
 #include <cassert>
+
 
 #include "../../core/interfaces.h"
 #include <cmath>

@@ -1,6 +1,8 @@
 #include <memory>
+#include <cassert>
 #include "../../core/interfaces.h"
 #include "../../extras/basic/RadixTree.h"
+#include "../../components/hashers/SimpleFingerprint.h"
 
 
 namespace  DynamicFKSRadixTreeNS {

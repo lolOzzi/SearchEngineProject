@@ -4,7 +4,7 @@
 #include "components/test/test.cpp"
 #include "components/preprocessors/BasicPreprocessorWordCleaner.cpp"
 
-#include "components/hashers/SimpleFingerprint.cpp"
+#include "components/hashers/SimpleFingerprint.h"
 #include "components/searchers/BasicSearcher.cpp"
 #include "components/stores/GenericFKSWithDocId.cpp"
 //#include "components/stores/DynamicFKSRadixTree.cpp"
