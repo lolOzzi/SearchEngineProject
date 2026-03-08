@@ -1,7 +1,7 @@
 #include <string>
 #include "../../core/interfaces.h"
 #include <cmath>
-#include "./RadixTreeWithPostings.cpp"
+#include "../../extras/basic/RadixTreeWithPostings.h"
 // MAJORLY WORK IN PROGRESS!!!
 using RadixTreeWithPostings = RadixTreeWithPostingsNS::RadixTreeWithPostings;
 using RTPNode = RadixTreeWithPostingsNS::Node;

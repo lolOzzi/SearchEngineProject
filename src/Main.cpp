@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     // 348283157567 ns, fuzzy
     printf("Started preprocessing \n");
     auto t0 = chrono::steady_clock::now();
-    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100KB.txt";
     index.preprocess(filename);
     auto t1 = chrono::steady_clock::now();
     auto elapsed = duration_cast<chrono::nanoseconds>(t1 - t0).count();

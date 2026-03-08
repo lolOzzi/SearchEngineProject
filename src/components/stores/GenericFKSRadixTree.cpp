@@ -1,7 +1,7 @@
 #include <memory>
 #include "../../core/interfaces.h"
-#include "./RadixTree.cpp"
-#include "../../extras/helpers/GenericFKSDictionary.cpp"
+#include "../../extras/basic/RadixTree.h"
+#include "../../extras/basic/GenericFKSDictionary.h"
 
 class DictWord {
 public:

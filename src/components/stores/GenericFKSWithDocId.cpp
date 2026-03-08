@@ -1,8 +1,8 @@
 #include <memory>
 #include "../../core/interfaces.h"
-#include "./RadixTree.cpp"
-#include "../../extras/helpers/GenericFKSDictionary.cpp"
-#include "../../extras/helpers/DynamicArray.cpp"
+#include "../../extras/basic/RadixTree.h"
+#include "../../extras/basic/GenericFKSDictionary.h"
+#include "../../extras/basic/DynamicArray.h"
 
 class DictWord {
 public:
