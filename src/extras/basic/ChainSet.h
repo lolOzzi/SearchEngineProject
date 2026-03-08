@@ -4,7 +4,6 @@
 #include <string>
 #include <cstdint>
 #include <iostream>
-class IHash;
 // Extremely simple chained-hashing set
 template<typename T>
 concept has_str = requires(const T& t) {
