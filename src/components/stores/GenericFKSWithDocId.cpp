@@ -9,8 +9,15 @@ public:
     Node* word;
     DynamicArray<int> documents_in;
 
-    DictWord() : word(nullptr), documents_in(2) { }
-    explicit DictWord(Node* node) : word(node), documents_in(2) { }
+    DictWord() : word(nullptr), documents_in(2) {}
+    explicit DictWord(Node* node) : word(node), documents_in(2) {}
+
+    ~DictWord() { word = nullptr; }
+    DictWord(const DictWord& other) : word(other.word), documents_in(other.documents_in) {};
+    DictWord& operator=(const DictWord& other) { word = other.word; documents_in = other.documents_in; return *this;};
+
+    DictWord(DictWord&& other) noexcept : word(other.word), documents_in(std::move(other.documents_in)) {other.word = nullptr; other.documents_in = DynamicArray<int>(); };
+    DictWord& operator=(DictWord&& other) noexcept { if (this != &other) {word = other.word; documents_in = other.documents_in; other.word = nullptr; other.documents_in = DynamicArray<int>();} return *this; };
 
     bool operator==(const DictWord& other) const {
         return word == other.word;
