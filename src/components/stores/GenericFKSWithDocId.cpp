@@ -57,6 +57,7 @@ public:
     void add_document(Doc document) override;
     int get_num_docs() override;
     std::vector<Doc> get(std::string word) override;
+    std::vector<Doc> prefix_search(std::string word);
     int words_added = 0;
     int documents_added = 0;
 };
@@ -77,6 +78,7 @@ void GenericFKSWithDocId::add_document(Doc document) {
     doc_arr.add(dict_doc);
     last_docid_added = doc_arr.n - 1;
     documents_added++;
+    node->label.set_to_document();
 }
 
 void GenericFKSWithDocId::add(std::string word, Doc document) {
@@ -117,5 +119,36 @@ std::vector<Doc> GenericFKSWithDocId::get(std::string word) {
         temp.push_back(new_doc);
     }
 
+    return temp;
+}
+
+
+static void prefix_search_from_node(Node* node, std::vector<Node*>* document_nodes) {
+    for (auto& node_ptr : node->targets) {
+        Node* loop_node = node_ptr.get();
+        prefix_search_from_node(loop_node, document_nodes);
+
+        if (loop_node->label.is_document()) {
+            document_nodes->push_back(loop_node);
+        }
+    }
+}
+
+std::vector<Doc> GenericFKSWithDocId::prefix_search(std::string word) {
+    Node* best = find_best_node(&tree.root, word);
+    std::vector<Doc> temp = std::vector<Doc>{};
+    std::vector<Node*> docs = std::vector<Node*>{};
+    prefix_search_from_node(best, &docs);
+
+    for (int i = 0; i < doc_arr.n; i++) {
+        for (auto& node_ptr : docs) {
+            if (doc_arr[i].word == node_ptr) {
+                Doc new_doc;
+                new_doc.title = get_string_from_node(doc_arr[i].word);
+                new_doc.start_loc = doc_arr[i].start_loc;
+                temp.push_back(new_doc);
+            }
+        }
+    }
     return temp;
 }

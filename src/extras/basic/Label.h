@@ -14,6 +14,7 @@ union Text {
 
 struct Label {
     Text text{};
+    bool is_doc = false;
     bool is_pointer(){return (text.large & MSB);}
 
     Label() {
@@ -51,6 +52,12 @@ struct Label {
         }
     }
 
+    void set_to_document() {
+        is_doc = true;
+    }
+    bool is_document() {
+        return is_doc;
+    }
 
     ~Label() {
         if (is_pointer()) {

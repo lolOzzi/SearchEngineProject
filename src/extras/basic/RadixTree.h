@@ -105,8 +105,39 @@ public:
 };
 
 
+static Node* find_best_node(Node* node, std::string word) {
+    for (auto& node_ptr : node->targets) {
+        std::string lab = node_ptr->label.get();
+        int num_shared = has_prefix(lab, word);
+        if (num_shared == 0) continue;
+
+        if (num_shared == lab.size()) return find_best_node(node_ptr.get(), word.substr(num_shared));
+
+        return node_ptr.get();
+    }
+    return node;
+}
+
 
 static std::string get_string_from_node(Node* node) {
+    /*
+    Node* loop_node = node;
+    size_t total = 0;
+    while (loop_node)
+    {
+        total += std::strlen(loop_node->label.get());
+        loop_node = loop_node->parent;
+    }
+    std::string res;
+    res.reserve(total);
+    loop_node = node;
+    while (loop_node)
+    {
+        res.append(loop_node->label.get());
+        loop_node = loop_node->parent;
+    }
+    return res;
+    */
     std::string full_string = node->label.get();
     Node* loop_node = node->parent;
     while (loop_node) {
@@ -125,9 +156,6 @@ public:
     }
 
     Node* add(std::string word) {
-        if (word == "Alf") {
-            int i = 1;
-        }
         return root.AddTarget(word);
     }
 };
