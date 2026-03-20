@@ -3,6 +3,7 @@
 #include "../../extras/basic/RadixTree.h"
 #include "../../extras/basic/GenericFKSDictionary.h"
 #include "../../extras/basic/DynamicArray.h"
+#include "../../extras/basic/CuckooHasingDictionary.h"
 
 class DictWord {
 public:
@@ -43,7 +44,7 @@ class GenericFKSWithDocId : public IStore {
 private:
     RadixTree tree;
     StringHashFamily hash_family = StringHashFamily();
-    GenericFKSDictionary<std::string, DictWord> dict;
+    CuckooHashingDictionary<std::string, DictWord> dict;
 
     DynamicArray<DictDoc> doc_arr;
 
