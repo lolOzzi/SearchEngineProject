@@ -20,6 +20,7 @@ private:
     int calculate_max_loop() const;
     double calculate_load_factor() const;
     void rehash(int new_size, int old_size);
+    void rehash_add(T key, U val); // Add specific to rehash, since some assumptions can be made.
 public:
     CuckooHashingDictionary(int start_size, IHashFamily<T>* hash_family);
     U* add(T key, U val) override;
@@ -111,6 +112,26 @@ void CuckooHashingDictionary<T, U>::rehash(int new_size, int old_size) {
     hash_family2->get_new_hash();
     n = 0;
     for (int i = 0; i < items.n; i++) {
-        add(items[i].key, items[i].val);
+        rehash_add(items[i].key, items[i].val);
     }
+}
+
+template<typename T, typename U>
+void CuckooHashingDictionary<T, U>::rehash_add(T key, U val) {
+    n++;
+    Item new_item{key, std::move(val), true};
+
+    int max_loop = calculate_max_loop();
+    for (int i = 0; i < max_loop; i++) {
+        uint64_t index1 = hash_family1->hash(new_item.key, size);
+        std::swap(new_item, T1[index1]);
+        if (new_item.used == false) return;
+
+        uint64_t index2 = hash_family2->hash(new_item.key, size);
+        std::swap(new_item, T2[index2]);
+        if (new_item.used == false) return;
+    }
+
+    rehash(size, size);
+    add(new_item.key, new_item.val);
 }
