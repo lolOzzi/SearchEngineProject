@@ -8,7 +8,7 @@ constexpr double EPSILON = 0.1;
 const double EPSILON_LOG_CONSTANT = std::log(1+EPSILON);
 
 template <typename T, typename U>
-class CuckooHashingDictionary : Dictionary<T, U> {
+class CuckooHashingDictionary : public Dictionary<T, U> {
 private:
     int size;
     int n;
