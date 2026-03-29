@@ -12,6 +12,17 @@ struct Item{
 };
 
 template <typename T, typename U>
+struct ChainedItem{
+    T key;
+    U val;
+    bool used = false;
+    ChainedItem* next = nullptr;
+    bool operator==(const ChainedItem& other) const {
+        return used == other.used && key == other.key;
+    }
+};
+
+template <typename T, typename U>
 class Dictionary {
 private:
 public:

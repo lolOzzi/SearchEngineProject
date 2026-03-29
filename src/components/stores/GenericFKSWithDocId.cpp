@@ -1,6 +1,8 @@
 #include <memory>
 #include "../../core/interfaces.h"
+#include "../../extras/basic/ChaniedHashDictionary.h"
 #include "../../extras/basic/RadixTree.h"
+#include "../../extras/basic/DoubleArrayDSTree.h"
 #include "../../extras/basic/GenericFKSDictionary.h"
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/CuckooHasingDictionary.h"
@@ -44,7 +46,7 @@ class GenericFKSWithDocId : public IStore {
 private:
     RadixTree tree;
     StringHashFamily hash_family = StringHashFamily();
-    CuckooHashingDictionary<std::string, DictWord> dict;
+    ChainedHashDictionary<std::string, DictWord> dict;
 
     DynamicArray<DictDoc> doc_arr;
 
