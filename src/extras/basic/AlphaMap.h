@@ -6,18 +6,18 @@
 
 class AlphaMap {
 private:
-    int n;
     IHashFamily<char>* hash_family;
     ChainedHashDictionary<char, int> dict;
 public:
+    int n;
     AlphaMap(const int start_size) :
-        n(0),
         hash_family(new CharHashFamily()),
-        dict(ChainedHashDictionary<char, int>(start_size, hash_family))
+        dict(ChainedHashDictionary<char, int>(start_size, hash_family)),
+        n(0)
     {}
 
     int get(const char c) {
-        int* val = dict.get(c);
+        const int* val = dict.get(c);
         if (val == nullptr) return add(c);
         return *val;
     }

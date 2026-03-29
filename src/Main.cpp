@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     SimpleFingerprint hasher;
     BasicSearcher searcher;
 
-    std::string filename = "data/WestburyLab.wikicorp.201004_10MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
 
     GenericDATWithDocId store = GenericDATWithDocId(4);
 
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         std::cout << it->title << " "  << endl;
     }
 
-    //test_correctness(&index, filename);
+    test_correctness(&index, filename);
 
     return 0;
 }
