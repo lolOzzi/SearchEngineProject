@@ -46,7 +46,7 @@ class GenericFKSWithDocId : public IStore {
 private:
     RadixTree tree;
     StringHashFamily hash_family = StringHashFamily();
-    ChainedHashDictionary<std::string, DictWord> dict;
+    CuckooHashingDictionary<std::string, DictWord> dict;
 
     DynamicArray<DictDoc> doc_arr;
 
@@ -63,6 +63,7 @@ public:
     std::vector<Doc> prefix_search(std::string word);
     int words_added = 0;
     int documents_added = 0;
+    void print_spaced_used();
 };
 
 GenericFKSWithDocId::GenericFKSWithDocId(int n, IHash* hash_function) :
@@ -154,4 +155,31 @@ std::vector<Doc> GenericFKSWithDocId::prefix_search(std::string word) {
         }
     }
     return temp;
+}
+
+void GenericFKSWithDocId::print_spaced_used() {
+    unsigned long long doc_holder_num_items = static_cast<unsigned long long>(doc_arr.n);
+    unsigned long long doc_holder_space_used = doc_arr.get_size() * sizeof(DictDoc);
+    printf("Documents holder has %llu items and uses %llu bytes.\n", doc_holder_num_items, doc_holder_space_used);
+
+    unsigned long long dict_num_items = static_cast<unsigned long long>(dict.get_num_items());
+    unsigned long long dict_space_used = dict.get_size() * dict.get_item_size();
+    printf("Word dictionary has %llu items and uses %llu bytes.\n", dict_num_items, dict_space_used);
+
+    auto dict_items = dict.get_all_items();
+    unsigned long long doc_arr_item_count = 0;
+    unsigned long long doc_arr_size_count = 0;
+    for (int i = 0; i < dict.get_num_items(); i++) {
+        doc_arr_item_count += static_cast<unsigned long long>(dict_items[i]->val.documents_in.n);
+        doc_arr_size_count += static_cast<unsigned long long>(dict_items[i]->val.documents_in.get_size());
+    }
+    printf("Words documents_in has %llu items and uses %llu bytes.\n", doc_arr_item_count, doc_arr_size_count * sizeof(int));
+
+    unsigned long long tree_num_nodes = 0;
+    unsigned long long tree_string_space_used = 0;
+    tree.get_space_used(&tree.root, &tree_num_nodes, &tree_string_space_used);
+    printf("Compressed trie has %llu items and uses %llu bytes.\n", tree_num_nodes, tree_string_space_used);
+
+    printf("Total space used is %llu\n", doc_holder_space_used + dict_space_used +
+                                               (doc_arr_size_count* sizeof(int)) + tree_string_space_used);
 }

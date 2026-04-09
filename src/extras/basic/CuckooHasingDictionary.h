@@ -26,6 +26,10 @@ public:
     U* add(T key, U val) override;
     U* get(T key) override;
     void remove(T key) override;
+    int get_num_items() const { return n; };
+    int get_size() const { return size; };
+    int get_item_size() { return sizeof(Item<T, U>); }
+    Item<T,U>** get_all_items();
 };
 template<typename T, typename U>
 CuckooHashingDictionary<T, U>::CuckooHashingDictionary(int start_size, IHashFamily<T>* hash_family) : size(start_size), n(0) {
@@ -134,4 +138,22 @@ void CuckooHashingDictionary<T, U>::rehash_add(T key, U val) {
 
     rehash(size, size);
     add(new_item.key, new_item.val);
+}
+
+template<typename T, typename U>
+Item<T,U>** CuckooHashingDictionary<T, U>::get_all_items() {
+    Item<T,U>** items = new Item<T, U>*[n];
+    int items_pos = 0;
+    for (int i = 0; i < size; i++) {
+        if (T1[i].used) {
+            items[items_pos] = &T1[i];
+            items_pos++;
+        }
+        if (T2[i].used) {
+            items[items_pos] = &T2[i];
+            items_pos++;
+        }
+    }
+
+    return items;
 }
