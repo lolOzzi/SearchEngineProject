@@ -6,7 +6,8 @@
 #include "components/searchers/BasicSearcher.cpp"
 
 //#include "components/stores/GenericFKSWithDocId.cpp"
-#include "components/stores/GenericDATWithDocId.cpp"
+#include "components/stores/BurstTrieStore.cpp"
+//#include "components/stores/GenericDATWithDocId.cpp"
 
 /*
 */
@@ -18,10 +19,9 @@ int main(int argc, char* argv[]) {
     SimpleFingerprint hasher;
     BasicSearcher searcher;
 
-    std::string filename = "data/WestburyLab.wikicorp.201004_10MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
 
-    GenericDATWithDocId store = GenericDATWithDocId(4);
-
+    BurstTrieStore store = BurstTrieStore();
 
     Index index = Index(&store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
     index.preprocess(filename);
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         std::cout << it->title << " "  << endl;
     }
 
-    //test_correctness(&index, filename);
+    test_correctness(&index, filename);
 
     return 0;
 }
