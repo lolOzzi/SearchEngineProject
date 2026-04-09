@@ -47,6 +47,8 @@ public:
 
     T& operator[](int index) { return arr[index]; }
     const T& operator[](int index) const { return arr[index]; }
+
+    int get_size() const { return size; }
 };
 
 template<typename T>

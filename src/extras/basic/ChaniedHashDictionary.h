@@ -18,6 +18,10 @@ public:
     U* add(T key, U val) override;
     U* get(T key) override;
     void remove(T key) override;
+    int get_num_items() const { return n; };
+    int get_size() const { return size; };
+    int get_item_size() { return sizeof(Item<T, U>); }
+
 };
 
 template<typename T, typename U>
