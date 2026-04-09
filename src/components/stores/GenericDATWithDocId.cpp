@@ -9,7 +9,7 @@ public:
     long long start_loc;
 
     DictDoc() : word(""), start_loc(-1) { }
-    explicit DictDoc(std::string word_, long long loc) : word(word_), start_loc(loc) { }
+    explicit DictDoc(const std::string &word_, long long loc) : word(word_), start_loc(loc) { }
 
     bool operator==(const DictDoc& other) const {
         return word == other.word;

@@ -7,43 +7,41 @@
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/CuckooHasingDictionary.h"
 
-class DictWord {
-public:
-    Node* word;
-    DynamicArray<int> documents_in;
-
-    DictWord() : word(nullptr), documents_in(2) {}
-    explicit DictWord(Node* node) : word(node), documents_in(2) {}
-
-    ~DictWord() { word = nullptr; }
-    DictWord(const DictWord& other) : word(other.word), documents_in(other.documents_in) {};
-    DictWord& operator=(const DictWord& other) { word = other.word; documents_in = other.documents_in; return *this;};
-
-    DictWord(DictWord&& other) noexcept : word(other.word), documents_in(std::move(other.documents_in)) {other.word = nullptr; other.documents_in = DynamicArray<int>(); };
-    DictWord& operator=(DictWord&& other) noexcept { if (this != &other) {word = other.word; documents_in = other.documents_in; other.word = nullptr; other.documents_in = DynamicArray<int>();} return *this; };
-
-    bool operator==(const DictWord& other) const {
-        return word == other.word;
-    }
-};
-
-class DictDoc {
-public:
-    Node* word;
-    long long start_loc;
-
-    DictDoc() : word(nullptr), start_loc(-1) { }
-    explicit DictDoc(Node* node, long long loc) : word(node), start_loc(loc) { }
-
-    bool operator==(const DictDoc& other) const {
-        return word == other.word;
-    }
-};
-
-
-
-class GenericFKSWithDocId : public IStore {
+class DictionaryWithTrieAndDocId : public IStore {
 private:
+    class DictWord {
+    public:
+        Node* word;
+        DynamicArray<int> documents_in;
+
+        DictWord() : word(nullptr), documents_in(2) {}
+        explicit DictWord(Node* node) : word(node), documents_in(2) {}
+
+        ~DictWord() { word = nullptr; }
+        DictWord(const DictWord& other) : word(other.word), documents_in(other.documents_in) {};
+        DictWord& operator=(const DictWord& other) { word = other.word; documents_in = other.documents_in; return *this;};
+
+        DictWord(DictWord&& other) noexcept : word(other.word), documents_in(std::move(other.documents_in)) {other.word = nullptr; other.documents_in = DynamicArray<int>(); };
+        DictWord& operator=(DictWord&& other) noexcept { if (this != &other) {word = other.word; documents_in = other.documents_in; other.word = nullptr; other.documents_in = DynamicArray<int>();} return *this; };
+
+        bool operator==(const DictWord& other) const {
+            return word == other.word;
+        }
+    };
+
+    class DictDoc {
+    public:
+        Node* word;
+        long long start_loc;
+
+        DictDoc() : word(nullptr), start_loc(-1) { }
+        explicit DictDoc(Node* node, long long loc) : word(node), start_loc(loc) { }
+
+        bool operator==(const DictDoc& other) const {
+            return word == other.word;
+        }
+    };
+
     RadixTree tree;
     StringHashFamily hash_family = StringHashFamily();
     CuckooHashingDictionary<std::string, DictWord> dict;
@@ -54,8 +52,8 @@ private:
     std::string last_document_title_added;
     int last_docid_added;
 public:
-    ~GenericFKSWithDocId() override = default;
-    GenericFKSWithDocId(int n, IHash* hash_function);
+    ~DictionaryWithTrieAndDocId() override = default;
+    DictionaryWithTrieAndDocId(int n, IHash* hash_function);
     void add(std::string word, Doc document) override;
     void add_document(Doc document) override;
     int get_num_docs() override;
@@ -66,17 +64,17 @@ public:
     void print_spaced_used();
 };
 
-GenericFKSWithDocId::GenericFKSWithDocId(int n, IHash* hash_function) :
+DictionaryWithTrieAndDocId::DictionaryWithTrieAndDocId(int n, IHash* hash_function) :
     tree(),
     dict(n, &hash_family),
     doc_arr(128)
 {
 }
-int GenericFKSWithDocId::get_num_docs() {
+int DictionaryWithTrieAndDocId::get_num_docs() {
     return words_added;
 }
 
-void GenericFKSWithDocId::add_document(Doc document) {
+void DictionaryWithTrieAndDocId::add_document(Doc document) {
     Node* node = tree.add(document.title);
     DictDoc dict_doc = DictDoc(node, document.start_loc);
     doc_arr.add(dict_doc);
@@ -85,7 +83,7 @@ void GenericFKSWithDocId::add_document(Doc document) {
     node->label.set_to_document();
 }
 
-void GenericFKSWithDocId::add(std::string word, Doc document) {
+void DictionaryWithTrieAndDocId::add(std::string word, Doc document) {
     if (word == "") return;
 
     DictWord* word_in_document = dict.get(word);
@@ -110,7 +108,7 @@ void GenericFKSWithDocId::add(std::string word, Doc document) {
     word_in_document->documents_in.add(last_docid_added);
 }
 
-std::vector<Doc> GenericFKSWithDocId::get(std::string word) {
+std::vector<Doc> DictionaryWithTrieAndDocId::get(std::string word) {
     DictWord* res = dict.get(word);
     if (res == nullptr) return std::vector<Doc>{};
 
@@ -138,7 +136,7 @@ static void prefix_search_from_node(Node* node, std::vector<Node*>* document_nod
     }
 }
 
-std::vector<Doc> GenericFKSWithDocId::prefix_search(std::string word) {
+std::vector<Doc> DictionaryWithTrieAndDocId::prefix_search(std::string word) {
     Node* best = find_best_node(&tree.root, word);
     std::vector<Doc> temp = std::vector<Doc>{};
     std::vector<Node*> docs = std::vector<Node*>{};
@@ -157,7 +155,7 @@ std::vector<Doc> GenericFKSWithDocId::prefix_search(std::string word) {
     return temp;
 }
 
-void GenericFKSWithDocId::print_spaced_used() {
+void DictionaryWithTrieAndDocId::print_spaced_used() {
     unsigned long long doc_holder_num_items = static_cast<unsigned long long>(doc_arr.n);
     unsigned long long doc_holder_space_used = doc_arr.get_size() * sizeof(DictDoc);
     printf("Documents holder has %llu items and uses %llu bytes.\n", doc_holder_num_items, doc_holder_space_used);

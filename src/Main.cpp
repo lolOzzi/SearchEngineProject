@@ -7,6 +7,7 @@
 
 //#include "components/stores/GenericFKSWithDocId.cpp"
 #include "components/stores/BurstTrieStore.cpp"
+#include "components/stores/DictionaryWithDocId.cpp"
 //#include "components/stores/GenericDATWithDocId.cpp"
 
 /*
@@ -21,23 +22,20 @@ int main(int argc, char* argv[]) {
 
     std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
 
-    BurstTrieStore store = BurstTrieStore();
+    BurstTrieStore trie_store = BurstTrieStore();
+    DictionaryWithDocId dict_store = DictionaryWithDocId(4);
 
-    Index index = Index(&store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
-    index.preprocess(filename);
-    printf("amt words added %d \n", store.words_added);
+    Index trie_index = Index(&trie_store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
+    Index dict_index = Index(&dict_store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
 
-    printf("Finished Preprocessing \n");
+    test_time_of_preprocess(&trie_index, &dict_index, filename);
+    test_time_of_search(&trie_index, &dict_index, filename, 100);
 
-    SearchQuery q;
-    q.q = "albedo";
-    std::vector<Doc> res = index.search(q);
-    printf("Finished searching \n");
-    for (std::vector<Doc>::iterator it = res.begin(); it != res.end(); ++it) {
-        std::cout << it->title << " "  << endl;
-    }
+    printf("trie correctness \n");
+    test_correctness(&trie_index, filename);
+    printf("dict correctness \n");
+    test_correctness(&dict_index, filename);
 
-    test_correctness(&index, filename);
-
+    dict_store.print_spaced_used();
     return 0;
 }

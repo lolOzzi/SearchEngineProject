@@ -1,3 +1,5 @@
+#pragma once
+
 #include <algorithm>
 
 #include "../Label.h"
@@ -32,6 +34,8 @@ inline Record::Record(const std::string& str) {
     word = new_word;
 }
 inline int Record::size() const {
+    if (word == nullptr)
+        return -1;
     int size = 0;
     while (word[size] != '\0') size++;
     return size;
