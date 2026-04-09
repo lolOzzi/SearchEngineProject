@@ -116,9 +116,11 @@ void test_correctness(Index* index, std::string filename) {
         tmp.q = s;
         auto res = index->search(tmp);
         CompareResult(s, res, results.at(s));
+        /*
         i++;
         if (i % 1000 == 0)
             printf("At test nr %d its word %s\n", i, s.c_str());
+        */
     }
 }
 
