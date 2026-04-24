@@ -54,7 +54,7 @@ namespace fuzzy {
         FuzzyDictWord* add_word(std::string word);
         FuzzyDictWord* add_word_with_last_doc(std::string word);
         std::vector<Doc> get_single(std::string word);
-        vector<string> create_variants(string str, int max_distance);
+        std::vector<std::string> create_variants(std::string str, int max_distance);
 
 
     public:

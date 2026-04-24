@@ -16,6 +16,7 @@ struct Label {
     Text text{};
     bool is_doc = false;
     bool is_pointer(){return (text.large & MSB);}
+    const bool is_pointer() const{return (text.large & MSB);}
 
     Label() {
         std::strcpy(text.small, "");
@@ -47,6 +48,14 @@ struct Label {
             uintptr_t cleaned = text.large;
             cleaned = cleaned & ~MSB;
             return reinterpret_cast<char*>(cleaned);
+        } else {
+            return text.small;
+        }
+    }
+    const char* get() const {
+        if (is_pointer()) {
+            uintptr_t cleaned = text.large & ~MSB;
+            return reinterpret_cast<const char*>(cleaned);
         } else {
             return text.small;
         }

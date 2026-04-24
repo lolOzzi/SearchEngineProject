@@ -1,6 +1,8 @@
 #pragma once
 #include "./HashFamily.h"
 #include <cmath>
+#include "Dictionary.h"
+#include "DynamicArray.h"
 
 // Se: https://studwww.itu.dk/~pagh/papers/cuckoo-jour.pdf
 
@@ -74,7 +76,7 @@ U *CuckooHashingDictionary<T, U>::add(T key, U val) {
     }
     // Failed, so reset and try again
     rehash(size, size);
-    add(new_item.key, new_item.val);
+    add(std::move(new_item.key), std::move(new_item.val));
     return get(key);
 }
 
@@ -112,7 +114,7 @@ void CuckooHashingDictionary<T, U>::rehash(int new_size, int old_size) {
     hash_family2->get_new_hash();
     n = 0;
     for (int i = 0; i < items.n; i++) {
-        rehash_add(items[i].key, items[i].val);
+        rehash_add(std::move(items[i].key), std::move(items[i].val));
     }
 }
 
@@ -133,5 +135,5 @@ void CuckooHashingDictionary<T, U>::rehash_add(T key, U val) {
     }
 
     rehash(size, size);
-    add(new_item.key, new_item.val);
+    add(std::move(new_item.key), std::move(new_item.val));
 }
