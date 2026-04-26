@@ -160,4 +160,17 @@ public:
     Node* add(std::string word) {
         return root.AddTarget(word);
     }
+
+    void get_space_used(Node* node, unsigned long long* num_nodes, unsigned long long* string_space_used);
 };
+
+
+inline void RadixTree::get_space_used(Node* node, unsigned long long *num_nodes, unsigned long long *string_space_used) {
+    *num_nodes += node->targets.size();
+    *string_space_used += node->targets.capacity() * (sizeof(Node) + sizeof(unique_ptr<Node>));
+    *string_space_used += node->label.get_space_used();
+
+    for (auto& node_ptr : node->targets) {
+        get_space_used(node_ptr.get(), num_nodes, string_space_used);
+    }
+}

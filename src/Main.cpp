@@ -20,6 +20,11 @@
 #include "TestDynamicArray.cpp"
 #include "extras/basic/HashFamily.h"
 
+//#include "components/stores/GenericFKSWithDocId.cpp"
+#include "components/stores/BurstTrieStore.cpp"
+#include "components/stores/DictionaryWithDocId.cpp"
+//#include "components/stores/GenericDATWithDocId.cpp"
+
 #include "extras/test/SortedDynamicArrayTest.cpp"
 
 #include "extras/test/CompressedTrieTest.cpp"
@@ -40,38 +45,22 @@ int main(int argc, char* argv[]) {
     StringHashFamily hasher;
     BasicSearcher searcher;
 
-    ModularStoreEliasFanoNS::ModularStoreEliasFano store = ModularStoreEliasFanoNS::ModularStoreEliasFano(&hasher, 300'000); // 256: 4.26 gb 
-    //ModularStorePackedNHashedNS::ModularStorePackedNHashed store = ModularStorePackedNHashedNS::ModularStorePackedNHashed(&hasher, 300'000); // 4.19gb
-    Index index = Index(&store, &preprocessor, nullptr, &searcher, nullptr, nullptr);
-    // 57408850400
-    // 348283157567 ns, fuzzy
-    // 95951786518 ns, elias fano  
-    printf("Started preprocessing \n");
-    auto t0 = chrono::steady_clock::now();
     std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
 
-    index.preprocess(filename);
-    auto t1 = chrono::steady_clock::now();
-    auto elapsed = duration_cast<chrono::nanoseconds>(t1 - t0).count();
-    std::cout << " elapsed=" << elapsed << " ns\n";
-    printf("Finished preprocessing \n");
+    BurstTrieStore trie_store = BurstTrieStore();
+    DictionaryWithDocId dict_store = DictionaryWithDocId(4);
 
-    auto res = index.search({"albedo"});
-    for (int i = 0; i < res.size(); ++i) {
-        std::cout << res[i].title << "\n";
-    }
+    Index trie_index = Index(&trie_store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
+    Index dict_index = Index(&dict_store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
 
-    //BasicHashTable store2 = BasicHashTable(300'000, &hasher);
-    //Index index2 = Index(&store2, &preprocessor, &hasher, &searcher, nullptr, nullptr);
+    test_time_of_preprocess(&trie_index, &dict_index, filename);
+    test_time_of_search(&trie_index, &dict_index, filename, 100);
 
-    //std::string filename = "data/WestburyLab.wikicorp.201004_50MB.txt";
+    printf("trie correctness \n");
+    test_correctness(&trie_index, filename);
+    printf("dict correctness \n");
+    test_correctness(&dict_index, filename);
 
-    //test_time_of_preprocess(&index, &index2, filename);
-    //int search_iterations = 50; //
-    //test_time_of_search(&index, &index2, filename, search_iterations);
-
-    //test_correctness(&index, filename);
-    
-
+    dict_store.print_spaced_used();
     return 0;
 }

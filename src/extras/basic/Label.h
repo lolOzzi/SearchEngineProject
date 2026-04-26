@@ -5,8 +5,6 @@
 //position of Most Significant Bit of 8 bytes in little endian
 #define MSB 0x8000000000000000
 
-
-
 union Text {
     uintptr_t large;
     char small[8];
@@ -58,6 +56,18 @@ struct Label {
             return reinterpret_cast<const char*>(cleaned);
         } else {
             return text.small;
+        }
+    }
+
+    unsigned long long get_space_used() {
+        if (is_pointer()) {
+            uintptr_t cleaned = text.large;
+            cleaned = cleaned & ~MSB;
+            const std::string s = reinterpret_cast<char*>(cleaned);
+            return s.size();
+        }
+        else {
+            return 0; // Should be accounted for in size_of label
         }
     }
 
