@@ -213,9 +213,6 @@ Expr BooleanSearcher::parse(std::vector<Token> tokens) {
     parser p;
     p.tokens = std::move(tokens);
     Expr res = p.lowPrecendence();
-
-
-
     return res;
 }
 
