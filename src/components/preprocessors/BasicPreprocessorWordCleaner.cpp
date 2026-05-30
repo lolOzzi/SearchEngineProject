@@ -1,7 +1,7 @@
 #include "../../core/interfaces.h"
 
 #include <fstream>
-
+#include <iostream>
 class BasicPreprocessorWordCleaner : public IPreprocessor {
 public:
     ~BasicPreprocessorWordCleaner() override = default;
@@ -61,6 +61,9 @@ void* BasicPreprocessorWordCleaner::preprocess(std::string filename, IStore *sto
     }
     std::cout << dbcounter << std::endl;
     file.close();
+    if (auto* c = dynamic_cast<ICompressible*>(store)) {
+        c->compress();
+    }
     return nullptr;
 }
 

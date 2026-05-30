@@ -1,4 +1,4 @@
-#include "extras/basic/DynamicPackedArray.h"
+#include "extras/basic/DynamicPackedArray.hpp"
 #include <vector>
 #include <cstdint>
 #include <string>
@@ -9,7 +9,7 @@ int TestDynamicPackedArray() {
     DynamicPackedArray dpa(2);
 
     // add a range of values (edge cases + typical)
-    vector<uint32_t> vals = {0u, 1u, 127u, 128u, 30000u, 0xFFFFFFu, 4294967295u};
+    std::vector<uint32_t> vals = {0u, 1u, 127u, 128u, 30000u, 0xFFFFFFu, 4294967295u};
     for (int i = 0; i < vals.size(); ++i) {
         dpa.add(vals[i]);
     }

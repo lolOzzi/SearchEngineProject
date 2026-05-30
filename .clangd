@@ -1,0 +1,10 @@
+CompileFlags:
+  CompilationDatabase: cmake-build-debug
+  Remove:
+    - -fmodules-ts
+    - -fmodule-mapper*
+    - -fmodules
+    - -fno-modules
+    - -fconcepts-diagnostics-depth=*
+    - -mrelocatable-packed-bits
+    - -fdeps-format=*

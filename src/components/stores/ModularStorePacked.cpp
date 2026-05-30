@@ -5,8 +5,8 @@
 #include "../../core/interfaces.h"
 #include "../../extras/basic/CompressedTrie.h"
 #include "../../extras/basic/DynamicArray.h"
-#include "../../extras/basic/DynamicPackedArray.h"
-#include "../../extras/basic/GenericFKSDictionary.h"
+#include "../../extras/basic/DynamicPackedArray.hpp"
+#include "../../extras/basic/CuckooHasingDictionary.h"
 #include "../../extras/basic/HashFamily.h"
 
 // Important greek guy or smth
@@ -43,7 +43,7 @@ namespace ModularStorePackedNS {
         void map_id_to_doc_nodes(std::vector<Doc> &res, std::vector<uint32_t> &ids );
         // Dictionary for things
         StringHashFamily* hasher;
-        GenericFKSDictionary<std::string, ModularStorePackedDictWord> word_node_store;
+        CuckooHashingDictionary<std::string, ModularStorePackedDictWord> word_node_store;
 
 
     public:

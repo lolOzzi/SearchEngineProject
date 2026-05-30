@@ -41,6 +41,11 @@ public:
     virtual std::vector<Doc> get(std::string word) = 0;
     virtual int get_num_docs() = 0;
 };
+class ICompressible {
+public:
+    virtual ~ICompressible() = default;
+    virtual void compress() = 0;
+};
 
 class IPreprocessor {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 #include "Record.h"
-
+#include "../DynamicArray.h"
 template <typename T>
 struct ValuePairs{
     Record word;

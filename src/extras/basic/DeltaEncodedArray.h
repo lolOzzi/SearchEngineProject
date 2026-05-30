@@ -1,5 +1,5 @@
 #pragma once
-#include "DynamicPackedArray.h"
+#include "DynamicPackedArray.hpp"
 
 #include <chrono>
 #include <limits>

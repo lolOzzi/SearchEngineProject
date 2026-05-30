@@ -2,20 +2,20 @@
 #include <string>
 #include <cstdint>
 #include "../../core/interfaces.h"
-#include "../../extras/basic/CompressedHashTrie.h"
+#include "../../extras/basic/CompressedTrie.h"
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/CuckooHasingDictionary.h"
 #include "../../extras/basic/HashFamily.h"
-#include "../../extras/basic/EliasFanoExtendableSlow.hpp"
+#include "../../extras/basic/EliasFanoBuffer.hpp"
 
 // Paradox greek guy or smth
 namespace ModularStoreEliasFanoNS {
 
     class ModularStoreEliasFanoDictWord {
     public:
-        HashTrie::Node* word;
+        Trie::Node* word;
         uint32_t last_added_id;
-        ExtensibleEliasFano documents_in;
+        EliasFanoBuffer documents_in;
         std::vector<ModularStoreEliasFanoDictWord*> originals;
 
         ModularStoreEliasFanoDictWord()
@@ -24,7 +24,7 @@ namespace ModularStoreEliasFanoNS {
               documents_in(UINT32_MAX),
               originals() {}
 
-        explicit ModularStoreEliasFanoDictWord(HashTrie::Node* node)
+        explicit ModularStoreEliasFanoDictWord(Trie::Node* node)
             : word(node),
               last_added_id(0),
               documents_in(UINT32_MAX),
@@ -34,9 +34,9 @@ namespace ModularStoreEliasFanoNS {
     class ModularStoreEliasFano : public IStore {
     private:
         // Words and titles yk
-        HashTrie::CompressedHashTrie tree;
+        Trie::CompressedTrie tree;
         //Doc ID to doc node
-        DynamicArray<HashTrie::Node*> doc_nodes;
+        DynamicArray<Trie::Node*> doc_nodes;
         uint32_t id_for_last_added_doc = 0;
         void map_id_to_doc_nodes(std::vector<Doc> &res, std::vector<uint32_t> &ids );
         // Dictionary for things
@@ -93,7 +93,7 @@ namespace ModularStoreEliasFanoNS {
     void ModularStoreEliasFano::map_id_to_doc_nodes(std::vector<Doc> &res, std::vector<uint32_t> &ids) {
     	for (int i = 0; i < ids.size(); ++i) {
         	auto doc_node = doc_nodes[ids[i]];
-            Doc doc = Doc{HashTrie::get_string_from_node(doc_node)};
+            Doc doc = Doc{Trie::get_string_from_node(doc_node)};
         	res.push_back(doc);
     	}
     }
