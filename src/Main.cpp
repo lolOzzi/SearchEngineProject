@@ -14,9 +14,9 @@
 
 #include "components/stores/ModularStoreEliasFanoNoBuffer.cpp"
 #include "components/stores/ModularStoreEliasFanoPackedBuffer.cpp"
-#include "components/stores/BurstTrieEliasFanoStaticStore.cpp"
+//#include "components/stores/BurstTrieEliasFanoStaticStore.cpp"
 //#include "components/stores/BurstTrieStore.cpp"
-//#include "components/stores/CompressibleBurstTrieStore.cpp"
+#include "components/stores/CompressibleBurstTrieStore.cpp"
 
 #include "components/rankers/MostMatchesRanker.cpp"
 #include "components/rankers/TFIDFRanker.cpp"
@@ -30,10 +30,7 @@
 //#include "components/stores/GenericDATWithDocId.cpp"
 
 #include "extras/basic/HashFamily.h"
-#include "extras/test/SortedDynamicArrayTest.cpp"
 
-#include "extras/test/CompressedTrieTest.cpp"
-#include "extras/test/CompressedHashTrieTest.cpp"
 #include "components/stores/ModularStorePacked.cpp"
 #include "components/stores/DictionaryWithTrieAndDocId.cpp"
 #include <cstdio>
@@ -52,7 +49,7 @@ int main(int argc, char* argv[]) {
     std::string filename = "data/WestburyLab.wikicorp.201004_800MB.txt";
     
     
-    BurstTrieEliasFanoStaticStoreNS::BurstTrieEliasFanoStaticStore mse =  BurstTrieEliasFanoStaticStoreNS::BurstTrieEliasFanoStaticStore(); // 800MB-file: 526 MiB
+    //BurstTrieEliasFanoStaticStoreNS::BurstTrieEliasFanoStaticStore mse =  BurstTrieEliasFanoStaticStoreNS::BurstTrieEliasFanoStaticStore(); // 800MB-file: 526 MiB
     //ModularStoreEliasFanoNS::ModularStoreEliasFano mse = ModularStoreEliasFanoNS::ModularStoreEliasFano(&hashing, 10'000); // 100MB-File: 276 MB,  800MB-file: 1.64 GB
     //ModularStoreEliasFanoPackedBufferNS::ModularStoreEliasFanoPackedBuffer mse = ModularStoreEliasFanoPackedBufferNS::ModularStoreEliasFanoPackedBuffer(&hashing, 10'000); // 100MB-File: 288 MB 
     //ModularStoreEliasFanoNoBufferNS::ModularStoreEliasFanoNoBuffer mse = ModularStoreEliasFanoNoBufferNS::ModularStoreEliasFanoNoBuffer(&hashing, 10'000); // 100MB-file: 206 MB, 800MB-file: 1.33 gb  
@@ -62,7 +59,7 @@ int main(int argc, char* argv[]) {
     //DictionaryWithTrieAndDocId dict_store = DictionaryWithTrieAndDocId(4, &hasher);
     //DictionaryWithDocId dict_store = DictionaryWithDocId(4);
     //DictionaryWithDocId dict_store_0 = DictionaryWithDocId(4);
-    //CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore mse = CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore(); //800MB-file: 455-mib
+    CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore mse = CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore(); //800MB-file: 455-mib
     IStore* s = &mse;
     IPreprocessor* p = &preprocessor;
     IHash* h = &hasher;
