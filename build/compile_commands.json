@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/Main.cpp",
+  "file": "/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/Main.cpp",
+  "output": "CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o"
+}
+]

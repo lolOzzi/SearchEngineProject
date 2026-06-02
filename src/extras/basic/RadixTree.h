@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
 #include "./Label.h"
-
+#include <vector>
+#include <memory>
+#include <cassert>
 
 static int has_prefix(std::string prefix, std::string word) {
     int max_its = std::min(prefix.size(), word.size());
@@ -105,8 +107,39 @@ public:
 };
 
 
+static Node* find_best_node(Node* node, std::string word) {
+    for (auto& node_ptr : node->targets) {
+        std::string lab = node_ptr->label.get();
+        int num_shared = has_prefix(lab, word);
+        if (num_shared == 0) continue;
+
+        if (num_shared == lab.size()) return find_best_node(node_ptr.get(), word.substr(num_shared));
+
+        return node_ptr.get();
+    }
+    return node;
+}
+
 
 static std::string get_string_from_node(Node* node) {
+    /*
+    Node* loop_node = node;
+    size_t total = 0;
+    while (loop_node)
+    {
+        total += std::strlen(loop_node->label.get());
+        loop_node = loop_node->parent;
+    }
+    std::string res;
+    res.reserve(total);
+    loop_node = node;
+    while (loop_node)
+    {
+        res.append(loop_node->label.get());
+        loop_node = loop_node->parent;
+    }
+    return res;
+    */
     std::string full_string = node->label.get();
     Node* loop_node = node->parent;
     while (loop_node) {
@@ -125,9 +158,19 @@ public:
     }
 
     Node* add(std::string word) {
-        if (word == "Alf") {
-            int i = 1;
-        }
         return root.AddTarget(word);
     }
+
+    void get_space_used(Node* node, unsigned long long* num_nodes, unsigned long long* string_space_used);
 };
+
+
+inline void RadixTree::get_space_used(Node* node, unsigned long long *num_nodes, unsigned long long *string_space_used) {
+    *num_nodes += node->targets.size();
+    *string_space_used += node->targets.capacity() * (sizeof(Node) + sizeof(unique_ptr<Node>));
+    *string_space_used += node->label.get_space_used();
+
+    for (auto& node_ptr : node->targets) {
+        get_space_used(node_ptr.get(), num_nodes, string_space_used);
+    }
+}

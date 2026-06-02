@@ -1,0 +1,3 @@
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles/SearchEngineProject.dir
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles/edit_cache.dir
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles/rebuild_cache.dir

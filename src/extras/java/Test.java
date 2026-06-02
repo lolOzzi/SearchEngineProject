@@ -1,17 +1,20 @@
 import java.io.*;
 import java.util.*;
-
-// Kan blive kørt måske nemmere ved
-
-// java src/extras/java/Test.java
+import java.nio.file.Path;
 
 class Test {
 
     public static void main(String[] args) {
 
         String filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
-        String test_filepath = "src/components/test/test_100MB.txt";
-        System.out.println("Preprocessing " + filename);
+
+        if (args.length == 1){
+            filename = args[0];
+        }
+        String test_file_name = filename.substring(5);
+        String test_filepath = "src/components/test/TEST_" + test_file_name;
+        File f = new File(test_filepath);
+        if (f.exists()) return;
         Test test = new Test(filename, test_filepath);
     }
 
@@ -44,9 +47,6 @@ class Test {
                         word = word.substring(0, word.length() - 1);
                     }
                 }
-
-
-
                 if (holder.containsKey(word)) {
                     var list = holder.get(word);
                     if (!list.get(list.size() - 1).equals(document)){

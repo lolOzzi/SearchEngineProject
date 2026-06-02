@@ -2,25 +2,17 @@
 #include "./HashFamily.h"
 #include <utility>
 #include <cassert>
+#include "Dictionary.h"
 
 template <typename T, typename U>
 class GenericCollisionFree {
 private:
-    struct Item{
-        T key;
-        U val;
-        bool used = false;
-
-        bool operator==(const Item& other) const {
-            return used == other.used && key == other.key;
-        }
-    };
     int n;
     int size;
     int arr_size;
-    Item* arr;
+    Item<T, U> * arr;
     IHashFamily<T>* hash_family;
-    void do_new(int old_arr_size, Item* new_item);
+    void do_new(int old_arr_size, Item<T, U>* new_item);
 public:
     ~GenericCollisionFree() = default;
     GenericCollisionFree(int size, IHashFamily<T>* hash_family);
@@ -35,9 +27,9 @@ GenericCollisionFree<T, U>::GenericCollisionFree(int size, IHashFamily<T>* hash_
     this->n = 0;
     this->size = size;
     arr_size = size*size;
-    this->arr = new Item[arr_size];
+    this->arr = new Item<T, U>[arr_size];
     for (int i = 0; i < arr_size; i++) {
-        arr[i] = Item();
+        arr[i] = Item<T, U>();
     }
     this->hash_family = hash_family->clone();
     this->hash_family->get_new_hash();
@@ -55,18 +47,22 @@ template<typename T, typename U>
 U* GenericCollisionFree<T,U>::add(T key, U val) {
 
     Item new_item{key, std::move(val), true};
+    if (n >= size) {
+        int old_size = arr_size;
+        size = size*2;
+        arr_size = size*size;
+        do_new(old_size, &new_item);
+        ++n;
+        return get(key);
+    }
 
     auto index = hash_family->hash(key, arr_size);
-
     if (arr[index].used) {
         if (arr[index].key == key) {
             arr[index].val = std::move(new_item.val);
             return &arr[index].val;
         } else {
-            int old_arr_size = arr_size;
-            size = size * 2;
-            arr_size = size * size;
-            do_new(old_arr_size, &new_item);
+            do_new(arr_size, &new_item);
             ++n;
             return get(key);
         }
@@ -89,44 +85,55 @@ bool GenericCollisionFree<T, U>::remove(T &key) {
     return true;
 }
 
-
 template<typename T, typename U>
-void GenericCollisionFree<T, U>::do_new(int old_arr_size, Item* new_item) {
+void GenericCollisionFree<T, U>::do_new(int old_arr_size, Item<T, U>* new_item) {
+    Item<T, U>* new_arr = new Item<T, U>[arr_size];
 
-    bool did_new_success = false;
-    Item* new_arr = new Item[arr_size];
-
-    while (!did_new_success) {
-        for (int i = 0; i < arr_size; i++) {
-            new_arr[i] = Item();
-        }
+    while (true) {
         hash_family->get_new_hash();
-        bool continue_after = false;
+
+        // Phase 1: probe only — no moves, just check for collisions
+        bool collision = false;
+        bool* slots = new bool[arr_size]();
 
         for (int i = 0; i < old_arr_size; i++) {
             if (!arr[i].used) continue;
-            uint64_t new_index = hash_family->hash(arr[i].key, arr_size);
-            assert(new_index < static_cast<uint64_t>(arr_size));
-
-            if (new_arr[new_index].used) {
-                continue_after = true;
-                break;
-            }
-            new_arr[new_index] = std::move(arr[i]);
+            uint64_t idx = hash_family->hash(arr[i].key, arr_size);
+            if (slots[idx]) { collision = true; break; }
+            slots[idx] = true;
         }
 
-        if (continue_after) {
-            continue;
+        if (!collision) {
+            uint64_t idx = hash_family->hash(new_item->key, arr_size);
+            if (slots[idx]) collision = true;
         }
-        int new_index = hash_family->hash(new_item->key, arr_size);
-        if (new_arr[new_index].used) continue;
-        assert(new_index >= 0 && new_index < arr_size);
 
-        new_arr[new_index] = std::move(*new_item);
-        did_new_success = true;
+        delete[] slots;
+        if (collision) continue;
+
+        // Phase 2: layout confirmed — now safe to move everything once
+        for (int i = 0; i < old_arr_size; i++) {
+            if (!arr[i].used) continue;
+            uint64_t idx = hash_family->hash(arr[i].key, arr_size);
+            new_arr[idx] = std::move(arr[i]);
+        }
+        uint64_t idx = hash_family->hash(new_item->key, arr_size);
+        new_arr[idx] = std::move(*new_item);
+
         delete[] arr;
         arr = new_arr;
+        return;
     }
+
+    for (int i = 0; i < old_arr_size; i++) {
+        if (!arr[i].used) continue;
+        uint64_t new_index = hash_family->hash(arr[i].key, arr_size);
+        assert(new_index < static_cast<uint64_t>(arr_size));
+        new_arr[new_index] = std::move(arr[i]);
+    }
+    delete[] arr;
+    arr = new_arr;
+
 }
 template<typename T, typename U>
 int GenericCollisionFree<T, U>::get_num_elements() {
@@ -135,18 +142,16 @@ int GenericCollisionFree<T, U>::get_num_elements() {
 
 
 template <typename T, typename U>
-class GenericFKSDictionary {
+class GenericFKSDictionary : Dictionary<T, U> {
 private:
-    int size_ = 0;
     int num_buckets;
     IHashFamily<T>* hash_family;
     GenericCollisionFree<T, U>** buckets;
 public:
     GenericFKSDictionary(int num_buckets, IHashFamily<T>* hash_family);
-    U* add(T key, U val);
-    U* get(T key);
-    void remove(T key);
-    int size();
+    U* add(T key, U val) override;
+    U* get(T key) override;
+    void remove(T key) override;
 };
 template<typename T, typename U>
 GenericFKSDictionary<T, U>::GenericFKSDictionary(int num_buckets, IHashFamily<T>* hash_family) {
@@ -160,11 +165,7 @@ GenericFKSDictionary<T, U>::GenericFKSDictionary(int num_buckets, IHashFamily<T>
 template<typename T, typename U>
 U *GenericFKSDictionary<T, U>::add(T key, U val) {
     uint64_t index = hash_family->hash(key, num_buckets);
-    int pre_n = buckets[index]->get_num_elements();
-
-    auto ret = buckets[index]->add(key, std::move(val));
-    size_ +=  buckets[index]->get_num_elements() - pre_n;
-    return ret;
+    return buckets[index]->add(std::move(key), std::move(val));
 }
 template<typename T, typename U>
 U *GenericFKSDictionary<T, U>::get(T key) {
@@ -175,8 +176,7 @@ U *GenericFKSDictionary<T, U>::get(T key) {
 template<typename T, typename U>
 void GenericFKSDictionary<T, U>::remove(T key) {
     uint64_t index = hash_family->hash(key, num_buckets);
-    size_ -= buckets[index]->remove(key) ? 1 : 0;
+    buckets[index]->remove(key);
 }
 
-template<typename T, typename U>
-int GenericFKSDictionary<T, U>::size() {return size_;}
+

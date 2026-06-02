@@ -1,16 +1,17 @@
 #include <memory>
 #include <vector>
+#include <iostream>
 #include <string>
 #include <cstdint>
 #include "../../core/interfaces.h"
-#include "./RadixTree++.cpp"
+#include "../../extras/basic/RadixTreeWithPostings.h"
 
 
 class TreeWrapper : public IStore {
 private:
-    RadixTree tree;
+    RadixTreeWithPostingsNS::RadixTreeWithPostings tree;
 
-    std::vector<Node*> doc_nodes;
+    std::vector<RadixTreeWithPostingsNS::Node*> doc_nodes;
 
     uint32_t next_doc_id = 0;
     uint32_t last_doc_id = UINT32_MAX;
@@ -21,7 +22,7 @@ public:
     ~TreeWrapper() override = default;
 
     void add_document(Doc document) override {
-        Node* docNode = tree.add(document.title);
+        RadixTreeWithPostingsNS::Node* docNode = tree.add(document.title);
         if (debug_counter == 10000 ) {
             std::cout << next_doc_id << "\n";
             debug_counter = 0;
@@ -42,7 +43,7 @@ public:
         if (word.empty()) return;
         if (last_doc_id == UINT32_MAX) return;
 
-        Node* wordNode = tree.add(word);
+        RadixTreeWithPostingsNS::Node* wordNode = tree.add(word);
         auto &plist = wordNode->postings;
 
         if (plist.empty() || plist.back() != last_doc_id) {
@@ -54,7 +55,7 @@ public:
     std::vector<Doc> get(std::string word) override {
         std::vector<Doc> res;
         if (word.empty()) return res;
-        Node* wordNode = tree.find(word);
+        RadixTreeWithPostingsNS::Node* wordNode = tree.find(word);
         if (!wordNode) return res;
         const std::vector<uint32_t>& plist = wordNode->postings;
         res.reserve(plist.size());

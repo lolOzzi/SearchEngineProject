@@ -1,13 +1,14 @@
+#pragma once
 #include <string>
 #include <vector>
 #include <memory>
 #include <cassert>
 #include "Label.h"
-#include "GenericFKSDictionary.h"
+#include "CuckooHasingDictionary.h"
 #include "HashFamily.h"
 template <typename T, typename U>
-using FKSDict = GenericFKSDictionary<T, U>;
-namespace Trie {
+using CuckDict = CuckooHashingDictionary<T, U>;
+namespace HashTrie {
 
 static int has_prefix(std::string_view prefix, std::string_view word) {
     int max_its = static_cast<int>(std::min(prefix.size(), word.size()));
@@ -17,15 +18,15 @@ static int has_prefix(std::string_view prefix, std::string_view word) {
     return max_its;
 }
 
-extern CharHashFamily hasher;
+inline CharHashFamily hasher;
 
 class Node {
 public:
     Label label;
-    FKSDict<char, std::unique_ptr<Node>> targets;
+    CuckDict<char, std::unique_ptr<Node>> targets;
     Node* parent;
 
-    Node(std::string text = ""): targets(100, &hasher) {
+    explicit Node(const std::string& text = ""): targets(100, &hasher) {
         label = Label();
         label.set(text.c_str());
         parent = nullptr;
@@ -127,6 +128,7 @@ public:
     Node* add(std::string word) {
         return root.AddTarget(word);
     }
+
 };
 
 }
