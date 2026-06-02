@@ -63,7 +63,7 @@ void DynamicArray<T>::add(T key) {
     if (n >= size) {
         double_up();
     }
-    arr[n] = key;
+    arr[n] = std::move(key);
     n++;
 }
 

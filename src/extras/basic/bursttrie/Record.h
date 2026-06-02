@@ -1,7 +1,7 @@
 #pragma once
 
 #include <algorithm>
-
+#include <cassert>
 #include "../Label.h"
 
 class Record {
