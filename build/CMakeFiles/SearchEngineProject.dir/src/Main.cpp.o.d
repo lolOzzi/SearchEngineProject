@@ -297,10 +297,10 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/EliasFanoPackedBuffer.hpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/DynamicPackedArray.hpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompressibleBurstTrieStore.cpp \
+ /usr/include/c++/16.1.1/variant \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/bursttrie/BurstTrie.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/bursttrie/AccessTrie.h \
- /usr/include/c++/16.1.1/variant \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/bursttrie/BinarySearchTree.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/bursttrie/Record.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/MostMatchesRanker.cpp \
@@ -312,10 +312,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/ChaniedHashDictionary.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/GenericFKSDictionary.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/SortedDynamicArrayTest.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedTrieTest.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedHashTrieTest.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/../basic/CompressedHashTrie.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/DoubleArrayDSTree.h \

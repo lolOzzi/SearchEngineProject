@@ -2,6 +2,8 @@
 #include <cstring>
 #include <type_traits>
 #include <utility>
+#include <vector>
+#include <stdint.h>
 
 template <typename T>
 class DynamicArray {
@@ -49,6 +51,13 @@ public:
     const T& operator[](int index) const { return arr[index]; }
 
     int get_size() const { return size; }
+
+    void copy_elements_to_vector(std::vector<uint32_t> &res) {
+	    int pos = 0;
+	    for (int i = 0; i < n; ++i) {
+            res.push_back(arr[i]);
+	    }
+    }
 };
 
 template<typename T>
@@ -81,3 +90,5 @@ void DynamicArray<T>::double_up() {
     arr = new_arr;
     size = size * 2;
 }
+
+
