@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
     //DictionaryWithTrieAndDocId dict_store = DictionaryWithTrieAndDocId(4, &hasher);
     //DictionaryWithDocId dict_store = DictionaryWithDocId(4);
     //DictionaryWithDocId dict_store_0 = DictionaryWithDocId(4);
-    CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore mse = CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore(); //800MB-file: 455-mib
+    CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore mse = CompressibleBurstTrieStoreNS::CompressibleBurstTrieStore(); //800MB-file: 450-mib
     IStore* s = &mse;
     IPreprocessor* p = &preprocessor;
     IHash* h = &hasher;

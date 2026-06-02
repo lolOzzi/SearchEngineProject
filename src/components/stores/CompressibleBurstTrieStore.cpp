@@ -6,19 +6,19 @@
 #include "../../core/interfaces.h"
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/bursttrie/BurstTrie.h"
-#include "../../extras/basic/EliasFanoBuffer.hpp"
+#include "../../extras/basic/EliasFanoStatic.hpp"
 
 namespace CompressibleBurstTrieStoreNS {
 
     class WordPostings {
     private:
-        std::variant<DynamicArray<uint32_t>, std::unique_ptr<EliasFanoBuffer>> document_ids;
+        std::variant<DynamicArray<uint32_t>, std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>> document_ids;
 
     public:
         WordPostings() : document_ids(DynamicArray<uint32_t>(2)) {}
 
         bool is_compressed() const {
-            return std::holds_alternative<std::unique_ptr<EliasFanoBuffer>>(document_ids);
+            return std::holds_alternative<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids);
         }
 
         void append(uint32_t document_id) {
@@ -31,23 +31,22 @@ namespace CompressibleBurstTrieStoreNS {
 
         void compress(uint32_t universe) {
             DynamicArray<uint32_t>& uncompressed = std::get<DynamicArray<uint32_t>>(document_ids);
-            std::unique_ptr<EliasFanoBuffer> compressed = std::make_unique<EliasFanoBuffer>(universe);
-            for (int i = 0; i < uncompressed.n; i++) {
-                compressed->add(uncompressed[i]);
-            }
+            std::vector<uint32_t> res;
+            uncompressed.copy_elements_to_vector(res);
+            std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic> compressed = std::make_unique<EliasFanoStaticNS::EliasFanoStatic>(res);
             document_ids = std::move(compressed);
         }
 
         std::size_t size() const {
             if (is_compressed()) {
-                return std::get<std::unique_ptr<EliasFanoBuffer>>(document_ids)->size();
+                return std::get<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids)->get_elem_count();
             }
             return std::get<DynamicArray<uint32_t>>(document_ids).n;
         }
 
         void copy_document_ids_to(std::vector<uint32_t>& output) const {
             if (is_compressed()) {
-                std::get<std::unique_ptr<EliasFanoBuffer>>(document_ids)->copy_elements_to_vector(output);
+                std::get<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids)->copy_elements_to_vector(output);
                 return;
             }
             const DynamicArray<uint32_t>& uncompressed = std::get<DynamicArray<uint32_t>>(document_ids);
@@ -90,7 +89,7 @@ namespace CompressibleBurstTrieStoreNS {
     CompressibleBurstTrieStore::CompressibleBurstTrieStore()
         : word_dictionary(),
           postings_lists(),
-          documents(128),
+          documents(2),
           last_added_document_id(0) {}
 
     void CompressibleBurstTrieStore::add_document(Doc document) {
