@@ -27,6 +27,7 @@ std::string preprocess(std::string reg) {
             }
         }
     }
+  //  printf(res.c_str());
     return res;
 }
 
@@ -83,6 +84,7 @@ std::string postfix(std::string reg) {
         res+=c;
         stack.pop();
     }
+    //printf(res.c_str());
 
 
     return res;
@@ -555,6 +557,11 @@ std::shared_ptr<TrigramNode> trigramTree(std::string reg) {
 
                 e.match = trigramAdd(e.match, {e.exact});
 
+                if (e.known) {
+                    e.prefix = e.exact;
+                    e.suffix = e.exact;
+                }
+
                 e.known = false;
                 e.exact.clear();
 
@@ -828,7 +835,7 @@ public:
 
 int main(int argc, char* argv[]) {
     std::vector<State*> nodes;
-    std::string regex = "(abc|0+00)";
+    std::string regex = "A(BC)+DE";
     std::string q = "gjsrgs";
 
     std::string pf = postfix(regex);

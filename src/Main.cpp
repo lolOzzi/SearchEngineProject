@@ -8,8 +8,8 @@
 #include "components/searchers/BasicSearcher.cpp"
 #include "components/stores/GenericFKSWithDocId.cpp"
 #include "components/stores/BasicHashTable.cpp"
-//#include "components/searchers/BooleanSearcher.cpp"
-#include "components/searchers/RegexSearch.cpp"
+#include "components/searchers/BooleanSearcher.cpp"
+//#include "components/searchers/RegexSearch.cpp"
 
 #include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
 
@@ -30,18 +30,18 @@ int main(int argc, char* argv[]) {
     BasicPreprocessorWordCleaner preprocessor;
     SimpleFingerprint hasher;
     //BasicSearcher searcher;
-   // BooleanSearcher searcher;
-    RegexSearch searcher;
+    BooleanSearcher searcher;
+   // RegexSearch searcher;
 
 
-    DynamicFKSRadixTreeRegex::DynamicFKS store = DynamicFKSRadixTreeRegex::DynamicFKS(3'000'000, &hasher);
+    BasicHashTable store = BasicHashTable(3'000'000, &hasher);
 
     Index index = Index(&store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
     // 57408850400
     // 348283157567 ns, fuzzy
     printf("Started preprocessing \n");
    // auto t0 = chrono::steady_clock::now();
-    std::string filename = "data/WestburyLab.wikicorp.201004_10MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100KB.txt";
     index.preprocess(filename);
   //  auto t1 = chrono::steady_clock::now();
    // auto elapsed = duration_cast<chrono::nanoseconds>(t1 - t0).count();
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
     printf("Start searching \n");
     SearchQuery q;
-    q.q = "(einsti|o+7?2*(bli)*gate)";
+    q.q = "albedo&01100001";
 
     std::vector<Doc> res = index.search(q);
     printf("Finished searching \n");

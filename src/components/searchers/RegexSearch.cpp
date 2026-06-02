@@ -554,6 +554,12 @@ std::shared_ptr<TrigramNode> trigramTree(std::string reg) {
                 stack.pop();
 
                 e.match = trigramAdd(e.match, {e.exact});
+
+                if (e.known) {
+                    e.prefix = e.exact;
+                    e.suffix = e.exact;
+                }
+
                 e.known = false;
                 e.exact.clear();
 

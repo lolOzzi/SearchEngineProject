@@ -9,7 +9,7 @@ struct Token;
 class BooleanSearcher : public ISearcher {
 private:
     std::vector<Doc> Intersection(std::vector<Doc> main, std::vector<Doc> v);
-    std::vector<Doc> Union(std::vector<Doc> main, const std::vector<Doc>& v);
+    std::vector<Doc> Union(std::vector<Doc> main, std::vector<Doc> v);
     std::unordered_set<std::string> createDocSet(std::vector<Doc>* v);
     std::vector<Token> lexer (std::string query);
     Expr parse(std::vector<Token> tokens);
@@ -49,33 +49,60 @@ std::vector<Doc> BooleanSearcher::Intersection(std::vector<Doc> main, std::vecto
     std::unordered_set<std::string> mainSet = createDocSet(&main);
     std::unordered_set<std::string> vSet = createDocSet(&v);
     std::unordered_set<std::string> resultSet;
-    for (auto& docName : mainSet) {
-        if (vSet.contains(docName)) {
-            resultSet.insert(docName);
-        }
-    }
-    mainSet = resultSet;
-    std::vector<Doc> resultsDoc;
-    for (Doc& doc : main) {
-        if (resultSet.find(doc.title) != resultSet.end()) {
-            resultsDoc.push_back(doc);
-        }
-    }
 
+    if (main.size() >= v.size()) {
+        for (auto& docName : vSet) {
+            if (mainSet.contains(docName)) {
+                resultSet.insert(docName);
+            }
+        }
+        mainSet = resultSet;
+        std::vector<Doc> resultsDoc;
+        for (Doc& doc : v) {
+            if (resultSet.find(doc.title) != resultSet.end()) {
+                resultsDoc.push_back(doc);
+            }
+        }
+
+        return resultsDoc;
+
+    }
+        for (auto& docName : mainSet) {
+            if (vSet.contains(docName)) {
+                resultSet.insert(docName);
+            }
+        }
+        mainSet = resultSet;
+        std::vector<Doc> resultsDoc;
+        for (Doc& doc : main) {
+            if (resultSet.find(doc.title) != resultSet.end()) {
+                resultsDoc.push_back(doc);
+            }
+        }
     return resultsDoc;
 
 
 }
 
-std::vector<Doc> BooleanSearcher::Union(std::vector<Doc> main, const std::vector<Doc>& v) {
-    std::unordered_set<std::string> mainSet = createDocSet(&main);
-    for (const Doc& doc : v) {
+std::vector<Doc> BooleanSearcher::Union(std::vector<Doc> main, std::vector<Doc> v) {
+    if (main.size() >= v.size()) {
+        std::unordered_set<std::string> mainSet = createDocSet(&main);
+        for (const Doc& doc : v) {
+            if (!mainSet.contains(doc.title)) {
+                main.push_back(doc);
+                mainSet.insert(doc.title);
+            }
+        }
+        return main;
+    }
+    std::unordered_set<std::string> mainSet = createDocSet(&v);
+    for (const Doc& doc : main) {
         if (!mainSet.contains(doc.title)) {
-            main.push_back(doc);
+            v.push_back(doc);
             mainSet.insert(doc.title);
         }
     }
-    return main;
+    return v;
 
 
 }
@@ -95,7 +122,7 @@ struct Parenthesis {
 };
 
 struct Expr {
-    std::variant<string, BooleanOR, BooleanAND, Parenthesis> type;
+    std::variant<std::string, BooleanOR, BooleanAND, Parenthesis> type;
 };
 
 
