@@ -4,37 +4,37 @@
 
 #include "components/hashers/SimpleFingerprint.h"
 #include "components/searchers/BasicSearcher.cpp"
-#include "components/stores/GenericFKSWithDocId.cpp"
+//#include "components/stores/GenericFKSWithDocId.cpp"
 #include "components/stores/BasicHashTable.cpp"
-#include "components/searchers/BooleanSearcher.cpp"
-//#include "components/searchers/RegexSearch.cpp"
+//#include "components/searchers/BooleanSearcher.cpp"
+#include "components/searchers/RegexSearch.cpp"
 
-#include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
+//#include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
 
 //#include "components/stores/TreeWrapper.cpp"
 
-#include "components/stores/ModularStoreEliasFanoNoBuffer.cpp"
-#include "components/stores/ModularStoreEliasFanoPackedBuffer.cpp"
+//#include "components/stores/ModularStoreEliasFanoNoBuffer.cpp"
+//#include "components/stores/ModularStoreEliasFanoPackedBuffer.cpp"
 //#include "components/stores/BurstTrieEliasFanoStaticStore.cpp"
-//#include "components/stores/BurstTrieStore.cpp"
-#include "components/stores/CompressibleBurstTrieStore.cpp"
+#include "components/stores/BurstTrieRegexStore.cpp"
+//#include "components/stores/CompressibleBurstTrieStore.cpp"
 
-#include "components/rankers/MostMatchesRanker.cpp"
-#include "components/rankers/TFIDFRanker.cpp"
-#include "components/sorters/MergeSort.cpp"
-#include "components/stores/FuzzyTreeWrapper.cpp"
-#include "TestDynamicArray.cpp"
+//#include "components/rankers/MostMatchesRanker.cpp"
+//#include "components/rankers/TFIDFRanker.cpp"
+//#include "components/sorters/MergeSort.cpp"
+//#include "components/stores/FuzzyTreeWrapper.cpp"
+//#include "TestDynamicArray.cpp"
 
 //#include "components/stores/GenericFKSWithDocId.cpp"
 //#include "components/stores/BurstTrieStore.cpp"
-#include "components/stores/DictionaryWithDocId.cpp"
+//#include "components/stores/DictionaryWithDocId.cpp"
 //#include "components/stores/GenericDATWithDocId.cpp"
 
-#include "extras/basic/HashFamily.h"
+//#include "extras/basic/HashFamily.h"
 
-#include "components/stores/ModularStorePacked.cpp"
-#include "components/stores/DictionaryWithTrieAndDocId.cpp"
-#include <cstdio>
+//#include "components/stores/ModularStorePacked.cpp"
+//#include "components/stores/DictionaryWithTrieAndDocId.cpp"
+//#include <cstdio>
 /*
 */
 
@@ -45,18 +45,18 @@ int main(int argc, char* argv[]) {
     BasicPreprocessorWordCleaner preprocessor;
     SimpleFingerprint hasher;
     //BasicSearcher searcher;
-    BooleanSearcher searcher;
-   // RegexSearch searcher;
+   // BooleanSearcher searcher;
+    RegexSearch searcher;
 
 
-    BasicHashTable store = BasicHashTable(3'000'000, &hasher);
+    BurstTrieRegexStore store = BurstTrieRegexStore();
 
     Index index = Index(&store, &preprocessor, &hasher, &searcher, nullptr, nullptr);
     // 57408850400
     // 348283157567 ns, fuzzy
     printf("Started preprocessing \n");
    // auto t0 = chrono::steady_clock::now();
-    std::string filename = "data/WestburyLab.wikicorp.201004_100KB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
     index.preprocess(filename);
   //  auto t1 = chrono::steady_clock::now();
    // auto elapsed = duration_cast<chrono::nanoseconds>(t1 - t0).count();
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
 
     printf("Start searching \n");
     SearchQuery q;
-    q.q = "albedo&01100001";
+    q.q = "efs";
 
     std::vector<Doc> res = index.search(q);
     printf("Finished searching \n");
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
     }
 
     //test(&index);
-
+    /**
     std::string filename = "data/WestburyLab.wikicorp.201004_800MB.txt";
     
     
@@ -108,5 +108,6 @@ int main(int argc, char* argv[]) {
     //test_correctness(&dict_index, filename);
 
     //dict_store.print_spaced_used();
+    */
     return 0;
 }
