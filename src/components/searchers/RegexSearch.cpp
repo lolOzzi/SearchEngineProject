@@ -830,6 +830,10 @@ public:
 
 std::vector<Doc> RegexSearch::search(SearchQuery q, IStore *store) {
     if (!store) return {};
+
+    if (!dynamic_cast<DynamicFKSRadixTreeRegex::DynamicFKS*>(store))
+        return store->get(q.q);
+
     auto* fksStore = dynamic_cast<DynamicFKSRadixTreeRegex::DynamicFKS*>(store);
     std::vector<State*> nodes;
     std::string regex = q.q;

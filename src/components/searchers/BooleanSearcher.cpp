@@ -1,6 +1,7 @@
 #include "../../core/interfaces.h"
 #include <unordered_set>
 #include <utility>
+#include <variant>
 
 struct Expr;
 struct Token;
