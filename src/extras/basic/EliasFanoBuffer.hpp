@@ -4,6 +4,9 @@
 #include <cassert>
 #include <cstdio>
 
+namespace EliasFanoBufferNS {
+
+
 static int floor_log2(uint64_t value) {
     return value ? 63 - __builtin_clzll(value) : 0;
 }
@@ -205,4 +208,5 @@ private:
     }
 
 
-};
+};}
+
