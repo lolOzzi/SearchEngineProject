@@ -9,7 +9,7 @@
 #include "../../extras/basic/bursttrie/BurstTrie.h"
 #include "../../extras/basic/EliasFanoBuffer.hpp"
 
-namespace BurstTrieEliasFanoDynamicNS {
+namespace BurstTrieEliasFanoDynamicStoreNS {
 
     class WordPostings {
     private:
@@ -46,7 +46,7 @@ namespace BurstTrieEliasFanoDynamicNS {
             : title(std::move(document_title)), start_location(document_start_location) {}
     };
 
-    class BurstTrieEliasFanoDynamic : public IStore {
+    class BurstTrieEliasFanoDynamicStore : public IStore {
     private:
         BurstTrie<uint32_t> word_dictionary;
         std::vector<WordPostings> postings_lists;
@@ -56,8 +56,8 @@ namespace BurstTrieEliasFanoDynamicNS {
         Doc build_document_from_id(uint32_t document_id);
 
     public:
-        BurstTrieEliasFanoDynamic();
-        ~BurstTrieEliasFanoDynamic() override = default;
+        BurstTrieEliasFanoDynamicStore();
+        ~BurstTrieEliasFanoDynamicStore() override = default;
 
         void add(std::string word, Doc document) override;
         void add_document(Doc document) override;
@@ -65,18 +65,18 @@ namespace BurstTrieEliasFanoDynamicNS {
         int get_num_docs() override;
     };
 
-    BurstTrieEliasFanoDynamic::BurstTrieEliasFanoDynamic()
+    BurstTrieEliasFanoDynamicStore::BurstTrieEliasFanoDynamicStore()
         : word_dictionary(),
           postings_lists(),
           documents(2),
           last_added_document_id(0) {}
 
-    void BurstTrieEliasFanoDynamic::add_document(Doc document) {
+    void BurstTrieEliasFanoDynamicStore::add_document(Doc document) {
         documents.add(DocumentRecord(std::move(document.title), document.start_loc));
         last_added_document_id = static_cast<uint32_t>(documents.n - 1);
     }
 
-    void BurstTrieEliasFanoDynamic::add(std::string word, Doc document) {
+    void BurstTrieEliasFanoDynamicStore::add(std::string word, Doc document) {
         if (word.empty()) {
             return;
         }
@@ -91,7 +91,7 @@ namespace BurstTrieEliasFanoDynamicNS {
         postings_lists[*existing_word_id].append(last_added_document_id);
     }
 
-    std::vector<Doc> BurstTrieEliasFanoDynamic::get(std::string word) {
+    std::vector<Doc> BurstTrieEliasFanoDynamicStore::get(std::string word) {
         uint32_t* word_id = word_dictionary.get(word);
         if (word_id == nullptr) {
             return {};
@@ -109,11 +109,11 @@ namespace BurstTrieEliasFanoDynamicNS {
     }
 
 
-    int BurstTrieEliasFanoDynamic::get_num_docs() {
+    int BurstTrieEliasFanoDynamicStore::get_num_docs() {
         return documents.n;
     }
 
-    Doc BurstTrieEliasFanoDynamic::build_document_from_id(uint32_t document_id) {
+    Doc BurstTrieEliasFanoDynamicStore::build_document_from_id(uint32_t document_id) {
         Doc document;
         document.title = documents[document_id].title;
         document.start_loc = documents[document_id].start_location;
