@@ -1,4 +1,5 @@
 #include "../../core/interfaces.h"
+#include <cstdio>
 #include <fstream>
 #include <istream>
 
@@ -6,14 +7,15 @@
 class MostMatchesRanker : public IRanker {
 public:
     ~MostMatchesRanker() = default;
-    std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates, std::string& query, IStore* store, std::string& filename, ISorter* sorter) override;
+    std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates, SearchQuery& q, IStore* store, std::string& filename, ISorter* sorter) override;
 };
 
 std::vector<ScoredDoc> MostMatchesRanker::rank(const std::vector<Doc>& candidates,
-                                        std::string& query, IStore* store,
+                                        SearchQuery& query, IStore* store,
                                         std::string& filename, ISorter* sorter) {
     std::vector<ScoredDoc> scoredDocs(candidates.size());
     std::ifstream file;
+    printf("Warning: Only single query support");
     file.open (filename);
     if (!file.good()) {
         printf("Error reading file");
@@ -37,7 +39,7 @@ std::vector<ScoredDoc> MostMatchesRanker::rank(const std::vector<Doc>& candidate
                 if (last_char == ',' || last_char == '.' || last_char == '?') {
                     word.erase(word.size() - 1);
                 }
-                if (word == query) counter++;
+                if (word == query.q) counter++;
             }
             if (word == END) break;
         }
