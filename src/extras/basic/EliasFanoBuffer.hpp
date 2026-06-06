@@ -138,8 +138,11 @@ public:
             assert(buffer_[i] <= UINT32_MAX);
             res.push_back((uint32_t)buffer_[i]);
         }
+        
 }
-
+    bool is_higher_than_last_added_value(uint32_t value) {
+        return !has_last_value_ || value > last_value_;
+    }
 private:
 
     struct BlockMetadata {

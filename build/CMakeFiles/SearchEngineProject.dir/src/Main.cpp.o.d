@@ -259,11 +259,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /usr/include/c++/16.1.1/tr1/riemann_zeta.tcc \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BasicSearcher.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp \
- /usr/include/c++/16.1.1/unordered_set \
- /usr/include/c++/16.1.1/bits/unordered_set.h \
- /usr/include/c++/16.1.1/bits/hashtable.h \
- /usr/include/c++/16.1.1/bits/hashtable_policy.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp \
  /usr/include/c++/16.1.1/memory \
  /usr/include/c++/16.1.1/bits/stl_raw_storage_iter.h \
@@ -279,11 +274,13 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /usr/include/c++/16.1.1/cstring /usr/include/string.h \
  /usr/include/strings.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/ChainSet.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFano.cpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/CompressedTrie.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/SortedDynamicArray.h \
  /usr/include/c++/16.1.1/functional /usr/include/c++/16.1.1/unordered_map \
  /usr/include/c++/16.1.1/bits/unordered_map.h \
+ /usr/include/c++/16.1.1/bits/hashtable.h \
+ /usr/include/c++/16.1.1/bits/hashtable_policy.h \
  /usr/include/c++/16.1.1/bits/binders.h /usr/include/c++/16.1.1/utility \
  /usr/include/c++/16.1.1/bits/stl_relops.h \
  /usr/include/c++/16.1.1/bits/intcmp.h \
@@ -291,8 +288,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/CuckooHasingDictionary.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/./HashFamily.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/Dictionary.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/EliasFanoBuffer.hpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/EliasFanoStatic.hpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/../../extras/basic/EliasFanoPackedBuffer.hpp \

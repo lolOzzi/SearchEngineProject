@@ -33,7 +33,7 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: /home/ozzi/CLionProjects/Ozzi
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/bursttrie/BurstTrie.h \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/bursttrie/Record.h \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp \
-  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp \
+  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompressibleBurstTrieStore.cpp \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp \
@@ -46,10 +46,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: /home/ozzi/CLionProjects/Ozzi
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/core/interfaces.h \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/test/test.cpp \
   /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/core/Index5.h \
-  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/CompressedHashTrie.h \
-  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedHashTrieTest.cpp \
-  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedTrieTest.cpp \
-  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/SortedDynamicArrayTest.cpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -450,6 +446,8 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/linux/types.h:
 
+/usr/include/linux/stddef.h:
+
 /usr/include/linux/sched/types.h:
 
 /usr/include/gnu/stubs.h:
@@ -612,12 +610,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/c++/16.1.1/bits/unique_ptr.h:
 
-/usr/include/c++/16.1.1/unordered_map:
-
-/usr/include/c++/16.1.1/bits/unicode.h:
-
-/usr/include/c++/16.1.1/bits/unicode-data.h:
-
 /usr/include/c++/16.1.1/bits/align.h:
 
 /usr/include/c++/16.1.1/ios:
@@ -642,9 +634,19 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/bits/stdio_lim.h:
 
+/usr/include/c++/16.1.1/unordered_map:
+
+/usr/include/c++/16.1.1/bits/unicode.h:
+
 /usr/include/bits/types/__locale_t.h:
 
 /usr/include/bits/types/__fpos64_t.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/bits/flt-eval-method.h:
 
 /usr/include/bits/time64.h:
 
@@ -696,12 +698,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/bits/fp-fast.h:
 
-/usr/include/bits/flt-eval-method.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/bits/types/FILE.h:
-
 /usr/include/bits/floatn.h:
 
 /usr/include/c++/16.1.1/iosfwd:
@@ -715,28 +711,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 /usr/include/c++/16.1.1/bits/regex_compiler.tcc:
 
 /usr/include/bits/cpu-set.h:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/c++/16.1.1/bits/cpp_type_traits.h:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/lib/libmvec.so.1:
-
-/usr/include/c++/16.1.1/bits/allocated_ptr.h:
-
-/usr/include/assert.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/c++/16.1.1/charconv:
-
-/usr/include/asm/types.h:
-
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedHashTrieTest.cpp:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/SortedDynamicArray.h:
 
@@ -791,10 +765,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 /usr/include/c++/16.1.1/bits/uniform_int_dist.h:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/bursttrie/AccessTrie.h:
-
-/usr/include/c++/16.1.1/bits/string_view.tcc:
-
-/usr/include/c++/16.1.1/bits/stl_deque.h:
 
 /usr/include/bits/types/mbstate_t.h:
 
@@ -860,10 +830,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/bits/types/time_t.h:
 
-/usr/include/c++/16.1.1/bits/stringfwd.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
-
 /usr/include/c++/16.1.1/bits/shared_ptr.h:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/cpu_defines.h:
@@ -881,6 +847,26 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 /usr/include/bits/types/sigset_t.h:
 
 /usr/include/c++/16.1.1/bits/ranges_cmp.h:
+
+/usr/include/c++/16.1.1/bits/unicode-data.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+
+/usr/include/bits/math-vector.h:
+
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp:
+
+/usr/lib/libm.so:
+
+/usr/include/c++/16.1.1/bits/locale_classes.tcc:
+
+/usr/include/c++/16.1.1/bits/ostream_print.h:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp:
 
 /usr/include/c++/16.1.1/bits/requires_hosted.h:
 
@@ -906,6 +892,8 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /usr/include/bits/types/wint_t.h:
 
+/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompressibleBurstTrieStore.cpp:
+
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/Label.h:
 
 /usr/include/asm-generic/types.h:
@@ -922,8 +910,6 @@ SearchEngineProject: /usr/lib/Scrt1.o \
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/ChainSet.h:
 
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp:
-
 /usr/include/c++/16.1.1/bits/hashtable_policy.h:
 
 CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
@@ -934,19 +920,17 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp:
 
-/usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+/usr/include/bits/stdint-intn.h:
 
-/usr/include/bits/math-vector.h:
+/usr/include/bits/types/clockid_t.h:
 
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp:
+/usr/include/c++/16.1.1/bits/cpp_type_traits.h:
 
-/usr/include/bits/waitflags.h:
+/usr/include/bits/atomic_wide_counter.h:
 
-/usr/lib/libm.so:
+/usr/lib/libmvec.so.1:
 
-/usr/include/c++/16.1.1/bits/locale_classes.tcc:
-
-/usr/include/c++/16.1.1/bits/ostream_print.h:
+/usr/include/c++/16.1.1/bits/allocated_ptr.h:
 
 /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
@@ -961,14 +945,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 /usr/include/c++/16.1.1/bits/range_access.h:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp:
-
-/usr/include/linux/stddef.h:
-
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/CompressedHashTrie.h:
-
-/usr/include/c++/16.1.1/debug/assertions.h:
-
-/usr/include/c++/16.1.1/bits/specfun.h:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp:
 
@@ -992,15 +968,17 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 
 /usr/include/c++/16.1.1/bits/enable_special_members.h:
 
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp:
-
-/usr/include/bits/types/struct_sched_param.h:
-
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/SortedDynamicArrayTest.cpp:
+/usr/include/assert.h:
 
 /usr/include/c++/16.1.1/tr1/legendre_function.tcc:
 
 /usr/include/alloca.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/c++/16.1.1/charconv:
+
+/usr/include/asm/types.h:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/TestDynamicArray.cpp:
 
@@ -1015,8 +993,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 /usr/lib/libgcc_s.so:
 
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp:
-
-/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedTrieTest.cpp:
 
 /usr/include/c++/16.1.1/algorithm:
 
@@ -1202,6 +1178,10 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 
 /usr/include/c++/16.1.1/bits/regex_constants.h:
 
+/usr/include/c++/16.1.1/debug/assertions.h:
+
+/usr/include/c++/16.1.1/bits/specfun.h:
+
 /usr/include/c++/16.1.1/bits/std_function.h:
 
 /usr/include/c++/16.1.1/bits/regex_automaton.h:
@@ -1211,6 +1191,10 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/test/test.cpp:
 
 /usr/include/c++/16.1.1/bits/stdexcept_throwfwd.h:
+
+/usr/include/c++/16.1.1/bits/stl_deque.h:
+
+/usr/include/c++/16.1.1/bits/string_view.tcc:
 
 /usr/include/math.h:
 
@@ -1251,3 +1235,7 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o:
 /usr/include/c++/16.1.1/bits/stl_uninitialized.h:
 
 /usr/include/c++/16.1.1/bits/stl_vector.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/c++/16.1.1/bits/stringfwd.h:

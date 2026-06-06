@@ -34,7 +34,7 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/bursttrie/BurstTrie.h
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/bursttrie/Record.h
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompressibleBurstTrieStore.cpp
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp
@@ -47,10 +47,6 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/core/interfaces.h
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/test/test.cpp
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/core/Index5.h
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/CompressedHashTrie.h
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedHashTrieTest.cpp
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/CompressedTrieTest.cpp
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/test/SortedDynamicArrayTest.cpp
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
