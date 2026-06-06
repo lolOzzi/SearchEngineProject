@@ -1,7 +1,6 @@
 #pragma once
 #include "DynamicPackedArray.hpp"
 
-#include <chrono>
 #include <limits>
 #include <cstdint>
 #include <vector>
@@ -27,6 +26,9 @@ public:
     template<UnsignedIntDEA T>void add(T elem);
     void copy_elements_to_vector(std::vector<uint32_t> &res);
     int get_elem_count();
+    bool is_higher_than_last_added_value(uint32_t value) {
+        return  value > last_added_elem && arr.get_elem_count() > 0;
+    } 
 
 };
 

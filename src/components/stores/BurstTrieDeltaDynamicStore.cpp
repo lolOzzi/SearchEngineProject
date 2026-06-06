@@ -1,58 +1,38 @@
 #include <cstdint>
 #include <memory>
 #include <string>
+#include <sys/types.h>
 #include <variant>
 #include <vector>
 #include "../../core/interfaces.h"
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/bursttrie/BurstTrie.h"
-#include "../../extras/basic/EliasFanoStatic.hpp"
+#include "../../extras/basic/DeltaEncodedArray.h"
 
-namespace BurstTrieEliasFanoStaticStoreNS {
+namespace BurstTrieDeltaDynamicStoreNS {
 
     class WordPostings {
     private:
-        std::variant<DynamicArray<uint32_t>, std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>> document_ids;
+         DeltaEncodedArray document_ids;
 
     public:
-        WordPostings() : document_ids(DynamicArray<uint32_t>(2)) {}
-
-        bool is_compressed() const {
-            return std::holds_alternative<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids);
-        }
+        WordPostings() : document_ids() {}
 
         void append(uint32_t document_id) {
-            DynamicArray<uint32_t>& uncompressed = std::get<DynamicArray<uint32_t>>(document_ids);
-            if (uncompressed.n != 0 && uncompressed[uncompressed.n - 1] == document_id) {
+            if (document_ids.get_elem_count() != 0 && !document_ids.is_higher_than_last_added_value(document_id)) {
                 return;
             }
-            uncompressed.add(document_id);
+            document_ids.add(document_id);
         }
 
-        void compress(uint32_t universe) {
-            DynamicArray<uint32_t>& uncompressed = std::get<DynamicArray<uint32_t>>(document_ids);
-            std::vector<uint32_t> res;
-            uncompressed.copy_elements_to_vector(res);
-            std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic> compressed = std::make_unique<EliasFanoStaticNS::EliasFanoStatic>(res);
-            document_ids = std::move(compressed);
+
+        std::size_t size() {
+            return document_ids.get_elem_count();
         }
 
-        std::size_t size() const {
-            if (is_compressed()) {
-                return std::get<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids)->get_elem_count();
-            }
-            return std::get<DynamicArray<uint32_t>>(document_ids).n;
-        }
-
-        void copy_document_ids_to(std::vector<uint32_t>& output) const {
-            if (is_compressed()) {
-                std::get<std::unique_ptr<EliasFanoStaticNS::EliasFanoStatic>>(document_ids)->copy_elements_to_vector(output);
-                return;
-            }
-            const DynamicArray<uint32_t>& uncompressed = std::get<DynamicArray<uint32_t>>(document_ids);
-            for (int i = 0; i < uncompressed.n; i++) {
-                output.push_back(uncompressed[i]);
-            }
+        void copy_document_ids_to(std::vector<uint32_t>& output) {
+            document_ids.copy_elements_to_vector(output);
+    
         }
     };
 
@@ -66,7 +46,7 @@ namespace BurstTrieEliasFanoStaticStoreNS {
             : title(std::move(document_title)), start_location(document_start_location) {}
     };
 
-    class BurstTrieEliasFanoStaticStore : public IStore, public ICompressible {
+    class BurstTrieDeltaDynamicStore : public IStore {
     private:
         BurstTrie<uint32_t> word_dictionary;
         std::vector<WordPostings> postings_lists;
@@ -76,28 +56,27 @@ namespace BurstTrieEliasFanoStaticStoreNS {
         Doc build_document_from_id(uint32_t document_id);
 
     public:
-        BurstTrieEliasFanoStaticStore();
-        ~BurstTrieEliasFanoStaticStore() override = default;
+        BurstTrieDeltaDynamicStore();
+        ~BurstTrieDeltaDynamicStore() override = default;
 
         void add(std::string word, Doc document) override;
         void add_document(Doc document) override;
         std::vector<Doc> get(std::string word) override;
         int get_num_docs() override;
-        void compress() override;
     };
 
-    BurstTrieEliasFanoStaticStore::BurstTrieEliasFanoStaticStore()
+    BurstTrieDeltaDynamicStore::BurstTrieDeltaDynamicStore()
         : word_dictionary(),
           postings_lists(),
           documents(2),
           last_added_document_id(0) {}
 
-    void BurstTrieEliasFanoStaticStore::add_document(Doc document) {
+    void BurstTrieDeltaDynamicStore::add_document(Doc document) {
         documents.add(DocumentRecord(std::move(document.title), document.start_loc));
         last_added_document_id = static_cast<uint32_t>(documents.n - 1);
     }
 
-    void BurstTrieEliasFanoStaticStore::add(std::string word, Doc document) {
+    void BurstTrieDeltaDynamicStore::add(std::string word, Doc document) {
         if (word.empty()) {
             return;
         }
@@ -112,7 +91,7 @@ namespace BurstTrieEliasFanoStaticStoreNS {
         postings_lists[*existing_word_id].append(last_added_document_id);
     }
 
-    std::vector<Doc> BurstTrieEliasFanoStaticStore::get(std::string word) {
+    std::vector<Doc> BurstTrieDeltaDynamicStore::get(std::string word) {
         uint32_t* word_id = word_dictionary.get(word);
         if (word_id == nullptr) {
             return {};
@@ -129,20 +108,12 @@ namespace BurstTrieEliasFanoStaticStoreNS {
         return results;
     }
 
-    void BurstTrieEliasFanoStaticStore::compress() {
-        uint32_t universe = static_cast<uint32_t>(documents.n);
-        for (WordPostings& postings : postings_lists) {
-            if (!postings.is_compressed()) {
-                postings.compress(universe);
-            }
-        }
-    }
 
-    int BurstTrieEliasFanoStaticStore::get_num_docs() {
+    int BurstTrieDeltaDynamicStore::get_num_docs() {
         return documents.n;
     }
 
-    Doc BurstTrieEliasFanoStaticStore::build_document_from_id(uint32_t document_id) {
+    Doc BurstTrieDeltaDynamicStore::build_document_from_id(uint32_t document_id) {
         Doc document;
         document.title = documents[document_id].title;
         document.start_loc = documents[document_id].start_location;

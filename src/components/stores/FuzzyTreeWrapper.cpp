@@ -2,6 +2,7 @@
 #include "../../core/interfaces.h"
 #include <cmath>
 #include "../../extras/basic/RadixTreeWithPostings.h"
+#include "../../extras/basic/ChainSet.h"
 // MAJORLY WORK IN PROGRESS!!!
 using RadixTreeWithPostings = RadixTreeWithPostingsNS::RadixTreeWithPostings;
 using RTPNode = RadixTreeWithPostingsNS::Node;
@@ -103,11 +104,11 @@ public:
     }
 
 
-    int Levenshtein_distance(string s, string t) {
+    int Levenshtein_distance(std::string s, std::string t) {
         int n = t.length();
         int m = s.length();
-        vector<int> v0 (n+1);
-        vector<int> v1 (n+1);
+        std::vector<int> v0 (n+1);
+        std::vector<int> v1 (n+1);
 
         for (int i = 0; i < n; ++i) {
             v0[i] = i;
@@ -125,25 +126,25 @@ public:
                 else {
                     substitution_cost = v0[j]+1;
                 }
-                v1[j+1] = min(min(deletion_cost, insertion_cost),substitution_cost);
+                v1[j+1] = std::min(std::min(deletion_cost, insertion_cost),substitution_cost);
             }
             swap(v0, v1);
         }
         return v0[n];
     }
 
-    vector<string> create_variants(string str, int max_distance) {
-        vector<string> variants{};
+    std::vector<std::string> create_variants(std::string str, int max_distance) {
+        std::vector<std::string> variants{};
         if (max_distance >= 1) {
             for (int i = 0; i < str.length(); ++i) {
-                string new_str = str;
+                std::string new_str = str;
                 variants.push_back(new_str.erase(i, 1));
             }
         }
         if (max_distance >= 2) {
             for (int i = 0; i < str.length(); ++i) {
                 for (int j = i+1; j < str.length(); ++j) {
-                    string new_str = str;
+                    std::string new_str = str;
                     new_str.erase(i, 1);
                     new_str.erase(j-1, 1);
                     variants.push_back(new_str);
@@ -154,7 +155,7 @@ public:
             for (int i = 0; i < str.length(); ++i) {
                 for (int j = i+1; j < str.length(); ++j) {
                     for (int k = j+1; k < str.length(); ++k) {
-                        string new_str = str;
+                        std::string new_str = str;
                         new_str.erase(i, 1);
                         new_str.erase(j-1, 1);
                         new_str.erase(k-2, 1);

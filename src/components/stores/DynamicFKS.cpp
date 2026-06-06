@@ -1,6 +1,6 @@
 #include <memory>
 #include "../../core/interfaces.h"
-
+#include <cassert>
 
 class DictWord {
 public:
