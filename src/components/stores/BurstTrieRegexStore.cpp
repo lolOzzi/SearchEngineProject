@@ -1,5 +1,4 @@
 #pragma once
-#include <map>
 #include <memory>
 #include <unordered_set>
 
@@ -35,7 +34,7 @@ private:
     std::string last_document_title_added;
     int last_docid_added;
     DynamicArray<std::string> indexString;
-    std::map<std::string, std::vector<int>> trigram;
+    std::unordered_map<std::string, std::vector<int>> trigram;
     void trigramAdd(std::string word);
 public:
     ~BurstTrieRegexStore() override = default;
