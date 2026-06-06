@@ -52,8 +52,6 @@ int BurstTrieStore::get_num_docs() {
 }
 
 void BurstTrieStore::add_document(Doc document) {
-    TreeWord rec = TreeWord();
-    tree.add(document.title, rec);
     DictDoc dict_doc = DictDoc(document.title, document.start_loc);
     doc_arr.add(dict_doc);
     last_docid_added = doc_arr.n - 1;
