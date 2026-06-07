@@ -3,7 +3,7 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/BurstTrieDeltaDynamicStore.cpp"
+#include "../components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
 #include "../components/searchers/RegexSearch.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
 #include "../components/sorters/RadixSort.cpp"
@@ -14,7 +14,7 @@ private:
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStore store;
+    BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStoreRegex store;
     RadixSort sort;
 
     std::string filename;
@@ -42,6 +42,6 @@ public:
         if (lastSearchQuery.q != q.q)
             lastSearchResults = index.search(q);
 
-        return index.rank(lastSearchResults, q.q, filename);
+        return index.rank(lastSearchResults, q, filename);
     }
 };

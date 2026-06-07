@@ -183,13 +183,14 @@ std::vector<Token> BooleanSearcher::lexer (std::string q) {
 Expr BooleanSearcher::parse(std::vector<Token> tokens) {
     struct parser {
         std::vector<Token> tokens;
+        int current = 0;
 
         Token next() {
-            return tokens.front();
+            return tokens[current];
         }
 
         void consume() {
-            tokens.erase(tokens.begin());
+            current++;
         }
 
         Expr highPrecendence() {

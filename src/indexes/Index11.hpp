@@ -1,19 +1,19 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/DictionaryWithDocId.cpp"
-#include "../components/searchers/BooleanSearcher.cpp"
+#include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp"
+#include "../components/searchers/RegexSearch.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
+#include "../components/sorters/RadixSort.cpp"
 
-class Index6 {
+class Index11 {
 private:
-    BooleanSearcher searcher;
+    RegexSearch searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    DictionaryWithDocId dict_store = DictionaryWithDocId(4);
-    MergeSort sort;
+    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStoreRegex store;
+    RadixSort sort;
     Index index;
     std::string filename;
 
@@ -21,7 +21,7 @@ private:
     SearchQuery lastSearchQuery;
 
 public:
-    Index6() : index(&dict_store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
+    Index11() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {
         filename = fn;

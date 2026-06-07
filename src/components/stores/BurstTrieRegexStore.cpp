@@ -5,6 +5,8 @@
 #include "../../core/interfaces.h"
 //#include "../../extras/basic/DoubleArrayDSTreeWithInfo.h"
 #include "../../extras/basic/DynamicArray.h"
+#include "../stores/RegexStoreComp.cpp"
+
 #include "../../extras/basic/bursttrie/BurstTrie.h"
 
 class TreeWord {
@@ -33,9 +35,7 @@ private:
     int last_document_edge_added;
     std::string last_document_title_added;
     int last_docid_added;
-    DynamicArray<std::string> indexString;
-    std::unordered_map<std::string, std::vector<int>> trigram;
-    void trigramAdd(std::string word);
+    RegexStoreComp reg;
 public:
     ~BurstTrieRegexStore() override = default;
     BurstTrieRegexStore();
@@ -52,8 +52,7 @@ public:
 
 BurstTrieRegexStore::BurstTrieRegexStore() :
     tree(),
-    doc_arr(128),
-    indexString(65536)
+    doc_arr(128)
 
 {
 }
@@ -71,16 +70,6 @@ void BurstTrieRegexStore::add_document(Doc document) {
     documents_added++;
 }
 
-void BurstTrieRegexStore::trigramAdd(std::string word) {
-    //Label label;
-    //label.set(word.c_str());
-    indexString.add(word);
-    for (int i = 0; i < word.length() - 2; i++) {
-        std::string tri = word.substr(i, 3);
-        trigram[tri].emplace_back(indexId);
-    }
-    indexId++;
-}
 
 
 
@@ -90,7 +79,7 @@ void BurstTrieRegexStore::add(std::string word, Doc document) {
 
     if (word_in_document == nullptr) {
         if (word.length() >= 3) {
-            trigramAdd(word);
+            reg.trigramAdd(word);
         }
         words_added++;
         word_in_document = tree.add(word, TreeWord());
@@ -121,15 +110,5 @@ std::vector<Doc> BurstTrieRegexStore::get(std::string word) {
 }
 
 std::vector<std::string> BurstTrieRegexStore::getWordsFromTrigram(std::string tri) {
-
-    if (!trigram.contains(tri)) {
-        std::vector<std::string> emp;
-        return emp;
-    }
-    std::vector<int> indexes = trigram[tri];
-    std::vector<std::string> res;
-    for (int i : indexes) {
-        res.emplace_back(indexString[i]);
-    }
-    return res;
+    return reg.getWordsFromTrigram(tri);
 }

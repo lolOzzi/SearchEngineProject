@@ -1,10 +1,14 @@
 #include "../../core/interfaces.h"
 #include "../../components/stores/BurstTrieRegexStore.cpp"
+#include "../../components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
+#include "../../components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp"
+
+
 #include <ranges>
 #include <stack>
 
 
-class BurstTrieRegexStore;
+
 
 
 
@@ -749,7 +753,19 @@ std::unordered_set<std::string> setIntersection(std::unordered_set<std::string> 
     return res;
 }
 
-std::unordered_set<std::string> extractTrigrams(std::shared_ptr<TrigramNode> node, BurstTrieRegexStore* store ) {
+std::vector<std::string> hasRegex(IStore* store, std::string tri) {
+    if (auto* burstTrieStore = dynamic_cast<BurstTrieRegexStore*>(store)) {
+        return burstTrieStore->getWordsFromTrigram(tri);
+    }
+    if (auto* burstTrieDeltaStore = dynamic_cast<BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStoreRegex*>(store)) {
+        return burstTrieDeltaStore->getWordsFromTrigram(tri);
+    }
+    if (auto* burstTrieEliasStore = dynamic_cast<BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStoreRegex*>(store)) {
+        return burstTrieEliasStore->getWordsFromTrigram(tri);
+    }
+    throw std::invalid_argument("Store does not support regex\n");
+}
+std::unordered_set<std::string> extractTrigrams(std::shared_ptr<TrigramNode> node, IStore* store ) {
     switch (node->type) {
         case TrigramType::AND: {
             std::unordered_set<std::string> res;
@@ -776,7 +792,7 @@ std::unordered_set<std::string> extractTrigrams(std::shared_ptr<TrigramNode> nod
         }
 
         case TrigramType::TRI: {
-            std::vector<std::string> vec = store->getWordsFromTrigram(node->trigram);
+            std::vector<std::string> vec = hasRegex(store, node->trigram);
             std::unordered_set<std::string> res(
             std::make_move_iterator(vec.begin()),
             std::make_move_iterator(vec.end())
@@ -803,7 +819,7 @@ std::unordered_set<std::string> filterCandidates(State* NFA, std::unordered_set<
     return res;
 }
 
-std::vector<Doc> findDocs(BurstTrieRegexStore* store, std::unordered_set<std::string> strings) {
+std::vector<Doc> findDocs(IStore* store, std::unordered_set<std::string> strings) {
     std::unordered_set<std::string> documentTitles;
     std::vector<Doc> res;
     for (auto& s : strings) {
@@ -834,18 +850,15 @@ public:
 
 std::vector<Doc> RegexSearch::search(SearchQuery q, IStore *store) {
     if (!store) return {};
-    auto* burstTrieStore = dynamic_cast<BurstTrieRegexStore*>(store);
-    if (burstTrieStore == nullptr)
-        return store->get(q.q);
     std::vector<State*> nodes;
     std::string regex = q.q;
 
     std::string pf = postfix(regex);
     State* NFA = createNFA(pf, nodes);
     std::shared_ptr<TrigramNode> ast = trigramTree(regex);
-    std::unordered_set<std::string> candidateList = extractTrigrams(ast, burstTrieStore);
+    std::unordered_set<std::string> candidateList = extractTrigrams(ast, store);
     candidateList = filterCandidates(NFA, candidateList, nodes);
-    std::vector<Doc> res = findDocs(burstTrieStore, candidateList);
+    std::vector<Doc> res = findDocs(store, candidateList);
 
 
 

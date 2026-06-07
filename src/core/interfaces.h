@@ -73,7 +73,7 @@ class IRanker {
 public:
     virtual ~IRanker() = default;
     virtual std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates,
-                                        std::string& query, IStore* store,
+                                        SearchQuery& query, IStore* store,
                                         std::string& filename, ISorter* sorter) = 0;
 };
 
@@ -104,7 +104,7 @@ public:
     std::vector<Doc> search(SearchQuery q) {
         return searcher->search(q, this->store);
     }
-    std::vector<ScoredDoc> rank(std::vector<Doc>& docs, std::string& q, std::string& fn) {
+    std::vector<ScoredDoc> rank(std::vector<Doc>& docs, SearchQuery& q, std::string& fn) {
         return ranker->rank(docs, q, this->store, fn, this->sorter);
     };
 };

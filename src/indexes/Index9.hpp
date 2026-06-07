@@ -42,6 +42,6 @@ public:
         if (lastSearchQuery.q != q.q)
             lastSearchResults = index.search(q);
 
-        return index.rank(lastSearchResults, q.q, filename);
+        return index.rank(lastSearchResults, q, filename);
     }
 };
