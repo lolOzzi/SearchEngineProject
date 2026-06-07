@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
@@ -14,13 +16,14 @@ private:
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStore store;
     RadixSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index8() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {

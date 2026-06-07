@@ -96,4 +96,9 @@ public:
 
     int size() const noexcept { return size_; }
     int capacity() const noexcept { return capacity_; }
+
+    void clear() {
+        arr_ = new T[capacity_];
+        size_ = 0;
+    }
 };

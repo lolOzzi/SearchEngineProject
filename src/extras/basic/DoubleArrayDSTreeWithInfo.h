@@ -69,7 +69,7 @@ void DoubleArrayDSTreeWithInfo::resize(int new_t) {
     char* new_label = new char[new_size];
     DynamicArray<int>* new_documents_in = new DynamicArray<int>[new_size];
 
-    copy(base, base + old_size, new_base);
+    std::copy(base, base + old_size, new_base);
     copy(check, check + old_size, new_check);
     copy(terminal, terminal + old_size, new_terminal);
     copy(label, label + old_size, new_label);

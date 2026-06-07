@@ -9,9 +9,9 @@ template <typename T>
 class DynamicArray {
 private:
     int size;
-    T* arr;
     void double_up();
 public:
+    T* arr;
     int n;
     void add(T key);
 
@@ -47,8 +47,13 @@ public:
 
     ~DynamicArray(){ delete[] arr; }
 
-    T& operator[](int index) { return arr[index]; }
-    const T& operator[](int index) const { return arr[index]; }
+    T& operator[](std::size_t index) {
+        return arr[index];
+    }
+
+    const T& operator[](std::size_t index) const {
+        return arr[index];
+    }
 
     int get_size() const { return size; }
 
@@ -57,6 +62,16 @@ public:
 	    for (int i = 0; i < n; ++i) {
             res.push_back(arr[i]);
 	    }
+    }
+
+    void clear() {
+        arr = new T[size];
+        n = 0;
+    }
+
+    void reserve(std::size_t new_size ) {
+        size = new_size;
+        arr = new T[new_size];
     }
 };
 

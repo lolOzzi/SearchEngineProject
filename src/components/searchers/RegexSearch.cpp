@@ -835,6 +835,8 @@ public:
 std::vector<Doc> RegexSearch::search(SearchQuery q, IStore *store) {
     if (!store) return {};
     auto* burstTrieStore = dynamic_cast<BurstTrieRegexStore*>(store);
+    if (burstTrieStore == nullptr)
+        return store->get(q.q);
     std::vector<State*> nodes;
     std::string regex = q.q;
 

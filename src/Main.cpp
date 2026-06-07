@@ -1,16 +1,20 @@
 #include <cstdio>
 #include <iostream>
-#include <thread>
 #include <vector>
-#include "indexes/Index8.hpp"
+
+#include "extras/basic/recsplit/RecSplit.h"
+#include "indexes/Index9.hpp"
+//#include "indexes/Index8.hpp"
+#include "components/test/test.cpp"
 /*
 */
 
+
 int main(int argc, char* argv[]) {
     printf("m a i n \n");
-    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004.txt";
 
-    Index8 index;
+    Index9 index;
     index.preprocess(filename);
 
     printf("done \n");

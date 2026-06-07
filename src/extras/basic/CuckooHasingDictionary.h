@@ -32,6 +32,16 @@ public:
     int get_size() const { return size; };
     int get_item_size() { return sizeof(Item<T, U>); }
     Item<T,U>** get_all_items();
+    Item<T,U>* move_all_items();
+
+    void informal_delete() {
+        delete[] T1;
+        delete[] T2;
+        delete hash_family1;
+        delete hash_family2;
+        size = 0;
+        n = 0;
+    }
 };
 template<typename T, typename U>
 CuckooHashingDictionary<T, U>::CuckooHashingDictionary(int start_size, IHashFamily<T>* hash_family) : size(start_size), n(0) {
@@ -153,6 +163,25 @@ Item<T,U>** CuckooHashingDictionary<T, U>::get_all_items() {
         }
         if (T2[i].used) {
             items[items_pos] = &T2[i];
+            items_pos++;
+        }
+    }
+
+    return items;
+}
+
+
+template<typename T, typename U>
+Item<T, U> *CuckooHashingDictionary<T, U>::move_all_items() {
+    Item<T,U>* items = new Item<T, U>[n];
+    int items_pos = 0;
+    for (int i = 0; i < size; i++) {
+        if (T1[i].used) {
+            items[items_pos] = std::move(T1[i]);
+            items_pos++;
+        }
+        if (T2[i].used) {
+            items[items_pos] = std::move(T2[i]);
             items_pos++;
         }
     }

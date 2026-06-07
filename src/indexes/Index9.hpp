@@ -1,27 +1,30 @@
+#pragma once
+
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/BurstTrieEliasFanoStaticStore.cpp"
-#include "../components/searchers/RegexSearch.cpp"
+#include "../components/stores/RecSplitEliasFanoStaticStore.cpp"
+#include "../components/searchers/BooleanSearcher.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
 #include "../components/sorters/RadixSort.cpp"
 
-class Index8 {
+class Index9 {
 private:
-    RegexSearch searcher;
+    BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieEliasFanoStaticStoreNS::BurstTrieEliasFanoStaticStore store;
+    RecSplitEliasFanoStaticStoreNS::RecSplitEliasFanoStaticStore store;
     RadixSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
-    Index8() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
+    Index index;
+    Index9() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {
         filename = fn;

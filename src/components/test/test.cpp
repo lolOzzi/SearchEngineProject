@@ -115,6 +115,8 @@ void test_correctness(Index* index, std::string filename) {
     for (const std::string& s : some) {
         tmp.q = s;
         auto res = index->search(tmp);
+        if (res.empty())
+            std::cout << s << " Was empty " << std::endl;
         CompareResult(s, res, results.at(s));
         /*
         i++;

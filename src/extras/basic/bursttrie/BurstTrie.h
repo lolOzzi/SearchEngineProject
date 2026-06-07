@@ -1,3 +1,4 @@
+#pragma once
 #include "AccessTrie.h"
 
 template <typename T>

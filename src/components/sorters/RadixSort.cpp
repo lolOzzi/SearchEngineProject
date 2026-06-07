@@ -1,5 +1,5 @@
-#include "../../core/interfaces.h";
-#include <list>;
+#include "../../core/interfaces.h"
+#include <list>
 class RadixSort : public ISorter {
 public:
     ~RadixSort() = default;

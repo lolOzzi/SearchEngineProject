@@ -3,7 +3,7 @@
 #include <unordered_set>
 
 #include "../../core/interfaces.h"
-#include "../../extras/basic/DoubleArrayDSTreeWithInfo.h"
+//#include "../../extras/basic/DoubleArrayDSTreeWithInfo.h"
 #include "../../extras/basic/DynamicArray.h"
 #include "../../extras/basic/bursttrie/BurstTrie.h"
 
