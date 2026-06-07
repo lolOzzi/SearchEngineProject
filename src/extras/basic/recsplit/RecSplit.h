@@ -3,10 +3,12 @@
 #include "hashfunctions/StringHasher.h"
 #include "../DynamicArray.h"
 #include "../SortedDynamicArray.h"
+#include "../ChaniedHashDictionary.h"
 #include <cmath>
 #include <variant>
 
 #include "hashfunctions/SignatureHasher.h"
+#include "hashfunctions/SignatureCheckHasher.h"
 
 #define LEAF_SIZE 8
 #define BUCKET_SIZE 100
@@ -299,26 +301,36 @@ DynamicArray<unsigned __int128>* RecSplit<T>::AssignSignaturesToBuckets(const Dy
 template<typename T>
 DynamicArray<unsigned __int128> RecSplit<T>::CreateSignatures(const DynamicArray<std::string>& keys) {
     DynamicArray<unsigned __int128> signatures = DynamicArray<unsigned __int128>(keys.get_size());
-    SortedDynamicArray<unsigned __int128> sorted_signatures = SortedDynamicArray<unsigned __int128>(keys.get_size());
+
+    SignatureCheckHasher hasher;
+    ChainedHashDictionary<unsigned __int128, unsigned __int128> signature_dict = ChainedHashDictionary<unsigned __int128, unsigned __int128>(keys.n, &hasher);
+
+    //SortedDynamicArray<unsigned __int128> sorted_signatures = SortedDynamicArray<unsigned __int128>(keys.get_size());
     string_hasher = StringHasher();
     for (int i = 0; i < keys.n; i++) {
         signatures.add(string_hasher.hash(keys[i]));
 
+        /*
         int idx = sorted_signatures.find_insert_index(signatures[i]);
         int candidates[2] = { idx, idx - 1 };
         if (candidates[1] < 0)
             candidates[1] = 0;
 
         if ((sorted_signatures.size() > candidates[0] && sorted_signatures[candidates[0]] == signatures[i]) ||
-            (sorted_signatures.size() > candidates[1] && sorted_signatures[candidates[1]] == signatures[i])) {
+            (sorted_signatures.size() > candidates[1] && sorted_signatures[candidates[1]] == signatures[i]))
+        */
+        if (signature_dict.get(signatures[i]) != nullptr)
+        {
             std::cout << "Reset" << std::endl;
             signatures.clear();
-            sorted_signatures.clear();
+            signature_dict = ChainedHashDictionary<unsigned __int128, unsigned __int128>(keys.n, &hasher);
+            //sorted_signatures.clear();
             string_hasher.get_new_hash();
             i = -1;
             continue;
         }
-        sorted_signatures.push_back(signatures[i]);
+        signature_dict.add(signatures[i], signatures[i]);
+        //sorted_signatures.push_back(signatures[i]);
     }
     return signatures;
 }

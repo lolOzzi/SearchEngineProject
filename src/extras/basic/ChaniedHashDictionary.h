@@ -15,6 +15,7 @@ private:
     void rehash_add(T key, U val);
 public:
     ChainedHashDictionary(int start_size, IHashFamily<T>* hash_family);
+    ~ChainedHashDictionary() override;
     U* add(T key, U val) override;
     U* get(T key) override;
     void remove(T key) override;
@@ -23,6 +24,23 @@ public:
     int get_item_size() { return sizeof(Item<T, U>); }
 
 };
+
+template <typename T, typename U>
+ChainedHashDictionary<T, U>::~ChainedHashDictionary()
+{
+    for (int i = 0; i < size; i++)
+    {
+        ChainedItem<T, U>* loop_item = buckets[i];
+        ChainedItem<T, U>* current_item = buckets[i];
+        while (loop_item) {
+            current_item = loop_item;
+            loop_item = loop_item->next;
+            delete current_item;
+        }
+    }
+    delete[] buckets;
+    delete hash_family;
+}
 
 template<typename T, typename U>
 ChainedHashDictionary<T, U>::ChainedHashDictionary(int start_size, IHashFamily<T>* hash_family) : size(start_size), n(0) {
