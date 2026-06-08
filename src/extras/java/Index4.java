@@ -42,11 +42,15 @@ class Index4 {
         }
 
         public void Add(WikiItem new_item) {
-
-            //if (Get(new_item.str) != null) return;
-
-
             int index = Hash(new_item.str);
+            WikiItem item = Buckets[index];
+          
+            while (item != null){
+                if (item.str.equals(new_item.str)) {
+                    return;
+                }
+                item = item.next;
+            }
 
             new_item.next = Buckets[index];
             Buckets[index] = new_item;
