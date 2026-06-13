@@ -4,6 +4,7 @@
 #include <limits>
 #include <cstdint>
 #include <vector>
+#include <cassert>
 
 template <typename T>
 concept UnsignedIntDEA = std::numeric_limits<T>::is_integer && !std::numeric_limits<T>::is_signed;
