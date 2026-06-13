@@ -1,6 +1,7 @@
+#pragma once
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/FuzzyTreeWrapper.cpp"
 #include "../components/searchers/BooleanSearcher.h"
 #include "../components/rankers/TFIDFRanker.h"

@@ -17,13 +17,14 @@ public:
     }
 };
 
-SignatureCheckHasher::SignatureCheckHasher() {
+inline SignatureCheckHasher::SignatureCheckHasher() {
     r = 47;
 }
-void SignatureCheckHasher::get_new_hash() {
+
+inline void SignatureCheckHasher::get_new_hash() {
 }
 
-std::uint64_t SignatureCheckHasher::hash(unsigned __int128 key, uint64_t max_val) {
+inline std::uint64_t SignatureCheckHasher::hash(unsigned __int128 key, uint64_t max_val) {
     std::uint64_t low = static_cast<std::uint64_t>(key);
     std::uint64_t high = static_cast<std::uint64_t>(key >> 64);
     std::uint64_t hash = high ^ (low * m);

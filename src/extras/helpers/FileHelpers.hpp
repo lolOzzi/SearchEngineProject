@@ -270,7 +270,7 @@ static std::string trim_string(const std::string& word) {
   return temp;
 }
 
-void replaceAll(std::string* str, const std::string& from, const std::string& to) {
+inline void replaceAll(std::string* str, const std::string& from, const std::string& to) {
   auto&& pos = str->find(from, size_t{});
   while (pos != std::string::npos)
   {

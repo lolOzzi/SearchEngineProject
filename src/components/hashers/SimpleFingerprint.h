@@ -17,20 +17,20 @@ public:
     void init();
 };
 
-void SimpleFingerprint::init() {
+inline void SimpleFingerprint::init() {
     z = rand() % p;
 }
 
-SimpleFingerprint::SimpleFingerprint() {
+inline SimpleFingerprint::SimpleFingerprint() {
     p = 2147483647;
     init();
 }
 
-int hash_individual(char c) {
+inline int hash_individual(char c) {
     return (int)c;
 }
 
-std::uint64_t SimpleFingerprint::hash(std::string key, int max_val) {
+inline std::uint64_t SimpleFingerprint::hash(std::string key, int max_val) {
     if (max_val == 0) return 0;
     assert(max_val > 0);
     std::uint64_t sum = 0;

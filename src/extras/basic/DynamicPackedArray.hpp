@@ -20,7 +20,8 @@ private:
     int front;
     uint8_t* arr;
     void double_up();
-    template<UnsignedInt T> int calc_elem_size(T& elem);
+    template<UnsignedInt T>
+    static int calc_elem_size(T& elem);
     void format_elem();
 public:
     template<UnsignedInt T> void add(T elem);
@@ -123,22 +124,22 @@ int DynamicPackedArray::calc_elem_size(T& elem) {
 }
 
 
-
-void DynamicPackedArray::copy_elements_to_vector(std::vector<uint32_t> &res) {
+inline void DynamicPackedArray::copy_elements_to_vector(std::vector<uint32_t> &res) {
 	int pos = 0;
 	for (int i = 0; i < n; ++i) {
           res.push_back(extract_elem(pos));
 	}
 }
 
-void DynamicPackedArray::double_up() {
+inline void DynamicPackedArray::double_up() {
     uint8_t* new_arr = new uint8_t[capacity*2];
 	std::memcpy(new_arr, arr, front * sizeof(uint8_t));
     delete[] arr;
     arr = new_arr;
     capacity = capacity*2;
 }
-int DynamicPackedArray::get_elem_count() {
+
+inline int DynamicPackedArray::get_elem_count() {
 	return n;
 }
 

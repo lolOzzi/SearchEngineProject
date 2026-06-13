@@ -32,7 +32,7 @@ public:
 
 };
 
-uint32_t DeltaEncodedArray::get_val(int index) {
+inline uint32_t DeltaEncodedArray::get_val(int index) {
     std::vector<uint32_t> all_vals;
     arr.copy_elements_to_vector(all_vals);
     if (all_vals.size() <= index) return 0;
@@ -51,7 +51,7 @@ void DeltaEncodedArray::add(T elem) {
 
 }
 
-void DeltaEncodedArray::copy_elements_to_vector(std::vector<uint32_t>& res) {
+inline void DeltaEncodedArray::copy_elements_to_vector(std::vector<uint32_t>& res) {
     std::vector<uint32_t> all_vals;
     arr.copy_elements_to_vector(all_vals);
     if (all_vals.empty()) return;
@@ -63,4 +63,4 @@ void DeltaEncodedArray::copy_elements_to_vector(std::vector<uint32_t>& res) {
     return;
 }
 
-int DeltaEncodedArray::get_elem_count() {return arr.get_elem_count();}
+inline int DeltaEncodedArray::get_elem_count() {return arr.get_elem_count();}

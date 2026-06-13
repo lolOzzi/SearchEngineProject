@@ -29,14 +29,16 @@ public:
     }
 };
 
-StringHashFamily::StringHashFamily() {
+inline StringHashFamily::StringHashFamily() {
     p = 2147483647;
     StringHashFamily::get_new_hash();
 }
-void StringHashFamily::get_new_hash() {
+
+inline void StringHashFamily::get_new_hash() {
     z = rand() % p;
 }
-std::uint64_t StringHashFamily::hash(std::string key, uint64_t max_val) {
+
+inline std::uint64_t StringHashFamily::hash(std::string key, uint64_t max_val) {
     if (max_val == 0) return 0;
     assert(max_val > 0);
     std::uint64_t sum = 0;
@@ -66,14 +68,16 @@ public:
     }
 };
 
-CharHashFamily::CharHashFamily() {
+inline CharHashFamily::CharHashFamily() {
     p = 2147483647;
     CharHashFamily::get_new_hash();
 }
-void CharHashFamily::get_new_hash() {
+
+inline void CharHashFamily::get_new_hash() {
     z = rand() % p;
 }
-std::uint64_t CharHashFamily::hash(char key, uint64_t max_val) {
+
+inline std::uint64_t CharHashFamily::hash(char key, uint64_t max_val) {
     if (max_val == 0) return 0;
     assert(max_val > 0);
     std::uint64_t sum = 0;
