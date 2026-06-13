@@ -1,12 +1,6 @@
-#include "../../core/interfaces.h"
+#include "BasicPreprocessor.h"
 
 #include <fstream>
-
-class BasicPreprocessor : public IPreprocessor {
-public:
-    ~BasicPreprocessor() override = default;
-    void* preprocess(std::string filename, IStore* store) override;
-};
 
 void* BasicPreprocessor::preprocess(std::string filename, IStore *store) {
     std::ifstream file;

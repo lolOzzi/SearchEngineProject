@@ -153,6 +153,606 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/components/hashers/BasicHasher.o: src/components/hashers/BasicHasher.cpp.o
+.PHONY : src/components/hashers/BasicHasher.o
+
+# target to build an object file
+src/components/hashers/BasicHasher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o
+.PHONY : src/components/hashers/BasicHasher.cpp.o
+
+src/components/hashers/BasicHasher.i: src/components/hashers/BasicHasher.cpp.i
+.PHONY : src/components/hashers/BasicHasher.i
+
+# target to preprocess a source file
+src/components/hashers/BasicHasher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.i
+.PHONY : src/components/hashers/BasicHasher.cpp.i
+
+src/components/hashers/BasicHasher.s: src/components/hashers/BasicHasher.cpp.s
+.PHONY : src/components/hashers/BasicHasher.s
+
+# target to generate assembly for a file
+src/components/hashers/BasicHasher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.s
+.PHONY : src/components/hashers/BasicHasher.cpp.s
+
+src/components/hashers/SimpleFingerprint.o: src/components/hashers/SimpleFingerprint.cpp.o
+.PHONY : src/components/hashers/SimpleFingerprint.o
+
+# target to build an object file
+src/components/hashers/SimpleFingerprint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/SimpleFingerprint.cpp.o
+.PHONY : src/components/hashers/SimpleFingerprint.cpp.o
+
+src/components/hashers/SimpleFingerprint.i: src/components/hashers/SimpleFingerprint.cpp.i
+.PHONY : src/components/hashers/SimpleFingerprint.i
+
+# target to preprocess a source file
+src/components/hashers/SimpleFingerprint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/SimpleFingerprint.cpp.i
+.PHONY : src/components/hashers/SimpleFingerprint.cpp.i
+
+src/components/hashers/SimpleFingerprint.s: src/components/hashers/SimpleFingerprint.cpp.s
+.PHONY : src/components/hashers/SimpleFingerprint.s
+
+# target to generate assembly for a file
+src/components/hashers/SimpleFingerprint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/hashers/SimpleFingerprint.cpp.s
+.PHONY : src/components/hashers/SimpleFingerprint.cpp.s
+
+src/components/preprocessors/BasicPreprocessor.o: src/components/preprocessors/BasicPreprocessor.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessor.o
+
+# target to build an object file
+src/components/preprocessors/BasicPreprocessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessor.cpp.o
+
+src/components/preprocessors/BasicPreprocessor.i: src/components/preprocessors/BasicPreprocessor.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessor.i
+
+# target to preprocess a source file
+src/components/preprocessors/BasicPreprocessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessor.cpp.i
+
+src/components/preprocessors/BasicPreprocessor.s: src/components/preprocessors/BasicPreprocessor.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessor.s
+
+# target to generate assembly for a file
+src/components/preprocessors/BasicPreprocessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessor.cpp.s
+
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.o: src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.o
+
+# target to build an object file
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o
+
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.i: src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.i
+
+# target to preprocess a source file
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i
+
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.s: src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.s
+
+# target to generate assembly for a file
+src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s
+
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.o: src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.o
+
+# target to build an object file
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o
+
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.i: src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.i
+
+# target to preprocess a source file
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i
+
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.s: src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.s
+
+# target to generate assembly for a file
+src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s
+
+src/components/preprocessors/BasicPreprocessorWordCleaner.o: src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.o
+
+# target to build an object file
+src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o
+
+src/components/preprocessors/BasicPreprocessorWordCleaner.i: src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.i
+
+# target to preprocess a source file
+src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i
+
+src/components/preprocessors/BasicPreprocessorWordCleaner.s: src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.s
+
+# target to generate assembly for a file
+src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s
+.PHONY : src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s
+
+src/components/rankers/MostMatchesRanker.o: src/components/rankers/MostMatchesRanker.cpp.o
+.PHONY : src/components/rankers/MostMatchesRanker.o
+
+# target to build an object file
+src/components/rankers/MostMatchesRanker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o
+.PHONY : src/components/rankers/MostMatchesRanker.cpp.o
+
+src/components/rankers/MostMatchesRanker.i: src/components/rankers/MostMatchesRanker.cpp.i
+.PHONY : src/components/rankers/MostMatchesRanker.i
+
+# target to preprocess a source file
+src/components/rankers/MostMatchesRanker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.i
+.PHONY : src/components/rankers/MostMatchesRanker.cpp.i
+
+src/components/rankers/MostMatchesRanker.s: src/components/rankers/MostMatchesRanker.cpp.s
+.PHONY : src/components/rankers/MostMatchesRanker.s
+
+# target to generate assembly for a file
+src/components/rankers/MostMatchesRanker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.s
+.PHONY : src/components/rankers/MostMatchesRanker.cpp.s
+
+src/components/rankers/TFIDFRanker.o: src/components/rankers/TFIDFRanker.cpp.o
+.PHONY : src/components/rankers/TFIDFRanker.o
+
+# target to build an object file
+src/components/rankers/TFIDFRanker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o
+.PHONY : src/components/rankers/TFIDFRanker.cpp.o
+
+src/components/rankers/TFIDFRanker.i: src/components/rankers/TFIDFRanker.cpp.i
+.PHONY : src/components/rankers/TFIDFRanker.i
+
+# target to preprocess a source file
+src/components/rankers/TFIDFRanker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.i
+.PHONY : src/components/rankers/TFIDFRanker.cpp.i
+
+src/components/rankers/TFIDFRanker.s: src/components/rankers/TFIDFRanker.cpp.s
+.PHONY : src/components/rankers/TFIDFRanker.s
+
+# target to generate assembly for a file
+src/components/rankers/TFIDFRanker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.s
+.PHONY : src/components/rankers/TFIDFRanker.cpp.s
+
+src/components/searchers/BasicSearcher.o: src/components/searchers/BasicSearcher.cpp.o
+.PHONY : src/components/searchers/BasicSearcher.o
+
+# target to build an object file
+src/components/searchers/BasicSearcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o
+.PHONY : src/components/searchers/BasicSearcher.cpp.o
+
+src/components/searchers/BasicSearcher.i: src/components/searchers/BasicSearcher.cpp.i
+.PHONY : src/components/searchers/BasicSearcher.i
+
+# target to preprocess a source file
+src/components/searchers/BasicSearcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.i
+.PHONY : src/components/searchers/BasicSearcher.cpp.i
+
+src/components/searchers/BasicSearcher.s: src/components/searchers/BasicSearcher.cpp.s
+.PHONY : src/components/searchers/BasicSearcher.s
+
+# target to generate assembly for a file
+src/components/searchers/BasicSearcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.s
+.PHONY : src/components/searchers/BasicSearcher.cpp.s
+
+src/components/searchers/BooleanSearcher.o: src/components/searchers/BooleanSearcher.cpp.o
+.PHONY : src/components/searchers/BooleanSearcher.o
+
+# target to build an object file
+src/components/searchers/BooleanSearcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o
+.PHONY : src/components/searchers/BooleanSearcher.cpp.o
+
+src/components/searchers/BooleanSearcher.i: src/components/searchers/BooleanSearcher.cpp.i
+.PHONY : src/components/searchers/BooleanSearcher.i
+
+# target to preprocess a source file
+src/components/searchers/BooleanSearcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.i
+.PHONY : src/components/searchers/BooleanSearcher.cpp.i
+
+src/components/searchers/BooleanSearcher.s: src/components/searchers/BooleanSearcher.cpp.s
+.PHONY : src/components/searchers/BooleanSearcher.s
+
+# target to generate assembly for a file
+src/components/searchers/BooleanSearcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.s
+.PHONY : src/components/searchers/BooleanSearcher.cpp.s
+
+src/components/searchers/RegexSearch.o: src/components/searchers/RegexSearch.cpp.o
+.PHONY : src/components/searchers/RegexSearch.o
+
+# target to build an object file
+src/components/searchers/RegexSearch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o
+.PHONY : src/components/searchers/RegexSearch.cpp.o
+
+src/components/searchers/RegexSearch.i: src/components/searchers/RegexSearch.cpp.i
+.PHONY : src/components/searchers/RegexSearch.i
+
+# target to preprocess a source file
+src/components/searchers/RegexSearch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.i
+.PHONY : src/components/searchers/RegexSearch.cpp.i
+
+src/components/searchers/RegexSearch.s: src/components/searchers/RegexSearch.cpp.s
+.PHONY : src/components/searchers/RegexSearch.s
+
+# target to generate assembly for a file
+src/components/searchers/RegexSearch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.s
+.PHONY : src/components/searchers/RegexSearch.cpp.s
+
+src/components/sorters/MergeSort.o: src/components/sorters/MergeSort.cpp.o
+.PHONY : src/components/sorters/MergeSort.o
+
+# target to build an object file
+src/components/sorters/MergeSort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o
+.PHONY : src/components/sorters/MergeSort.cpp.o
+
+src/components/sorters/MergeSort.i: src/components/sorters/MergeSort.cpp.i
+.PHONY : src/components/sorters/MergeSort.i
+
+# target to preprocess a source file
+src/components/sorters/MergeSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.i
+.PHONY : src/components/sorters/MergeSort.cpp.i
+
+src/components/sorters/MergeSort.s: src/components/sorters/MergeSort.cpp.s
+.PHONY : src/components/sorters/MergeSort.s
+
+# target to generate assembly for a file
+src/components/sorters/MergeSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.s
+.PHONY : src/components/sorters/MergeSort.cpp.s
+
+src/components/sorters/RadixSort.o: src/components/sorters/RadixSort.cpp.o
+.PHONY : src/components/sorters/RadixSort.o
+
+# target to build an object file
+src/components/sorters/RadixSort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o
+.PHONY : src/components/sorters/RadixSort.cpp.o
+
+src/components/sorters/RadixSort.i: src/components/sorters/RadixSort.cpp.i
+.PHONY : src/components/sorters/RadixSort.i
+
+# target to preprocess a source file
+src/components/sorters/RadixSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.i
+.PHONY : src/components/sorters/RadixSort.cpp.i
+
+src/components/sorters/RadixSort.s: src/components/sorters/RadixSort.cpp.s
+.PHONY : src/components/sorters/RadixSort.s
+
+# target to generate assembly for a file
+src/components/sorters/RadixSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.s
+.PHONY : src/components/sorters/RadixSort.cpp.s
+
+src/components/stores/BasicHashTable.o: src/components/stores/BasicHashTable.cpp.o
+.PHONY : src/components/stores/BasicHashTable.o
+
+# target to build an object file
+src/components/stores/BasicHashTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o
+.PHONY : src/components/stores/BasicHashTable.cpp.o
+
+src/components/stores/BasicHashTable.i: src/components/stores/BasicHashTable.cpp.i
+.PHONY : src/components/stores/BasicHashTable.i
+
+# target to preprocess a source file
+src/components/stores/BasicHashTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.i
+.PHONY : src/components/stores/BasicHashTable.cpp.i
+
+src/components/stores/BasicHashTable.s: src/components/stores/BasicHashTable.cpp.s
+.PHONY : src/components/stores/BasicHashTable.s
+
+# target to generate assembly for a file
+src/components/stores/BasicHashTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.s
+.PHONY : src/components/stores/BasicHashTable.cpp.s
+
+src/components/stores/BurstTrieRegexStore.o: src/components/stores/BurstTrieRegexStore.cpp.o
+.PHONY : src/components/stores/BurstTrieRegexStore.o
+
+# target to build an object file
+src/components/stores/BurstTrieRegexStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o
+.PHONY : src/components/stores/BurstTrieRegexStore.cpp.o
+
+src/components/stores/BurstTrieRegexStore.i: src/components/stores/BurstTrieRegexStore.cpp.i
+.PHONY : src/components/stores/BurstTrieRegexStore.i
+
+# target to preprocess a source file
+src/components/stores/BurstTrieRegexStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.i
+.PHONY : src/components/stores/BurstTrieRegexStore.cpp.i
+
+src/components/stores/BurstTrieRegexStore.s: src/components/stores/BurstTrieRegexStore.cpp.s
+.PHONY : src/components/stores/BurstTrieRegexStore.s
+
+# target to generate assembly for a file
+src/components/stores/BurstTrieRegexStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.s
+.PHONY : src/components/stores/BurstTrieRegexStore.cpp.s
+
+src/components/stores/BurstTrieStore.o: src/components/stores/BurstTrieStore.cpp.o
+.PHONY : src/components/stores/BurstTrieStore.o
+
+# target to build an object file
+src/components/stores/BurstTrieStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o
+.PHONY : src/components/stores/BurstTrieStore.cpp.o
+
+src/components/stores/BurstTrieStore.i: src/components/stores/BurstTrieStore.cpp.i
+.PHONY : src/components/stores/BurstTrieStore.i
+
+# target to preprocess a source file
+src/components/stores/BurstTrieStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.i
+.PHONY : src/components/stores/BurstTrieStore.cpp.i
+
+src/components/stores/BurstTrieStore.s: src/components/stores/BurstTrieStore.cpp.s
+.PHONY : src/components/stores/BurstTrieStore.s
+
+# target to generate assembly for a file
+src/components/stores/BurstTrieStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.s
+.PHONY : src/components/stores/BurstTrieStore.cpp.s
+
+src/components/stores/CompactTrieStore.o: src/components/stores/CompactTrieStore.cpp.o
+.PHONY : src/components/stores/CompactTrieStore.o
+
+# target to build an object file
+src/components/stores/CompactTrieStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o
+.PHONY : src/components/stores/CompactTrieStore.cpp.o
+
+src/components/stores/CompactTrieStore.i: src/components/stores/CompactTrieStore.cpp.i
+.PHONY : src/components/stores/CompactTrieStore.i
+
+# target to preprocess a source file
+src/components/stores/CompactTrieStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.i
+.PHONY : src/components/stores/CompactTrieStore.cpp.i
+
+src/components/stores/CompactTrieStore.s: src/components/stores/CompactTrieStore.cpp.s
+.PHONY : src/components/stores/CompactTrieStore.s
+
+# target to generate assembly for a file
+src/components/stores/CompactTrieStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.s
+.PHONY : src/components/stores/CompactTrieStore.cpp.s
+
+src/components/stores/DictionaryWithDocId.o: src/components/stores/DictionaryWithDocId.cpp.o
+.PHONY : src/components/stores/DictionaryWithDocId.o
+
+# target to build an object file
+src/components/stores/DictionaryWithDocId.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o
+.PHONY : src/components/stores/DictionaryWithDocId.cpp.o
+
+src/components/stores/DictionaryWithDocId.i: src/components/stores/DictionaryWithDocId.cpp.i
+.PHONY : src/components/stores/DictionaryWithDocId.i
+
+# target to preprocess a source file
+src/components/stores/DictionaryWithDocId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.i
+.PHONY : src/components/stores/DictionaryWithDocId.cpp.i
+
+src/components/stores/DictionaryWithDocId.s: src/components/stores/DictionaryWithDocId.cpp.s
+.PHONY : src/components/stores/DictionaryWithDocId.s
+
+# target to generate assembly for a file
+src/components/stores/DictionaryWithDocId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.s
+.PHONY : src/components/stores/DictionaryWithDocId.cpp.s
+
+src/components/stores/DictionaryWithTrieAndDocId.o: src/components/stores/DictionaryWithTrieAndDocId.cpp.o
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.o
+
+# target to build an object file
+src/components/stores/DictionaryWithTrieAndDocId.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.cpp.o
+
+src/components/stores/DictionaryWithTrieAndDocId.i: src/components/stores/DictionaryWithTrieAndDocId.cpp.i
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.i
+
+# target to preprocess a source file
+src/components/stores/DictionaryWithTrieAndDocId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.i
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.cpp.i
+
+src/components/stores/DictionaryWithTrieAndDocId.s: src/components/stores/DictionaryWithTrieAndDocId.cpp.s
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.s
+
+# target to generate assembly for a file
+src/components/stores/DictionaryWithTrieAndDocId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.s
+.PHONY : src/components/stores/DictionaryWithTrieAndDocId.cpp.s
+
+src/components/stores/DocBlock.o: src/components/stores/DocBlock.cpp.o
+.PHONY : src/components/stores/DocBlock.o
+
+# target to build an object file
+src/components/stores/DocBlock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o
+.PHONY : src/components/stores/DocBlock.cpp.o
+
+src/components/stores/DocBlock.i: src/components/stores/DocBlock.cpp.i
+.PHONY : src/components/stores/DocBlock.i
+
+# target to preprocess a source file
+src/components/stores/DocBlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.i
+.PHONY : src/components/stores/DocBlock.cpp.i
+
+src/components/stores/DocBlock.s: src/components/stores/DocBlock.cpp.s
+.PHONY : src/components/stores/DocBlock.s
+
+# target to generate assembly for a file
+src/components/stores/DocBlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.s
+.PHONY : src/components/stores/DocBlock.cpp.s
+
+src/components/stores/DynamicFKS.o: src/components/stores/DynamicFKS.cpp.o
+.PHONY : src/components/stores/DynamicFKS.o
+
+# target to build an object file
+src/components/stores/DynamicFKS.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o
+.PHONY : src/components/stores/DynamicFKS.cpp.o
+
+src/components/stores/DynamicFKS.i: src/components/stores/DynamicFKS.cpp.i
+.PHONY : src/components/stores/DynamicFKS.i
+
+# target to preprocess a source file
+src/components/stores/DynamicFKS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.i
+.PHONY : src/components/stores/DynamicFKS.cpp.i
+
+src/components/stores/DynamicFKS.s: src/components/stores/DynamicFKS.cpp.s
+.PHONY : src/components/stores/DynamicFKS.s
+
+# target to generate assembly for a file
+src/components/stores/DynamicFKS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.s
+.PHONY : src/components/stores/DynamicFKS.cpp.s
+
+src/components/stores/GenericDATWithDocId.o: src/components/stores/GenericDATWithDocId.cpp.o
+.PHONY : src/components/stores/GenericDATWithDocId.o
+
+# target to build an object file
+src/components/stores/GenericDATWithDocId.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o
+.PHONY : src/components/stores/GenericDATWithDocId.cpp.o
+
+src/components/stores/GenericDATWithDocId.i: src/components/stores/GenericDATWithDocId.cpp.i
+.PHONY : src/components/stores/GenericDATWithDocId.i
+
+# target to preprocess a source file
+src/components/stores/GenericDATWithDocId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.i
+.PHONY : src/components/stores/GenericDATWithDocId.cpp.i
+
+src/components/stores/GenericDATWithDocId.s: src/components/stores/GenericDATWithDocId.cpp.s
+.PHONY : src/components/stores/GenericDATWithDocId.s
+
+# target to generate assembly for a file
+src/components/stores/GenericDATWithDocId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.s
+.PHONY : src/components/stores/GenericDATWithDocId.cpp.s
+
+src/components/stores/GenericFKSRadixTree.o: src/components/stores/GenericFKSRadixTree.cpp.o
+.PHONY : src/components/stores/GenericFKSRadixTree.o
+
+# target to build an object file
+src/components/stores/GenericFKSRadixTree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o
+.PHONY : src/components/stores/GenericFKSRadixTree.cpp.o
+
+src/components/stores/GenericFKSRadixTree.i: src/components/stores/GenericFKSRadixTree.cpp.i
+.PHONY : src/components/stores/GenericFKSRadixTree.i
+
+# target to preprocess a source file
+src/components/stores/GenericFKSRadixTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.i
+.PHONY : src/components/stores/GenericFKSRadixTree.cpp.i
+
+src/components/stores/GenericFKSRadixTree.s: src/components/stores/GenericFKSRadixTree.cpp.s
+.PHONY : src/components/stores/GenericFKSRadixTree.s
+
+# target to generate assembly for a file
+src/components/stores/GenericFKSRadixTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.s
+.PHONY : src/components/stores/GenericFKSRadixTree.cpp.s
+
+src/components/stores/LinearProbingTable.o: src/components/stores/LinearProbingTable.cpp.o
+.PHONY : src/components/stores/LinearProbingTable.o
+
+# target to build an object file
+src/components/stores/LinearProbingTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o
+.PHONY : src/components/stores/LinearProbingTable.cpp.o
+
+src/components/stores/LinearProbingTable.i: src/components/stores/LinearProbingTable.cpp.i
+.PHONY : src/components/stores/LinearProbingTable.i
+
+# target to preprocess a source file
+src/components/stores/LinearProbingTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.i
+.PHONY : src/components/stores/LinearProbingTable.cpp.i
+
+src/components/stores/LinearProbingTable.s: src/components/stores/LinearProbingTable.cpp.s
+.PHONY : src/components/stores/LinearProbingTable.s
+
+# target to generate assembly for a file
+src/components/stores/LinearProbingTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.s
+.PHONY : src/components/stores/LinearProbingTable.cpp.s
+
+src/indexes/Index5.o: src/indexes/Index5.cpp.o
+.PHONY : src/indexes/Index5.o
+
+# target to build an object file
+src/indexes/Index5.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o
+.PHONY : src/indexes/Index5.cpp.o
+
+src/indexes/Index5.i: src/indexes/Index5.cpp.i
+.PHONY : src/indexes/Index5.i
+
+# target to preprocess a source file
+src/indexes/Index5.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.i
+.PHONY : src/indexes/Index5.cpp.i
+
+src/indexes/Index5.s: src/indexes/Index5.cpp.s
+.PHONY : src/indexes/Index5.s
+
+# target to generate assembly for a file
+src/indexes/Index5.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.s
+.PHONY : src/indexes/Index5.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +765,81 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/components/hashers/BasicHasher.o"
+	@echo "... src/components/hashers/BasicHasher.i"
+	@echo "... src/components/hashers/BasicHasher.s"
+	@echo "... src/components/hashers/SimpleFingerprint.o"
+	@echo "... src/components/hashers/SimpleFingerprint.i"
+	@echo "... src/components/hashers/SimpleFingerprint.s"
+	@echo "... src/components/preprocessors/BasicPreprocessor.o"
+	@echo "... src/components/preprocessors/BasicPreprocessor.i"
+	@echo "... src/components/preprocessors/BasicPreprocessor.s"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesPunctuation.o"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesPunctuation.i"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesPunctuation.s"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.o"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.i"
+	@echo "... src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.s"
+	@echo "... src/components/preprocessors/BasicPreprocessorWordCleaner.o"
+	@echo "... src/components/preprocessors/BasicPreprocessorWordCleaner.i"
+	@echo "... src/components/preprocessors/BasicPreprocessorWordCleaner.s"
+	@echo "... src/components/rankers/MostMatchesRanker.o"
+	@echo "... src/components/rankers/MostMatchesRanker.i"
+	@echo "... src/components/rankers/MostMatchesRanker.s"
+	@echo "... src/components/rankers/TFIDFRanker.o"
+	@echo "... src/components/rankers/TFIDFRanker.i"
+	@echo "... src/components/rankers/TFIDFRanker.s"
+	@echo "... src/components/searchers/BasicSearcher.o"
+	@echo "... src/components/searchers/BasicSearcher.i"
+	@echo "... src/components/searchers/BasicSearcher.s"
+	@echo "... src/components/searchers/BooleanSearcher.o"
+	@echo "... src/components/searchers/BooleanSearcher.i"
+	@echo "... src/components/searchers/BooleanSearcher.s"
+	@echo "... src/components/searchers/RegexSearch.o"
+	@echo "... src/components/searchers/RegexSearch.i"
+	@echo "... src/components/searchers/RegexSearch.s"
+	@echo "... src/components/sorters/MergeSort.o"
+	@echo "... src/components/sorters/MergeSort.i"
+	@echo "... src/components/sorters/MergeSort.s"
+	@echo "... src/components/sorters/RadixSort.o"
+	@echo "... src/components/sorters/RadixSort.i"
+	@echo "... src/components/sorters/RadixSort.s"
+	@echo "... src/components/stores/BasicHashTable.o"
+	@echo "... src/components/stores/BasicHashTable.i"
+	@echo "... src/components/stores/BasicHashTable.s"
+	@echo "... src/components/stores/BurstTrieRegexStore.o"
+	@echo "... src/components/stores/BurstTrieRegexStore.i"
+	@echo "... src/components/stores/BurstTrieRegexStore.s"
+	@echo "... src/components/stores/BurstTrieStore.o"
+	@echo "... src/components/stores/BurstTrieStore.i"
+	@echo "... src/components/stores/BurstTrieStore.s"
+	@echo "... src/components/stores/CompactTrieStore.o"
+	@echo "... src/components/stores/CompactTrieStore.i"
+	@echo "... src/components/stores/CompactTrieStore.s"
+	@echo "... src/components/stores/DictionaryWithDocId.o"
+	@echo "... src/components/stores/DictionaryWithDocId.i"
+	@echo "... src/components/stores/DictionaryWithDocId.s"
+	@echo "... src/components/stores/DictionaryWithTrieAndDocId.o"
+	@echo "... src/components/stores/DictionaryWithTrieAndDocId.i"
+	@echo "... src/components/stores/DictionaryWithTrieAndDocId.s"
+	@echo "... src/components/stores/DocBlock.o"
+	@echo "... src/components/stores/DocBlock.i"
+	@echo "... src/components/stores/DocBlock.s"
+	@echo "... src/components/stores/DynamicFKS.o"
+	@echo "... src/components/stores/DynamicFKS.i"
+	@echo "... src/components/stores/DynamicFKS.s"
+	@echo "... src/components/stores/GenericDATWithDocId.o"
+	@echo "... src/components/stores/GenericDATWithDocId.i"
+	@echo "... src/components/stores/GenericDATWithDocId.s"
+	@echo "... src/components/stores/GenericFKSRadixTree.o"
+	@echo "... src/components/stores/GenericFKSRadixTree.i"
+	@echo "... src/components/stores/GenericFKSRadixTree.s"
+	@echo "... src/components/stores/LinearProbingTable.o"
+	@echo "... src/components/stores/LinearProbingTable.i"
+	@echo "... src/components/stores/LinearProbingTable.s"
+	@echo "... src/indexes/Index5.o"
+	@echo "... src/indexes/Index5.i"
+	@echo "... src/indexes/Index5.s"
 .PHONY : help
 
 

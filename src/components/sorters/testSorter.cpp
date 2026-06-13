@@ -1,5 +1,5 @@
-#include "MergeSort.cpp"
-#include "RadixSort.cpp"
+#include "MergeSort.h"
+#include "RadixSort.h"
 #include "../../core/interfaces.h"
 #include <iostream>
 

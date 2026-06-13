@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "extras/basic/recsplit/RecSplit.h"
-#include "indexes/Index5.hpp"
+#include "indexes/Index5.h"
 #include "indexes/Index6.hpp"
 #include "indexes/Index7.hpp"
 #include "indexes/Index8.hpp"

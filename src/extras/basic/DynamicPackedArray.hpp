@@ -100,7 +100,7 @@ inline DynamicPackedArray::DynamicPackedArray(int base_cap) {
 }
 
 template<UnsignedInt T>
-void DynamicPackedArray::add(T elem) {
+inline void DynamicPackedArray::add(T elem) {
 	int elem_size = calc_elem_size(elem);
 	if (front+elem_size >= capacity) {
 		double_up();
@@ -118,27 +118,27 @@ void DynamicPackedArray::add(T elem) {
 }
 
 template<UnsignedInt T>
-int DynamicPackedArray::calc_elem_size(T& elem) {
+inline int DynamicPackedArray::calc_elem_size(T& elem) {
 	return elem == 0 ? 1 : (std::bit_width((uint64_t)elem) + 6) / 7;
 }
 
 
 
-void DynamicPackedArray::copy_elements_to_vector(std::vector<uint32_t> &res) {
+inline void DynamicPackedArray::copy_elements_to_vector(std::vector<uint32_t> &res) {
 	int pos = 0;
 	for (int i = 0; i < n; ++i) {
           res.push_back(extract_elem(pos));
 	}
 }
 
-void DynamicPackedArray::double_up() {
+inline void DynamicPackedArray::double_up() {
     uint8_t* new_arr = new uint8_t[capacity*2];
 	std::memcpy(new_arr, arr, front * sizeof(uint8_t));
     delete[] arr;
     arr = new_arr;
     capacity = capacity*2;
 }
-int DynamicPackedArray::get_elem_count() {
+inline int DynamicPackedArray::get_elem_count() {
 	return n;
 }
 

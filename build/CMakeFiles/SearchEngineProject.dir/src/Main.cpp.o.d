@@ -155,77 +155,56 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /usr/include/c++/16.1.1/bits/basic_ios.tcc \
  /usr/include/c++/16.1.1/bits/ostream_print.h \
  /usr/include/c++/16.1.1/bits/ostream.tcc /usr/include/c++/16.1.1/istream \
- /usr/include/c++/16.1.1/bits/istream.tcc /usr/include/c++/16.1.1/thread \
- /usr/include/c++/16.1.1/stop_token /usr/include/c++/16.1.1/atomic \
- /usr/include/c++/16.1.1/bits/atomic_base.h \
- /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16.1.1/bits/atomic_wait.h \
- /usr/include/c++/16.1.1/cstdint \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h \
- /usr/include/c++/16.1.1/bits/std_thread.h \
- /usr/include/c++/16.1.1/bits/refwrap.h \
- /usr/include/c++/16.1.1/bits/unique_ptr.h \
- /usr/include/c++/16.1.1/semaphore \
- /usr/include/c++/16.1.1/bits/semaphore_base.h \
- /usr/include/c++/16.1.1/bits/chrono.h /usr/include/c++/16.1.1/ratio \
- /usr/include/c++/16.1.1/ctime \
- /usr/include/c++/16.1.1/bits/parse_numbers.h \
- /usr/include/c++/16.1.1/bits/atomic_timed_wait.h \
- /usr/include/c++/16.1.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/c++/16.1.1/vector \
+ /usr/include/c++/16.1.1/bits/istream.tcc /usr/include/c++/16.1.1/vector \
  /usr/include/c++/16.1.1/bits/stl_uninitialized.h \
  /usr/include/c++/16.1.1/bits/stl_vector.h \
  /usr/include/c++/16.1.1/bits/stl_bvector.h \
  /usr/include/c++/16.1.1/bits/vector.tcc \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index8.hpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../core/interfaces.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../core/../extras/helpers/FileHelpers.cpp \
- /usr/include/c++/16.1.1/fstream /usr/include/c++/16.1.1/bits/codecvt.h \
- /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/16.1.1/bits/fstream.tcc /usr/include/c++/16.1.1/regex \
- /usr/include/c++/16.1.1/bitset /usr/include/c++/16.1.1/locale \
- /usr/include/c++/16.1.1/bits/locale_facets_nonio.h \
- /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h \
- /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc \
- /usr/include/c++/16.1.1/bits/locale_conv.h /usr/include/c++/16.1.1/stack \
- /usr/include/c++/16.1.1/deque /usr/include/c++/16.1.1/bits/stl_deque.h \
- /usr/include/c++/16.1.1/bits/deque.tcc \
- /usr/include/c++/16.1.1/bits/stl_stack.h \
- /usr/include/c++/16.1.1/ext/aligned_buffer.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/RecSplit.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/hashfunctions/StringHasher.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/../DynamicArray.h \
+ /usr/include/c++/16.1.1/cstring /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/16.1.1/utility \
+ /usr/include/c++/16.1.1/bits/stl_relops.h \
+ /usr/include/c++/16.1.1/bits/intcmp.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/../SortedDynamicArray.h \
+ /usr/include/c++/16.1.1/memory \
+ /usr/include/c++/16.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/16.1.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16.1.1/bits/align.h \
+ /usr/include/c++/16.1.1/bits/unique_ptr.h \
  /usr/include/c++/16.1.1/bits/shared_ptr.h \
  /usr/include/c++/16.1.1/bits/shared_ptr_base.h \
  /usr/include/c++/16.1.1/bits/allocated_ptr.h \
+ /usr/include/c++/16.1.1/bits/refwrap.h \
+ /usr/include/c++/16.1.1/ext/aligned_buffer.h \
  /usr/include/c++/16.1.1/ext/concurrence.h \
- /usr/include/c++/16.1.1/bits/align.h \
+ /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16.1.1/bits/atomic_base.h \
+ /usr/include/c++/16.1.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/16.1.1/bits/atomic_wait.h \
+ /usr/include/c++/16.1.1/backward/auto_ptr.h \
+ /usr/include/c++/16.1.1/bits/ranges_uninitialized.h \
+ /usr/include/c++/16.1.1/bits/ranges_algobase.h \
+ /usr/include/c++/16.1.1/pstl/glue_memory_defs.h \
+ /usr/include/c++/16.1.1/pstl/execution_defs.h \
+ /usr/include/c++/16.1.1/functional \
  /usr/include/c++/16.1.1/bits/std_function.h \
- /usr/include/c++/16.1.1/bits/stl_algo.h \
- /usr/include/c++/16.1.1/bits/algorithmfwd.h \
- /usr/include/c++/16.1.1/bits/stl_heap.h \
- /usr/include/c++/16.1.1/bits/uniform_int_dist.h \
- /usr/include/c++/16.1.1/bits/stl_tempbuf.h \
- /usr/include/c++/16.1.1/bits/stl_tree.h \
- /usr/include/c++/16.1.1/bits/node_handle.h \
- /usr/include/c++/16.1.1/bits/stl_map.h \
- /usr/include/c++/16.1.1/bits/regex_constants.h \
- /usr/include/c++/16.1.1/bits/regex_error.h \
- /usr/include/c++/16.1.1/bits/regex_automaton.h \
- /usr/include/c++/16.1.1/bits/regex_automaton.tcc \
- /usr/include/c++/16.1.1/bits/regex_scanner.h \
- /usr/include/c++/16.1.1/bits/regex_scanner.tcc \
- /usr/include/c++/16.1.1/bits/regex_compiler.h \
- /usr/include/c++/16.1.1/bits/regex_compiler.tcc \
- /usr/include/c++/16.1.1/bits/regex.h \
- /usr/include/c++/16.1.1/bits/regex.tcc \
- /usr/include/c++/16.1.1/bits/regex_executor.h \
- /usr/include/c++/16.1.1/bits/regex_executor.tcc \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/hashers/SimpleFingerprint.h \
- /usr/include/c++/16.1.1/cassert /usr/include/assert.h \
- /usr/include/c++/16.1.1/cmath /usr/include/math.h \
+ /usr/include/c++/16.1.1/unordered_map \
+ /usr/include/c++/16.1.1/bits/unordered_map.h \
+ /usr/include/c++/16.1.1/bits/hashtable.h \
+ /usr/include/c++/16.1.1/bits/hashtable_policy.h \
+ /usr/include/c++/16.1.1/bits/enable_special_members.h \
+ /usr/include/c++/16.1.1/bits/node_handle.h /usr/include/c++/16.1.1/array \
+ /usr/include/c++/16.1.1/bits/binders.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/../ChaniedHashDictionary.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/.././Dictionary.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/../././HashFamily.h \
+ /usr/include/c++/16.1.1/cstdint /usr/include/c++/16.1.1/cassert \
+ /usr/include/assert.h /usr/include/c++/16.1.1/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
@@ -244,48 +223,88 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o: \
  /usr/include/c++/16.1.1/tr1/poly_hermite.tcc \
  /usr/include/c++/16.1.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/16.1.1/tr1/riemann_zeta.tcc \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/preprocessors/BasicPreprocessorWordCleaner.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/BurstTrieDeltaDynamicStore.cpp \
- /usr/include/c++/16.1.1/memory \
- /usr/include/c++/16.1.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/16.1.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/16.1.1/backward/auto_ptr.h \
- /usr/include/c++/16.1.1/bits/ranges_uninitialized.h \
- /usr/include/c++/16.1.1/bits/ranges_algobase.h \
- /usr/include/c++/16.1.1/pstl/glue_memory_defs.h \
- /usr/include/c++/16.1.1/pstl/execution_defs.h \
- /usr/include/c++/16.1.1/variant \
- /usr/include/c++/16.1.1/bits/enable_special_members.h \
- /usr/include/c++/16.1.1/bits/monostate.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/DynamicArray.h \
- /usr/include/c++/16.1.1/cstring /usr/include/string.h \
- /usr/include/strings.h /usr/include/c++/16.1.1/utility \
- /usr/include/c++/16.1.1/bits/stl_relops.h \
- /usr/include/c++/16.1.1/bits/intcmp.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/BurstTrie.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/AccessTrie.h \
- /usr/include/c++/16.1.1/array \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/BinarySearchTree.h \
+ /usr/include/c++/16.1.1/variant /usr/include/c++/16.1.1/bits/monostate.h \
+ /usr/include/c++/16.1.1/bits/parse_numbers.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/hashfunctions/SignatureHasher.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/extras/basic/recsplit/hashfunctions/SignatureCheckHasher.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index5.h \
+ /usr/include/c++/16.1.1/fstream /usr/include/c++/16.1.1/bits/codecvt.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/16.1.1/bits/fstream.tcc \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index6.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../core/interfaces.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../core/../extras/helpers/FileHelpers.hpp \
+ /usr/include/c++/16.1.1/regex /usr/include/c++/16.1.1/bitset \
+ /usr/include/c++/16.1.1/locale \
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/16.1.1/ctime \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/16.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h \
+ /usr/include/c++/16.1.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/16.1.1/bits/locale_conv.h /usr/include/c++/16.1.1/stack \
+ /usr/include/c++/16.1.1/deque /usr/include/c++/16.1.1/bits/stl_deque.h \
+ /usr/include/c++/16.1.1/bits/deque.tcc \
+ /usr/include/c++/16.1.1/bits/stl_stack.h \
+ /usr/include/c++/16.1.1/bits/stl_algo.h \
+ /usr/include/c++/16.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/16.1.1/bits/stl_heap.h \
+ /usr/include/c++/16.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/16.1.1/bits/stl_tree.h \
+ /usr/include/c++/16.1.1/bits/stl_map.h \
+ /usr/include/c++/16.1.1/bits/regex_constants.h \
+ /usr/include/c++/16.1.1/bits/regex_error.h \
+ /usr/include/c++/16.1.1/bits/regex_automaton.h \
+ /usr/include/c++/16.1.1/bits/regex_automaton.tcc \
+ /usr/include/c++/16.1.1/bits/regex_scanner.h \
+ /usr/include/c++/16.1.1/bits/regex_scanner.tcc \
+ /usr/include/c++/16.1.1/bits/regex_compiler.h \
+ /usr/include/c++/16.1.1/bits/regex_compiler.tcc \
+ /usr/include/c++/16.1.1/bits/regex.h \
+ /usr/include/c++/16.1.1/bits/regex.tcc \
+ /usr/include/c++/16.1.1/bits/regex_executor.h \
+ /usr/include/c++/16.1.1/bits/regex_executor.tcc \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/hashers/SimpleFingerprint.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/preprocessors/BasicPreprocessorWordCleaner.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/DictionaryWithDocId.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/RadixTree.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/./Label.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/GenericFKSDictionary.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/CuckooHasingDictionary.h \
  /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/Record.h \
  /usr/include/c++/16.1.1/algorithm \
  /usr/include/c++/16.1.1/bits/ranges_algo.h \
  /usr/include/c++/16.1.1/pstl/glue_algorithm_defs.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/../Label.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/DeltaEncodedArray.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/DynamicPackedArray.hpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/searchers/RegexSearch.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/searchers/../../components/stores/DynamicFKSRadixTreeRegex.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/searchers/../../components/stores/../../extras/basic/RadixTree.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/searchers/BooleanSearcher.h \
  /usr/include/c++/16.1.1/unordered_set \
  /usr/include/c++/16.1.1/bits/unordered_set.h \
- /usr/include/c++/16.1.1/bits/hashtable.h \
- /usr/include/c++/16.1.1/bits/hashtable_policy.h \
- /usr/include/c++/16.1.1/map /usr/include/c++/16.1.1/bits/stl_multimap.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/rankers/TFIDFRanker.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/sorters/MergeSort.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index7.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/FuzzyTreeWrapper.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/RadixTreeWithPostings.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/ChainSet.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index8.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/BurstTrieDeltaDynamicStoreRegex.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/BurstTrie.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/AccessTrie.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/bursttrie/BinarySearchTree.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/DeltaEncodedArray.h \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/DynamicPackedArray.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../stores/RegexStoreComp.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/searchers/RegexSearch.h \
  /usr/include/c++/16.1.1/ranges /usr/include/c++/16.1.1/iterator \
  /usr/include/c++/16.1.1/bits/stream_iterator.h \
  /usr/include/c++/16.1.1/optional /usr/include/c++/16.1.1/span \
- /usr/include/c++/16.1.1/bits/binders.h \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/rankers/TFIDFRanker.cpp \
- /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/sorters/RadixSort.cpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/sorters/RadixSort.h \
  /usr/include/c++/16.1.1/list /usr/include/c++/16.1.1/bits/stl_list.h \
- /usr/include/c++/16.1.1/bits/list.tcc
+ /usr/include/c++/16.1.1/bits/list.tcc \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index9.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/RecSplitEliasFanoStaticStore.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/EliasFanoStatic.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index10.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/BurstTrieEliasFanoDynamicStore.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/../../extras/basic/EliasFanoBuffer.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index11.hpp \
+ /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/../components/stores/BurstTrieEliasFanoDynamicStoreRegex.hpp

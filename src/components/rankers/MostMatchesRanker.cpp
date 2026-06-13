@@ -1,14 +1,7 @@
-#include "../../core/interfaces.h"
+#include "MostMatchesRanker.h"
 #include <cstdio>
 #include <fstream>
 #include <istream>
-
-
-class MostMatchesRanker : public IRanker {
-public:
-    ~MostMatchesRanker() = default;
-    std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates, SearchQuery& q, IStore* store, std::string& filename, ISorter* sorter) override;
-};
 
 std::vector<ScoredDoc> MostMatchesRanker::rank(const std::vector<Doc>& candidates,
                                         SearchQuery& query, IStore* store,
@@ -51,4 +44,3 @@ std::vector<ScoredDoc> MostMatchesRanker::rank(const std::vector<Doc>& candidate
     sorter->sort(scoredDocs);
     return scoredDocs;
 }
-

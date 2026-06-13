@@ -1,15 +1,7 @@
-#include "../../core/interfaces.h"
+#include "BasicPreprocessorHandlesWhitespaceChars.h"
 
 #include <fstream>
 #include <iostream>
-
-class BasicPreprocessorHandlesWhitespaceChars : public IPreprocessor {
-public:
-    ~BasicPreprocessorHandlesWhitespaceChars() override = default;
-    void* preprocess(std::string filename, IStore* store) override;
-
-};
-
 
 void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, IStore *store) {
     std::ifstream file;
@@ -58,5 +50,3 @@ void* BasicPreprocessorHandlesWhitespaceChars::preprocess(std::string filename, 
     file.close();
     return nullptr;
 }
-
-

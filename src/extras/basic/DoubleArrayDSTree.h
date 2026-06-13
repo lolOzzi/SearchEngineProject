@@ -43,7 +43,7 @@ public:
 };
 
 
-void DoubleArrayDSTree::resize(int new_t) {
+inline void DoubleArrayDSTree::resize(int new_t) {
     int min_size = new_t+1;
     if (min_size <= size) return;
     int old_size = size;
@@ -82,7 +82,7 @@ void DoubleArrayDSTree::resize(int new_t) {
     size = new_size;
 }
 
-void DoubleArrayDSTree::get_children(DynamicArray<int> *child_codes_holder, int parent_val) {
+inline void DoubleArrayDSTree::get_children(DynamicArray<int> *child_codes_holder, int parent_val) {
     for (int i = 0; i < size; i++) {
         if (check[i] == parent_val) {
             int child_code = i - base[parent_val];
@@ -91,7 +91,7 @@ void DoubleArrayDSTree::get_children(DynamicArray<int> *child_codes_holder, int 
     }
 }
 
-int DoubleArrayDSTree::find_base(DynamicArray<int> child_codes, int parent_val) {
+inline int DoubleArrayDSTree::find_base(DynamicArray<int> child_codes, int parent_val) {
     int current_base = 0;
     bool has_conflict = true;
 
@@ -113,7 +113,7 @@ int DoubleArrayDSTree::find_base(DynamicArray<int> child_codes, int parent_val) 
     return current_base;
 }
 
-void DoubleArrayDSTree::add(std::string word) {
+inline void DoubleArrayDSTree::add(std::string word) {
     int s = root;
     for (int i = 0; i < word.size(); i++) {
         char c = word[i];
@@ -185,7 +185,7 @@ void DoubleArrayDSTree::add(std::string word) {
     terminal[s] = true;
 }
 
-bool DoubleArrayDSTree::search(const std::string& word) {
+inline bool DoubleArrayDSTree::search(const std::string& word) {
     int s = root;
 
     for (int i = 0; i < word.size(); i++) {
@@ -202,7 +202,7 @@ bool DoubleArrayDSTree::search(const std::string& word) {
     return terminal[s];
 }
 
-std::string DoubleArrayDSTree::reconstruct(int t) {
+inline std::string DoubleArrayDSTree::reconstruct(int t) {
     std::string result;
 
     while (t != root) {
@@ -215,7 +215,7 @@ std::string DoubleArrayDSTree::reconstruct(int t) {
     return result;
 }
 
-int DoubleArrayDSTree::get_node(const std::string& word) {
+inline int DoubleArrayDSTree::get_node(const std::string& word) {
     int s = root;
 
     for (char c : word) {

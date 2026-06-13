@@ -1,4 +1,4 @@
-#include "../stores/RadixTree.cpp"
+#include "../../extras/basic/RadixTree.h"
 
 int main(int argc, char* argv[]) {
   Label pointer = Label();

@@ -1,47 +1,47 @@
-#include "core/Index5.h"
-#include "components/test/test.cpp"
-#include "components/preprocessors/BasicPreprocessorWordCleaner.cpp"
+#include "indexes/Index5.h"
+#include "components/test/test_helpers.h"
+#include "components/preprocessors/BasicPreprocessorWordCleaner.h"
 
 #include "components/hashers/SimpleFingerprint.h"
-#include "components/searchers/BasicSearcher.cpp"
+#include "components/searchers/BasicSearcher.h"
 //#include "components/stores/GenericFKSWithDocId.cpp"
-#include "components/stores/BasicHashTable.cpp"
-//#include "components/searchers/BooleanSearcher.cpp"
-#include "components/searchers/RegexSearch.cpp"
+#include "components/stores/BasicHashTable.h"
+//#include "components/searchers/BooleanSearcher.h"
+#include "components/searchers/RegexSearch.h"
 
-//#include "components/stores/FuzzyDynamicFKSRadixTree.cpp"
+//#include "components/stores/FuzzyDynamicFKSRadixTree.hpp"
 
-//#include "components/stores/TreeWrapper.cpp"
+//#include "components/stores/TreeWrapper.hpp"
 
-//#include "components/stores/ModularStoreEliasFanoNoBuffer.cpp"
-//#include "components/stores/ModularStoreEliasFanoPackedBuffer.cpp"
-//#include "components/stores/BurstTrieEliasFanoStaticStore.cpp"
+//#include "components/stores/ModularStoreEliasFanoNoBuffer.hpp"
+//#include "components/stores/ModularStoreEliasFanoPackedBuffer.hpp"
+//#include "components/stores/BurstTrieEliasFanoStaticStore.hpp"
 
 /**
  stores
  */
-//#include "components/stores/BurstTrieRegexStore.cpp"
-//#include "components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
-#include "components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp"
+//#include "components/stores/BurstTrieRegexStore.h"
+//#include "components/stores/BurstTrieDeltaDynamicStoreRegex.hpp"
+#include "components/stores/BurstTrieEliasFanoDynamicStoreRegex.hpp"
 
 
 //#include "components/stores/CompressibleBurstTrieStore.cpp"
 
-//#include "components/rankers/MostMatchesRanker.cpp"
-//#include "components/rankers/TFIDFRanker.cpp"
-//#include "components/sorters/MergeSort.cpp"
-//#include "components/stores/FuzzyTreeWrapper.cpp"
+//#include "components/rankers/MostMatchesRanker.h"
+//#include "components/rankers/TFIDFRanker.h"
+//#include "components/sorters/MergeSort.h"
+//#include "components/stores/FuzzyTreeWrapper.hpp"
 //#include "TestDynamicArray.cpp"
 
 //#include "components/stores/GenericFKSWithDocId.cpp"
-//#include "components/stores/BurstTrieStore.cpp"
-//#include "components/stores/DictionaryWithDocId.cpp"
-//#include "components/stores/GenericDATWithDocId.cpp"
+//#include "components/stores/BurstTrieStore.h"
+//#include "components/stores/DictionaryWithDocId.h"
+//#include "components/stores/GenericDATWithDocId.h"
 
 //#include "extras/basic/HashFamily.h"
 
-//#include "components/stores/ModularStorePacked.cpp"
-//#include "components/stores/DictionaryWithTrieAndDocId.cpp"
+//#include "components/stores/ModularStorePacked.hpp"
+//#include "components/stores/DictionaryWithTrieAndDocId.h"
 //#include <cstdio>
 /*
 */

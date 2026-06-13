@@ -1,5 +1,5 @@
 #include "../../core/interfaces.h"
-#include "../../components/stores/DynamicFKSRadixTreeRegex.cpp"
+#include "../../components/stores/DynamicFKSRadixTreeRegex.hpp"
 #include <ranges>
 #include <stack>
 

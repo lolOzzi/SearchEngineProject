@@ -85,12 +85,12 @@ clean: CMakeFiles/SearchEngineProject.dir/clean
 CMakeFiles/SearchEngineProject.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=1,2 "Built target SearchEngineProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target SearchEngineProject"
 .PHONY : CMakeFiles/SearchEngineProject.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SearchEngineProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SearchEngineProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles 0
 .PHONY : CMakeFiles/SearchEngineProject.dir/rule
@@ -102,7 +102,7 @@ SearchEngineProject: CMakeFiles/SearchEngineProject.dir/rule
 # codegen rule for target.
 CMakeFiles/SearchEngineProject.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SearchEngineProject.dir/build.make CMakeFiles/SearchEngineProject.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=1,2 "Finished codegen for target SearchEngineProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Finished codegen for target SearchEngineProject"
 .PHONY : CMakeFiles/SearchEngineProject.dir/codegen
 
 # clean rule for target.

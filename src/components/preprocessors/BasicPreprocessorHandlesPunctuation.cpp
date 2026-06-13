@@ -1,12 +1,6 @@
-#include "../../core/interfaces.h"
+#include "BasicPreprocessorHandlesPunctuation.h"
 
 #include <fstream>
-
-class BasicPreprocessorHandlesPunctuation : public IPreprocessor {
-public:
-    ~BasicPreprocessorHandlesPunctuation() override = default;
-    void* preprocess(std::string filename, IStore* store) override;
-};
 
 void* BasicPreprocessorHandlesPunctuation::preprocess(std::string filename, IStore *store) {
     std::ifstream file;
@@ -53,5 +47,3 @@ void* BasicPreprocessorHandlesPunctuation::preprocess(std::string filename, ISto
     file.close();
     return nullptr;
 }
-
-

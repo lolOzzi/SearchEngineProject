@@ -1,9 +1,9 @@
 #include "RegexSearch.h"
 
 #include <algorithm>
-#include "../stores/BurstTrieRegexStore.cpp"
-#include "../stores/BurstTrieDeltaDynamicStoreRegex.cpp"
-#include "../stores/BurstTrieEliasFanoDynamicStoreRegex.cpp"
+#include "../stores/BurstTrieRegexStore.h"
+#include "../stores/BurstTrieDeltaDynamicStoreRegex.hpp"
+#include "../stores/BurstTrieEliasFanoDynamicStoreRegex.hpp"
 
 std::string preprocess(std::string reg) {
     std::string res = "";
@@ -700,7 +700,7 @@ std::unordered_set<std::string> setIntersection(std::unordered_set<std::string> 
 
 
 std::vector<std::string> hasRegex(IStore* store, std::string tri) {
-    if (auto* burstTrieStore = dynamic_cast<BurstTrieRegexStore*>(store)) {
+    if (auto* burstTrieStore = dynamic_cast<BurstTrieRegexStoreNS::BurstTrieRegexStore*>(store)) {
         return burstTrieStore->getWordsFromTrigram(tri);
     }
     if (auto* burstTrieDeltaStore = dynamic_cast<BurstTrieDeltaDynamicStoreRegexNS::BurstTrieDeltaDynamicStoreRegex*>(store)) {

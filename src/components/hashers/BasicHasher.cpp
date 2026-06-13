@@ -1,11 +1,4 @@
-#include "../../core/interfaces.h"
-
-
-class BasicHasher : public IHash {
-public:
-    ~BasicHasher() override = default;
-    std::uint64_t hash(std::string key, int max_val) override;
-};
+#include "BasicHasher.h"
 
 std::uint64_t BasicHasher::hash(std::string key, int max_val) {
     size_t raw_hash = std::hash<std::string>{}(key);
