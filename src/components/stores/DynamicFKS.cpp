@@ -2,6 +2,8 @@
 #include "../../core/interfaces.h"
 #include <cassert>
 
+#include "SimpleFingerprint.h"
+
 class DictWord {
 public:
     std::string word;

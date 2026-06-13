@@ -2,11 +2,11 @@
 
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
-#include "../components/searchers/RegexSearch.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/RadixSort.cpp"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/BurstTrieDeltaDynamicStoreRegex.h"
+#include "../components/searchers/RegexSearch.h"
+#include "../components/rankers/TFIDFRanker.h"
+#include "../components/sorters/RadixSort.h"
 
 class Index8 {
 private:
@@ -14,7 +14,7 @@ private:
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStoreRegex store;
+    BurstTrieDeltaDynamicStoreRegexNS::BurstTrieDeltaDynamicStoreRegex store;
     RadixSort sort;
 
     std::string filename;

@@ -32,7 +32,7 @@ public:
     int get_node(const std::string&);
 };
 
-DoubleArrayDSTreeWithInfo::DoubleArrayDSTreeWithInfo(int start_size) : alpha_map(AlphaMap(32)), size(start_size) {
+inline DoubleArrayDSTreeWithInfo::DoubleArrayDSTreeWithInfo(int start_size) : alpha_map(AlphaMap(32)), size(start_size) {
     base = new int[size];
     check = new int[size];
     terminal = new bool[size];
@@ -54,7 +54,7 @@ DoubleArrayDSTreeWithInfo::DoubleArrayDSTreeWithInfo(int start_size) : alpha_map
     check[size-1] = END_CHECK_VAL;
 }
 
-void DoubleArrayDSTreeWithInfo::resize(int new_t) {
+inline void DoubleArrayDSTreeWithInfo::resize(int new_t) {
     int min_size = new_t+1;
     if (min_size <= size) return;
     int old_size = size;
@@ -70,10 +70,10 @@ void DoubleArrayDSTreeWithInfo::resize(int new_t) {
     DynamicArray<int>* new_documents_in = new DynamicArray<int>[new_size];
 
     std::copy(base, base + old_size, new_base);
-    copy(check, check + old_size, new_check);
-    copy(terminal, terminal + old_size, new_terminal);
-    copy(label, label + old_size, new_label);
-    copy(documents_in, documents_in + old_size, new_documents_in);
+    std::copy(check, check + old_size, new_check);
+    std::copy(terminal, terminal + old_size, new_terminal);
+    std::copy(label, label + old_size, new_label);
+    std::copy(documents_in, documents_in + old_size, new_documents_in);
 
     for (int i = old_size; i < new_size; i++) {
         new_base[i] = DEFAULT_BASE;
@@ -144,7 +144,7 @@ inline void DoubleArrayDSTreeWithInfo::add_free_base(int pos)
     check[cur] = search_pos;
 }
 
-void DoubleArrayDSTreeWithInfo::get_children(DynamicArray<int> *child_codes_holder, int parent_val) {
+inline void DoubleArrayDSTreeWithInfo::get_children(DynamicArray<int> *child_codes_holder, int parent_val) {
     int start_val = base[parent_val];
     int end_val = start_val + alpha_map.n + 1;
     for (int i = start_val; i < end_val; i++) {
@@ -155,7 +155,7 @@ void DoubleArrayDSTreeWithInfo::get_children(DynamicArray<int> *child_codes_hold
     }
 }
 
-int DoubleArrayDSTreeWithInfo::find_base(DynamicArray<int> child_codes, int parent_val) {
+inline int DoubleArrayDSTreeWithInfo::find_base(DynamicArray<int> child_codes, int parent_val) {
     int current_base = 0;
     bool has_conflict = true;
 
@@ -184,7 +184,7 @@ int DoubleArrayDSTreeWithInfo::find_base(DynamicArray<int> child_codes, int pare
     return current_base;
 }
 
-int DoubleArrayDSTreeWithInfo::add(const std::string& word) {
+inline int DoubleArrayDSTreeWithInfo::add(const std::string& word) {
     int s = root;
     for (int i = 0; i < word.size(); i++) {
         char c = word[i];
@@ -263,7 +263,7 @@ int DoubleArrayDSTreeWithInfo::add(const std::string& word) {
     return s;
 }
 
-int DoubleArrayDSTreeWithInfo::search(const std::string& word) {
+inline int DoubleArrayDSTreeWithInfo::search(const std::string& word) {
     int s = root;
 
     for (int i = 0; i < word.size(); i++) {
@@ -280,7 +280,7 @@ int DoubleArrayDSTreeWithInfo::search(const std::string& word) {
     return s;
 }
 
-std::string DoubleArrayDSTreeWithInfo::reconstruct(int t) {
+inline std::string DoubleArrayDSTreeWithInfo::reconstruct(int t) {
     std::string result;
 
     while (t != root) {
@@ -293,7 +293,7 @@ std::string DoubleArrayDSTreeWithInfo::reconstruct(int t) {
     return result;
 }
 
-int DoubleArrayDSTreeWithInfo::get_node(const std::string& word) {
+inline int DoubleArrayDSTreeWithInfo::get_node(const std::string& word) {
     int s = root;
 
     for (char c : word) {

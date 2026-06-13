@@ -57,10 +57,10 @@ void DoubleArrayDSTree::resize(int new_t) {
     bool* new_terminal = new bool[new_size];
     char* new_label = new char[new_size];
 
-    copy(base, base + old_size, new_base);
-    copy(check, check + old_size, new_check);
-    copy(terminal, terminal + old_size, new_terminal);
-    copy(label, label + old_size, new_label);
+    std::copy(base, base + old_size, new_base);
+    std::copy(check, check + old_size, new_check);
+    std::copy(terminal, terminal + old_size, new_terminal);
+    std::copy(label, label + old_size, new_label);
 
     for (int i = old_size; i < new_size; i++) {
         new_base[i] = DEFAULT_BASE;
