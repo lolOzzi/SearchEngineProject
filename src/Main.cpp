@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 
-#include "extras/basic/recsplit/RecSplit.h"
-#include "indexes/Index5.hpp"
+#include "indexes/Index5.h"
 #include "indexes/Index6.hpp"
 #include "indexes/Index7.hpp"
 #include "indexes/Index8.hpp"
@@ -16,7 +15,7 @@
 
 int main(int argc, char* argv[]) {
     printf("m a i n \n");
-    std::string filename = "data/WestburyLab.wikicorp.201004_800MB.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_100MB.txt";
 
     Index9 index;
     index.preprocess(filename);

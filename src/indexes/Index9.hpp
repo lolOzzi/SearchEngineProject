@@ -3,7 +3,7 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
-#include "../components/stores/RecSplitEliasFanoStaticStore.cpp"
+#include "../components/stores/RecSplitEliasFanoStaticStore.h"
 #include "../components/searchers/BooleanSearcher.h"
 #include "../components/rankers/TFIDFRanker.h"
 #include "../components/sorters/RadixSort.h"

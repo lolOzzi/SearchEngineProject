@@ -1,7 +1,7 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
-#include "../components/stores/DictionaryWithDocId.cpp"
+#include "../components/stores/DictionaryWithDocId.h"
 #include "../components/searchers/BooleanSearcher.h"
 #include "../components/rankers/TFIDFRanker.h"
 #include "../components/sorters/MergeSort.h"

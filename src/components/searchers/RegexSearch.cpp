@@ -1,9 +1,9 @@
 #include "RegexSearch.h"
 
 #include <algorithm>
-#include "../stores/BurstTrieRegexStore.cpp"
-#include "../stores/BurstTrieDeltaDynamicStoreRegex.cpp"
-#include "../stores/BurstTrieEliasFanoDynamicStoreRegex.cpp"
+#include "../stores/BurstTrieRegexStore.h"
+#include "../stores/BurstTrieDeltaDynamicStoreRegex.h"
+#include "../stores/BurstTrieEliasFanoDynamicStoreRegex.h"
 
 std::string preprocess(std::string reg) {
     std::string res = "";
