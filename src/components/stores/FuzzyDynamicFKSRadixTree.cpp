@@ -1,4 +1,6 @@
 #include <memory>
+
+#include "SimpleFingerprint.h"
 #include "../../core/interfaces.h"
 #include "../../extras/basic/RadixTree.h"
 #include "../../extras/basic/ChainSet.h"
@@ -158,7 +160,7 @@ namespace fuzzy {
     }
 
     std::vector<Doc> FuzzyDynamicFKS::get(std::string word) {
-        vector<Doc> res;
+        std::vector<Doc> res;
         SimpleSet<Doc> res_set{ hash_function, 500 };
         auto fdw = get_word(word);
         if (fdw) {
@@ -268,18 +270,18 @@ namespace fuzzy {
     int FuzzyDynamicFKS::get_num_docs() {
         return documents_added;
     }
-    vector<string> FuzzyDynamicFKS::create_variants(string str, int max_distance) {
-        vector<string> variants{};
+    std::vector<std::string> FuzzyDynamicFKS::create_variants(std::string str, int max_distance) {
+        std::vector<std::string> variants{};
         if (max_distance >= 1) {
             for (int i = 0; i < str.length(); ++i) {
-                string new_str = str;
+                std::string new_str = str;
                 variants.push_back(new_str.erase(i, 1));
             }
         }
         if (max_distance >= 2) {
             for (int i = 0; i < str.length(); ++i) {
                 for (int j = i+1; j < str.length(); ++j) {
-                    string new_str = str;
+                    std::string new_str = str;
                     new_str.erase(i, 1);
                     new_str.erase(j-1, 1);
                     variants.push_back(new_str);
@@ -290,7 +292,7 @@ namespace fuzzy {
             for (int i = 0; i < str.length(); ++i) {
                 for (int j = i+1; j < str.length(); ++j) {
                     for (int k = j+1; k < str.length(); ++k) {
-                        string new_str = str;
+                        std::string new_str = str;
                         new_str.erase(i, 1);
                         new_str.erase(j-1, 1);
                         new_str.erase(k-2, 1);

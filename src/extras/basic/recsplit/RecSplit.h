@@ -10,8 +10,8 @@
 #include "hashfunctions/SignatureHasher.h"
 #include "hashfunctions/SignatureCheckHasher.h"
 
-#define LEAF_SIZE 8
-#define BUCKET_SIZE 100
+#define LEAF_SIZE 12
+#define BUCKET_SIZE 2000
 #define NUM_UPPER_BITS 64
 
 template <typename T>
@@ -112,7 +112,7 @@ uint64_t RecSplit<T>::Hash(const std::string& key) {
 
 template<typename T>
 void RecSplit<T>::CreateMPHF(const DynamicArray<std::string>& keys, const DynamicArray<T>& values) {
-    std::cout << "Creating MPHF" << std::endl;
+    std::cout << "Creating MPHF of " << values.n  << " keys" << std::endl;
 
     std::cout << "Creating Signatures" << std::endl;
     DynamicArray<unsigned __int128> signatures = CreateSignatures(keys);
@@ -142,7 +142,7 @@ void RecSplit<T>::CreateMPHF(const DynamicArray<std::string>& keys, const Dynami
         values_array[global_hash] = std::move(values[i]);
     }
     std::cout << "Rec Split Done" << std::endl;
-    printf("sizes %d %d %d %d %d \n", prefix_sums.n, offsets.n, bucket_sizes.n, seeds.n, values_array.get_size());
+    printf("sizes %d %d %d %d \n", prefix_sums.n, offsets.n, bucket_sizes.n, seeds.n);
 }
 
 template<typename T>

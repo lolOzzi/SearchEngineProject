@@ -1,10 +1,10 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/BurstTrieEliasFanoDynamicStore.cpp"
-#include "../components/searchers/RegexSearch.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/RadixSort.cpp"
+#include "../components/searchers/RegexSearch.h"
+#include "../components/rankers/TFIDFRanker.h"
+#include "../components/sorters/RadixSort.h"
 
 class Index10 {
 private:

@@ -5,10 +5,10 @@
 
 class BlockTable {
   private:
-      vector<vector<int>> abe;
+      std::vector<std::vector<int>> abe;
     public:
 
-}
+};
 
 class Word {
 public:

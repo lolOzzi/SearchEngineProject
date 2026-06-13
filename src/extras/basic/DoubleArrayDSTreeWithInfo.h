@@ -70,10 +70,10 @@ void DoubleArrayDSTreeWithInfo::resize(int new_t) {
     DynamicArray<int>* new_documents_in = new DynamicArray<int>[new_size];
 
     std::copy(base, base + old_size, new_base);
-    copy(check, check + old_size, new_check);
-    copy(terminal, terminal + old_size, new_terminal);
-    copy(label, label + old_size, new_label);
-    copy(documents_in, documents_in + old_size, new_documents_in);
+    std::copy(check, check + old_size, new_check);
+    std::copy(terminal, terminal + old_size, new_terminal);
+    std::copy(label, label + old_size, new_label);
+    std::copy(documents_in, documents_in + old_size, new_documents_in);
 
     for (int i = old_size; i < new_size; i++) {
         new_base[i] = DEFAULT_BASE;

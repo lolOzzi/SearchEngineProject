@@ -12,7 +12,7 @@
 #include "../stores/RegexStoreComp.cpp"
 
 
-namespace BurstTrieEliasFanoDynamicStoreNS {
+namespace BurstTrieEliasFanoDynamicStoreRegexNS {
 
     class WordPostings {
     private:

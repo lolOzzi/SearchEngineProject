@@ -2,13 +2,13 @@
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
 #include "../components/stores/FuzzyTreeWrapper.cpp"
-#include "../components/searchers/BooleanSearcher.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
+#include "../components/searchers/BooleanSearcher.h"
+#include "../components/rankers/TFIDFRanker.h"
+#include "../components/sorters/MergeSort.h"
 
 class Index7 {
 private:
-    BooleanSearcher searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;

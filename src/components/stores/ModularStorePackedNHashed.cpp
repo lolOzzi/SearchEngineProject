@@ -4,7 +4,7 @@
 #include "../../core/interfaces.h"
 #include "../../extras/basic/CompressedHashTrie.h"
 #include "../../extras/basic/DynamicArray.h"
-#include "../../extras/basic/DynamicPackedArray.h"
+#include "../../extras/basic/DynamicPackedArray.hpp"
 #include "../../extras/basic/CuckooHasingDictionary.h"
 #include "../../extras/basic/HashFamily.h"
 

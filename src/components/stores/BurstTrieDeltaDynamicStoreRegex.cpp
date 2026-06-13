@@ -12,7 +12,7 @@
 #include "../stores/RegexStoreComp.cpp"
 
 
-namespace BurstTrieDeltaDynamicStoreNS {
+namespace BurstTrieDeltaDynamicStoreRegexNS {
 
     class WordPostings {
     private:

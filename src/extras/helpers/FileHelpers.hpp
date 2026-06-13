@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include "../../core/interfaces.h"
 #include <fstream>

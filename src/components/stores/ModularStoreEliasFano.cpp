@@ -15,7 +15,7 @@ namespace ModularStoreEliasFanoNS {
     public:
         Trie::Node* word;
         uint32_t last_added_id;
-        EliasFanoBuffer documents_in;
+        EliasFanoBufferNS::EliasFanoBuffer documents_in;
         std::vector<ModularStoreEliasFanoDictWord*> originals;
 
         ModularStoreEliasFanoDictWord()
