@@ -7,6 +7,12 @@ WikiItem::WikiItem() {
     next = nullptr;
 }
 WikiItem::~WikiItem() {
+    WikiItem* curr = articles;
+    while (curr) {
+        WikiItem* next = curr->next;
+        delete curr;
+        curr = next;
+    }
 }
 
 WikiItem::WikiItem(string s, WikiItem* n) {
@@ -27,7 +33,7 @@ void WikiItem::addDoc(WikiItem* article) {
 
 WikiItemMap::WikiItemMap(int n) {
     numBuckets = n;
-    buckets = new WikiItem*[n];
+    buckets = new WikiItem*[n]();
 }
 
 WikiItem* WikiItemMap::get(string s) {
@@ -57,7 +63,6 @@ int WikiItemMap::hash(string s) {
 }
 
 WikiItemMap::~WikiItemMap() {
-
     for (int i = 0; i < numBuckets; i++) {
         WikiItem* curr = buckets[i];
         while (curr) {
