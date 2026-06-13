@@ -747,6 +747,12 @@ std::unordered_set<std::string> extractTrigrams(std::shared_ptr<TrigramNode> nod
             break;
         }
 
+        // Kan crashe
+        case TrigramType::ANY:
+        case TrigramType::NONE: {
+            return {};
+        }
+
         default:
             throw std::invalid_argument("Not enough litterals for any trigrams to be produced");
     }

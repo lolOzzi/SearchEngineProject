@@ -14,13 +14,14 @@ private:
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
     RadixSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index11() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {

@@ -10,8 +10,8 @@
 #include "hashfunctions/SignatureHasher.h"
 #include "hashfunctions/SignatureCheckHasher.h"
 
-#define LEAF_SIZE 12
-#define BUCKET_SIZE 2000
+#define LEAF_SIZE 8
+#define BUCKET_SIZE 1000
 #define NUM_UPPER_BITS 64
 
 template <typename T>

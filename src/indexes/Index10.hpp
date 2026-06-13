@@ -1,7 +1,7 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
-#include "../components/stores/BurstTrieEliasFanoDynamicStore.h"
+#include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
 #include "../components/searchers/RegexSearch.h"
 #include "../components/rankers/TFIDFRanker.h"
 #include "../components/sorters/RadixSort.h"
@@ -12,15 +12,16 @@ private:
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
+    BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
     RadixSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index10() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {

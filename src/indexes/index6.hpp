@@ -14,13 +14,14 @@ private:
     BasicPreprocessorWordCleaner preprocessor;
     DictionaryWithDocId dict_store = DictionaryWithDocId(4);
     MergeSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index6() : index(&dict_store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {
