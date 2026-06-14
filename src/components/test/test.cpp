@@ -11,6 +11,8 @@
 
 #include "Index5.h"
 
+std::vector<std::string> some = std::vector<std::string>();
+
 std::map<std::string, std::vector<std::string>> load_test(std::string data_filename) {
 
     std::map<std::string, std::vector<std::string>> results = std::map<std::string, std::vector<std::string>>{};
@@ -60,6 +62,17 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
     }
     results.insert({word, curr_vector});
     file.close();
+
+    int count = 0;
+    std::regex re(R"([\|\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
+    for (std::map<std::string, std::vector<std::string>>::iterator it = results.begin(); it != results.end(); ++it) {
+        if (it->first.empty()) continue;
+        if (std::regex_search(it->first, re)) continue;
+        if (it->first.length() < 2) continue;
+        count++;
+        if (count >= 10000) break;
+        some.push_back(it->first);
+    }
 
     return results;
 }
@@ -128,26 +141,18 @@ void test_correctness(Index* index, std::string filename) {
     }
 }
 
+
 long long test_time_of_search(Index* index, std::string filename, int iterations) {
-    if (results.empty()) results = load_test(filename);
-    std::vector<std::string> some = std::vector<std::string>{};
-    int count = 0;
-    std::regex re(R"([\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
-    for (std::map<std::string, std::vector<std::string>>::iterator it = results.begin(); it != results.end(); ++it) {
-        if (it->first.empty()) continue;
-        if (std::regex_search(it->first, re)) continue;
-        if (it->first.length() < 2) continue;
-        count++;
-        if (count >= 10000) break;
-        some.push_back(it->first);
-    }
+    if (some.empty())
+        load_test(filename);
     SearchQuery tmp;
-    std::cout << "Will do " << count*iterations << " queries." << std::endl;
+    std::cout << "Will do " << some.size()*iterations << " queries." << std::endl;
     printf("Searching Index\n");
     auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {
         for (const std::string& s : some) {
             tmp.q = s;
+            //std::cout << s << std::endl;
             auto res = index->search(tmp);
         }
     }
@@ -160,20 +165,11 @@ long long test_time_of_search(Index* index, std::string filename, int iterations
 }
 
 long long test_time_of_search_index5(Index5* index, std::string filename, int iterations) {
-    if (results.empty()) results = load_test(filename);
-    std::vector<std::string> some = std::vector<std::string>{};
-    int count = 0;
-    std::regex re(R"([\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
-    for (std::map<std::string, std::vector<std::string>>::iterator it = results.begin(); it != results.end(); ++it) {
-        if (it->first.empty()) continue;
-        if (std::regex_search(it->first, re)) continue;
-        if (it->first.length() < 2) continue;
-        count++;
-        if (count >= 10000) break;
-        some.push_back(it->first);
-    }
+    if (some.empty())
+        load_test(filename);
+
     SearchQuery tmp;
-    std::cout << "Will do " << count*iterations << " queries." << std::endl;
+    std::cout << "Will do " << some.size()*iterations << " queries." << std::endl;
     printf("Searching Index\n");
     auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {

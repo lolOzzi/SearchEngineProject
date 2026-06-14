@@ -6,7 +6,7 @@
 #include "Index11.hpp"
 #include "Index5.h"
 #include "index6.hpp"
-#include "Index7.hpp"
+#include "index7.hpp"
 #include "Index8.hpp"
 #include "Index9.hpp"
 #include "core/interfaces.h"
@@ -23,7 +23,7 @@ long long ParseLine(char* line) {
     return val;
 }
 
-long long GetRamUsage() { // kb
+long long GetRamUsage() {
     FILE* file = fopen("/proc/self/status", "r");
     long long result = -1;
     char line[128];
@@ -31,15 +31,18 @@ long long GetRamUsage() { // kb
     if (file == NULL) {
         return -1;
     }
-    while (fgets(line, 128, file) != NULL) {
-        if (strncmp(line, "VmSize:", 7) == 0) {
-            result = ParseLine(line);
-            break;
+    while (fgets(line, sizeof(line), file) != NULL) {
+        // Change from VmSize to VmRSS
+        if (strncmp(line, "VmRSS:", 6) == 0) {
+            // Safely parse the integer ignoring the " kB" at the end
+            if (sscanf(line, "VmRSS: %lld", &result) == 1) {
+                break;
+            }
         }
     }
 
     fclose(file);
-    return result;
+    return result; // Returns KB
 }
 
 long long GetIndexTestPreprocessingTime(Index* index, std::string fileName) {
@@ -81,10 +84,15 @@ void WriteToFileIndex5(std::string fileName, std::string outputFileName) {
     }
 }
 
-void WriteToFile(Index* index, std::string fileName, std::string outputFileName) {
+void WriteToFile(Index* index, std::string fileName, std::string outputFileName, bool withQueryTime = true) {
     auto initalRamUsage = GetRamUsage();
     auto preprocessingTime = GetIndexTestPreprocessingTime(index, fileName);
-    auto queryTime = GetIndexTestQueryTime(index, fileName);
+    std::cout << "after prepro" << std::endl;
+    long long queryTime = 0;
+    if (withQueryTime)
+    {
+        queryTime = GetIndexTestQueryTime(index, fileName);
+    }
     auto currentRamUsage = GetRamUsage();
     auto ramUsageOfIndex = currentRamUsage - initalRamUsage;
 
@@ -118,10 +126,10 @@ void TestIndex6(std::string fileName, int iteration) {
     Index6 index = Index6();
     WriteToFile(&index.index, fileName, "Index6_" + std::to_string(iteration) + "_" + clean);
 }
-void TestIndex7(std::string fileName, int iteration) {
+void TestIndex7(std::string fileName, int iteration, bool withQueryTime = false) {
     std::string clean = CleanFileName(fileName);
     Index7 index = Index7();
-    WriteToFile(&index.index, fileName, "Index7_" + std::to_string(iteration) + "_" + clean);
+    WriteToFile(&index.index, fileName, "Index7_" + std::to_string(iteration) + "_" + clean, withQueryTime);
 }
 void TestIndex8(std::string fileName, int iteration) {
     std::string clean = CleanFileName(fileName);
