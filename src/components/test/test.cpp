@@ -8,14 +8,15 @@
 #include <regex>
 #include <cstdlib>
 #include <chrono>
+#include <malloc.h>
 
 #include "Index5.h"
 
-std::vector<std::string> some = std::vector<std::string>();
+std::vector<std::string> wordsInFile = std::vector<std::string>();
 
 std::map<std::string, std::vector<std::string>> load_test(std::string data_filename) {
 
-    std::map<std::string, std::vector<std::string>> results = std::map<std::string, std::vector<std::string>>{};
+    std::map<std::string, std::vector<std::string>> fileresults = std::map<std::string, std::vector<std::string>>{};
     std::string partial_test_path = data_filename.substr(5);
     std::string filename = "src/components/test/TEST_";
     filename += partial_test_path;
@@ -32,7 +33,7 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
 
     if (!file.good()) {
         printf("Error reading file\n");
-        return results;
+        return fileresults;
     }
 
     std::string word;
@@ -50,7 +51,7 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
             continue;
         }
         if (take_next) {
-            results.insert({word, curr_vector});
+            fileresults.insert({word, curr_vector});
             word = line;
             curr_vector = std::vector<std::string>{};
             take_next = 0;
@@ -60,21 +61,22 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
         curr_vector.push_back(line);
 
     }
-    results.insert({word, curr_vector});
+    fileresults.insert({word, curr_vector});
     file.close();
-
+    wordsInFile.clear();
     int count = 0;
     std::regex re(R"([\|\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
-    for (std::map<std::string, std::vector<std::string>>::iterator it = results.begin(); it != results.end(); ++it) {
+    for (std::map<std::string, std::vector<std::string>>::iterator it = fileresults.begin(); it != fileresults.end(); ++it) {
         if (it->first.empty()) continue;
         if (std::regex_search(it->first, re)) continue;
         if (it->first.length() < 2) continue;
         count++;
-        if (count >= 10000) break;
-        some.push_back(it->first);
+        if (count > 10000) break;
+        wordsInFile.push_back(it->first);
     }
-
-    return results;
+    fileresults.clear();
+    malloc_trim(0);
+    return fileresults;
 }
 
 void CompareResult(std::string query, std::vector<Doc> index_res, std::vector<std::string> benchmark_res) {
@@ -143,14 +145,14 @@ void test_correctness(Index* index, std::string filename) {
 
 
 long long test_time_of_search(Index* index, std::string filename, int iterations) {
-    if (some.empty())
+    if (wordsInFile.empty())
         load_test(filename);
     SearchQuery tmp;
-    std::cout << "Will do " << some.size()*iterations << " queries." << std::endl;
+    std::cout << "Will do " << wordsInFile.size()*iterations << " queries." << std::endl;
     printf("Searching Index\n");
     auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {
-        for (const std::string& s : some) {
+        for (const std::string& s : wordsInFile) {
             tmp.q = s;
             //std::cout << s << std::endl;
             auto res = index->search(tmp);
@@ -165,15 +167,15 @@ long long test_time_of_search(Index* index, std::string filename, int iterations
 }
 
 long long test_time_of_search_index5(Index5* index, std::string filename, int iterations) {
-    if (some.empty())
+    if (wordsInFile.empty())
         load_test(filename);
 
     SearchQuery tmp;
-    std::cout << "Will do " << some.size()*iterations << " queries." << std::endl;
+    std::cout << "Will do " << wordsInFile.size()*iterations << " queries." << std::endl;
     printf("Searching Index\n");
     auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {
-        for (const std::string& s : some) {
+        for (const std::string& s : wordsInFile) {
             auto res = index->search(s);
         }
     }
