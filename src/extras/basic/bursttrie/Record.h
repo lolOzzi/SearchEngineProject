@@ -1,70 +1,82 @@
 #pragma once
 
 #include <algorithm>
-#include <cassert>
-#include "../Label.h"
+#include <cstring>
+#include <string>
 
 class Record {
+private:
+    char* word;
+    int length;
+
+    void deep_copy(const char* str, int len) {
+        length = len;
+        word = new char[length + 1];
+        for (int i = 0; i < length; i++) {
+            word[i] = str[i];
+        }
+        word[length] = '\0';
+    }
+
 public:
-    Record() : word("") {}
-    Record(const char* str);
-    Record(const std::string& str);
-    const char* word;
-    const char* get_string() const { return word; };
-    int size() const;
+    Record() : word(new char[1]{'\0'}), length(0) {}
 
-    Record substring(const int start_index) const;
+    Record(const char* str) {
+        if (str == nullptr) {
+            word = new char[1]{'\0'};
+            length = 0;
+        } else {
+            int len = 0;
+            while (str[len] != '\0') len++;
+            deep_copy(str, len);
+        }
+    }
 
-    char operator[](int index) { return word[index]; }
-    const char& operator[](int index) const { return word[index]; }
-    bool operator<(const Record& other) const;
-    bool operator==(const Record& other) const;
+    Record(const std::string& str) {
+        deep_copy(str.c_str(), str.size());
+    }
+
+    Record(const Record& other) {
+        deep_copy(other.word, other.length);
+    }
+
+    Record& operator=(const Record& other) {
+        if (this != &other) {
+            delete[] word; // Free existing memory
+            deep_copy(other.word, other.length);
+        }
+        return *this;
+    }
+
+    ~Record() {
+        delete[] word;
+    }
+
+    const char* get_string() const { return word; }
+    int size() const { return length; }
+
+    Record substring(const int start_index) const {
+        if (start_index >= length) return Record("");
+        return Record(&word[start_index]);
+    }
+
+    char operator[](int index) const { return word[index]; }
+
+    bool operator<(const Record& other) const {
+        int min_len = std::min(length, other.length);
+        for (int i = 0; i < min_len; i++) {
+            if (word[i] != other.word[i]) {
+                return word[i] < other.word[i];
+            }
+        }
+        return length < other.length;
+    }
+
+    bool operator==(const Record& other) const {
+        if (length != other.length) return false;
+        for (int i = 0; i < length; i++) {
+            if (word[i] != other.word[i]) return false;
+        }
+        return true;
+    }
 };
-
-inline Record::Record(const char *str) {
-    word = str;
-}
-inline Record::Record(const std::string& str) {
-    int len = str.size() + 1;
-    char* new_word = new char[len];
-    const char* old_word = str.c_str();
-
-    for (int i = 0; i < len; i++)
-        new_word[i] = old_word[i];
-    word = new_word;
-}
-inline int Record::size() const {
-    if (word == nullptr)
-        return -1;
-    int size = 0;
-    while (word[size] != '\0') size++;
-    return size;
-}
-
-inline Record Record::substring(const int start_index) const {
-    return {&word[start_index]};
-}
-
-inline bool Record::operator<(const Record &other) const {
-    int it_num = std::min(size(), other.size()) + 1;
-    for (int i = 0; i < it_num; i++) {
-        if (word[i] != other.word[i])
-            return word[i] < other.word[i];
-    }
-    assert(false);
-    return -1;
-}
-
-inline bool Record::operator==(const Record &other) const {
-    int size_1 = size();
-    if (size_1 != other.size())
-        return false;
-
-    for (int i = 0; i < size_1; i++) {
-        if (word[i] != other.word[i])
-            return false;
-    }
-    return true;
-}
-
-

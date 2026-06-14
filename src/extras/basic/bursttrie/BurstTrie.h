@@ -7,6 +7,7 @@ private:
     AccessTrie<T> root;
 public:
     BurstTrie() : root(AccessTrie<T>(1)) {}
+    ~BurstTrie() = default;
     T* get(const std::string &word);
     T* add(const std::string& word, const T &value);
 };
@@ -22,4 +23,5 @@ inline T* BurstTrie<T>::add(const std::string& word, const T &value) {
     const Record rec = Record(word);
     return root.insert(rec, value);
 }
+
 

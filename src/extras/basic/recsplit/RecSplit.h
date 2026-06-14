@@ -42,6 +42,7 @@ private:
 
 public:
     RecSplit();
+    ~RecSplit() = default;
     void CreateMPHF(const DynamicArray<std::string> &keys, const DynamicArray<T> &values);
     T* LookUp(const std::string &word);
 };

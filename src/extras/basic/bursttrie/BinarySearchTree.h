@@ -20,6 +20,8 @@ private:
     void BFSAndDeleteHelper(DynamicArray<ValuePairs<T>> *item_holder, BSTNode* node);
 public:
     BinarySearchTree() : root(nullptr) {}
+    ~BinarySearchTree();
+    void destroyTree(BSTNode* node);
     T* add(Record word, T val);
     T* get(Record word);
 
@@ -96,6 +98,22 @@ void BinarySearchTree<T>::BFSAndDeleteHelper(DynamicArray<ValuePairs<T>> *item_h
 
 template<typename T>
 void BinarySearchTree<T>::BFSAndDelete(DynamicArray<ValuePairs<T>> *item_holder) {
-    BFSAndDeleteHelper(item_holder, root);
-    //delete this;
+    if (root != nullptr) {
+        BFSAndDeleteHelper(item_holder, root);
+        root = nullptr;
+    }
+}
+
+template<typename T>
+BinarySearchTree<T>::~BinarySearchTree() {
+    destroyTree(root);
+}
+
+template<typename T>
+void BinarySearchTree<T>::destroyTree(BSTNode* node) {
+    if (node != nullptr) {
+        destroyTree(node->left);
+        destroyTree(node->right);
+        delete node;
+    }
 }
