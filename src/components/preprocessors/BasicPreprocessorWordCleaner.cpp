@@ -14,6 +14,7 @@ void* BasicPreprocessorWordCleaner::preprocess(std::string filename, IStore *sto
 
     short take_next = 1;
     long long before_first_word = file.tellg();
+    initTables();
 
     int dbcounter = 0;
     while (std::getline(file, line)) {
@@ -41,7 +42,7 @@ void* BasicPreprocessorWordCleaner::preprocess(std::string filename, IStore *sto
             std::vector<std::string> clean_words;
             cleanString(word, clean_words);
             for (const std::string& clean_word : clean_words) {
-                store->add(remove_unwanted_and_trim(&clean_word), document);
+                store->add(removeUnwantedAndTrim(&clean_word), document);
             }
 
             take_next = word == END;
