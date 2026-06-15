@@ -310,28 +310,18 @@ DynamicArray<unsigned __int128> RecSplit<T>::CreateSignatures(const DynamicArray
     string_hasher = StringHasher();
     for (int i = 0; i < keys.n; i++) {
         signatures.add(string_hasher.hash(keys[i]));
-
-        /*
-        int idx = sorted_signatures.find_insert_index(signatures[i]);
-        int candidates[2] = { idx, idx - 1 };
-        if (candidates[1] < 0)
-            candidates[1] = 0;
-
-        if ((sorted_signatures.size() > candidates[0] && sorted_signatures[candidates[0]] == signatures[i]) ||
-            (sorted_signatures.size() > candidates[1] && sorted_signatures[candidates[1]] == signatures[i]))
-        */
         if (signature_dict.get(signatures[i]) != nullptr)
         {
             std::cout << "Reset" << std::endl;
             signatures.clear();
-            signature_dict = ChainedHashDictionary<unsigned __int128, unsigned __int128>(keys.n, &hasher);
-            //sorted_signatures.clear();
+            hasher = SignatureCheckHasher();
             string_hasher.get_new_hash();
+            signature_dict.clear();
+
             i = -1;
             continue;
         }
         signature_dict.add(signatures[i], signatures[i]);
-        //sorted_signatures.push_back(signatures[i]);
     }
     return signatures;
 }
