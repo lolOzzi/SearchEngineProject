@@ -27,6 +27,7 @@ list(REMOVE_ITEM CORE_SRC_FILES
 # 4. Define the main executable
 add_executable(SearchEngineProject
         src/Main.cpp
+        src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp
         ${CORE_SRC_FILES}
 )
 

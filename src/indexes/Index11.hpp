@@ -4,18 +4,18 @@
 
 #include "../components/sorters/MergeSort.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
-#include "../components/stores/BurstTrieEliasFanoDynamicStore.h"
-#include "../components/searchers/BooleanSearcher.h"
+#include "../components/stores/RecSplitEliasFanoStaticStoreRegex.h"
+#include "../components/searchers/RegexSearch.h"
 #include "../components/rankers/TFIDFRanker.h"
 
 
 class Index11 {
 private:
-    BooleanSearcherNS::BooleanSearcher searcher;
+    RegexSearch searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
+    RecSplitEliasFanoStaticStoreNSRegex::RecSplitEliasFanoStaticStoreRegex store;
     MergeSort sort;
 
     std::string filename;
