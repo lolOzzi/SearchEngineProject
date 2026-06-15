@@ -75,7 +75,7 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
         wordsInFile.push_back(it->first);
     }
     fileresults.clear();
-    malloc_trim(0);
+    // Linux only malloc_trim(0);
     return fileresults;
 }
 

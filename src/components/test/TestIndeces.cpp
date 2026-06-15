@@ -61,11 +61,11 @@ long long GetIndexTestQueryTime(Index* index, std::string fileName) {
 
 void WriteToFileIndex5(std::string fileName, std::string outputFileName) {
     Index5 index5 = Index5();
-    malloc_trim(0);
+    // Linux only malloc_trim(0);
     auto initalRamUsage = GetRamUsage();
     auto tPreprocessStart = std::chrono::steady_clock::now();
     index5.preprocess(fileName);
-    malloc_trim(0);
+    // Linux only malloc_trim(0);
     auto tPreprocessEnd = std::chrono::steady_clock::now();
     auto preprocessingTime = duration_cast<std::chrono::nanoseconds>(tPreprocessEnd - tPreprocessStart).count();
     auto queryTime = 0;//test_time_of_search_index5(&index5, fileName, 1);
@@ -88,7 +88,7 @@ void WriteToFileIndex5(std::string fileName, std::string outputFileName) {
 }
 
 void WriteToFile(Index* index, std::string fileName, std::string outputFileName, bool withQueryTime = true) {
-    malloc_trim(0);
+    // Linux only malloc_trim(0);
     auto initalRamUsage = GetRamUsage();
     auto preprocessingTime = GetIndexTestPreprocessingTime(index, fileName);
     std::cout << std::endl << "after prepro" << std::endl;
@@ -97,7 +97,7 @@ void WriteToFile(Index* index, std::string fileName, std::string outputFileName,
     {
         queryTime = GetIndexTestQueryTime(index, fileName);
     }
-    malloc_trim(0);
+    // Linux only malloc_trim(0);
     auto currentRamUsage = GetRamUsage();
     auto ramUsageOfIndex = currentRamUsage - initalRamUsage;
     std::cout << ramUsageOfIndex << std::endl;

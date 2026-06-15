@@ -54,7 +54,7 @@ std::vector<ScoredDoc> RegexTFIDFRanker::rank(const std::vector<Doc>& candidates
                 std::vector<std::string> clean_words;
                 cleanString(word, clean_words);
                 for (const std::string& clean_word : clean_words) {
-                    std::string token = remove_unwanted_and_trim(&clean_word);
+                    std::string token = removeUnwantedAndTrim(&clean_word);
                     if (token.empty()) continue;
                     word_counter++;
                     if (match(NFA, token, nodes)) {
