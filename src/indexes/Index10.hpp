@@ -1,3 +1,4 @@
+#pragma once
 #include "BooleanSearcher.h"
 #include "BurstTrieEliasFanoDynamicStore.h"
 #include "../core/interfaces.h"
