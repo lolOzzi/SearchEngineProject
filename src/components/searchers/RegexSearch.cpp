@@ -4,6 +4,8 @@
 #include "../stores/BurstTrieRegexStore.h"
 #include "../stores/BurstTrieDeltaDynamicStoreRegex.h"
 #include "../stores/BurstTrieEliasFanoDynamicStoreRegex.h"
+#include "../stores//RecSplitEliasFanoStaticStoreRegex.h"
+
 
 std::string preprocess(std::string reg) {
     std::string res = "";
@@ -708,6 +710,9 @@ std::vector<std::string> hasRegex(IStore* store, std::string tri) {
     }
     if (auto* burstTrieEliasStore = dynamic_cast<BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex*>(store)) {
         return burstTrieEliasStore->getWordsFromTrigram(tri);
+    }
+    if (auto* recSplitEliasFanoStaticStore = dynamic_cast<RecSplitEliasFanoStaticStoreNSRegex::RecSplitEliasFanoStaticStoreRegex*>(store)) {
+        return recSplitEliasFanoStaticStore->getWordsFromTrigram(tri);
     }
     throw std::invalid_argument("Store does not support regex\n");
 }
