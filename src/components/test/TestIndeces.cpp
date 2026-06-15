@@ -4,6 +4,7 @@
 
 #include "Index10.hpp"
 #include "Index11.hpp"
+#include "Index12.hpp"
 #include "Index5.h"
 #include "index6.hpp"
 #include "index7.hpp"
@@ -60,15 +61,17 @@ long long GetIndexTestQueryTime(Index* index, std::string fileName) {
 
 void WriteToFileIndex5(std::string fileName, std::string outputFileName) {
     Index5 index5 = Index5();
+    malloc_trim(0);
     auto initalRamUsage = GetRamUsage();
     auto tPreprocessStart = std::chrono::steady_clock::now();
     index5.preprocess(fileName);
+    malloc_trim(0);
     auto tPreprocessEnd = std::chrono::steady_clock::now();
     auto preprocessingTime = duration_cast<std::chrono::nanoseconds>(tPreprocessEnd - tPreprocessStart).count();
-
-    auto queryTime = test_time_of_search_index5(&index5, fileName, 1);
+    auto queryTime = 0;//test_time_of_search_index5(&index5, fileName, 1);
     auto currentRamUsage = GetRamUsage();
     auto ramUsageOfIndex = currentRamUsage - initalRamUsage;
+    std::cout << std::endl << ramUsageOfIndex << std::endl;
 
     std::ofstream outFile("results/" + outputFileName);
 
@@ -85,16 +88,19 @@ void WriteToFileIndex5(std::string fileName, std::string outputFileName) {
 }
 
 void WriteToFile(Index* index, std::string fileName, std::string outputFileName, bool withQueryTime = true) {
+    malloc_trim(0);
     auto initalRamUsage = GetRamUsage();
     auto preprocessingTime = GetIndexTestPreprocessingTime(index, fileName);
-    std::cout << "after prepro" << std::endl;
+    std::cout << std::endl << "after prepro" << std::endl;
     long long queryTime = 0;
     if (withQueryTime)
     {
         queryTime = GetIndexTestQueryTime(index, fileName);
     }
+    malloc_trim(0);
     auto currentRamUsage = GetRamUsage();
     auto ramUsageOfIndex = currentRamUsage - initalRamUsage;
+    std::cout << ramUsageOfIndex << std::endl;
 
     std::ofstream outFile("results/" + outputFileName);
 
@@ -134,20 +140,26 @@ void TestIndex7(std::string fileName, int iteration, bool withQueryTime = false)
 void TestIndex8(std::string fileName, int iteration) {
     std::string clean = CleanFileName(fileName);
     Index8 index = Index8();
-    WriteToFile(&index.index, fileName, "Index8_" + std::to_string(iteration) + "_" + clean);
+    WriteToFile(&index.index, fileName, "Index8_" + std::to_string(iteration) + "_" + clean, true);
 }
 void TestIndex9(std::string fileName, int iteration) {
     std::string clean = CleanFileName(fileName);
     Index9 index = Index9();
-    WriteToFile(&index.index, fileName, "Index9_" + std::to_string(iteration) + "_" + clean);
+    WriteToFile(&index.index, fileName, "Index9_" + std::to_string(iteration) + "_" + clean, true);
 }
 void TestIndex10(std::string fileName, int iteration) {
     std::string clean = CleanFileName(fileName);
     Index10 index = Index10();
-    WriteToFile(&index.index, fileName, "Index10_" + std::to_string(iteration) + "_" + clean);
+    WriteToFile(&index.index, fileName, "Index10_" + std::to_string(iteration) + "_" + clean, true);
 }
 void TestIndex11(std::string fileName, int iteration) {
     std::string clean = CleanFileName(fileName);
     Index11 index = Index11();
-    WriteToFile(&index.index, fileName, "Index11_" + std::to_string(iteration) + "_" + clean);
+    WriteToFile(&index.index, fileName, "Index11_" + std::to_string(iteration) + "_" + clean, true);
+}
+
+void TestIndex12(std::string fileName, int iteration) {
+    std::string clean = CleanFileName(fileName);
+    Index12 index = Index12();
+    WriteToFile(&index.index, fileName, "Index11_" + std::to_string(iteration) + "_" + clean, true);
 }
