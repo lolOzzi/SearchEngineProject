@@ -9,7 +9,7 @@
 #include <cctype>
 
 inline void printRegexHelp() {
-    std::cout << "\nIf you want search as regex start query with r \n";
+    std::cout << "\nIf you want search as regex start query with \"r \"\n";
     std::cout << "regex tokens:\n";
     std::cout << "  abc   literal characters, matched exactly\n";
     std::cout << "  |     alternation: match the left OR right side (cat|dog)\n";
