@@ -13,29 +13,29 @@ void _merge (std::vector<ScoredDoc>& A, int l, int m, int r, std::vector<ScoredD
 
   while (i <= m && j <= r) {
     if (A[i].score >= A[j].score) {
-      tmp[k] = A[i];
+      tmp[k] = std::move(A[i]);
       i++;
     }
     else {
-      tmp[k] = A[j];
+      tmp[k] = std::move(A[j]);
       j++;
     }
     k++;
   }
   while (j <= r) {
-    tmp[k] = A[j];
+    tmp[k] = std::move(A[j]);
     k++;
     j++;
   };
 
   while (i <= m) {
-    tmp[k] = A[i];
+    tmp[k] = std::move(A[i]);
     k++;
     i++;
   }
 
   for (int it = l; it <= r; ++it) {
-    A[it] = tmp[it];
+    A[it] = std::move(tmp[it]);
   }
 }
 

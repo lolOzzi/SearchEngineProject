@@ -6,7 +6,7 @@
 #include "../components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
 #include "../components/searchers/RegexSearch.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/RadixSort.cpp"
+#include "../components/sorters/MergeSort.cpp"
 
 class Index8 {
 private:
@@ -15,7 +15,7 @@ private:
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStoreRegex store;
-    RadixSort sort;
+    MergeSort sort;
 
     std::string filename;
 

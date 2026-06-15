@@ -6,7 +6,7 @@
 #include "../components/stores/RecSplitEliasFanoStaticStore.cpp"
 #include "../components/searchers/BooleanSearcher.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/RadixSort.cpp"
+#include "../components/sorters/MergeSort.cpp"
 
 class Index9 {
 private:
@@ -15,7 +15,7 @@ private:
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     RecSplitEliasFanoStaticStoreNS::RecSplitEliasFanoStaticStore store;
-    RadixSort sort;
+    MergeSort sort;
 
     std::string filename;
 

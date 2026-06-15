@@ -11,10 +11,7 @@ public:
 static int tf_idf(int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
   double tf = query_count_in_doc /(double) words_in_doc;
   double idf = log(num_docs /(double) num_docs_containing_query);
-  std::cout << tf*idf;
-  int score = tf*idf*100;
-  if (score < 0) score = 0;
-  if (score > num_docs) score = num_docs;
+  int score = tf*idf;
   return score;
 }
 std::vector<ScoredDoc> TFIDFRANKER::rank(const std::vector<Doc>& candidates,

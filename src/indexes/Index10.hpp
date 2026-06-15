@@ -4,7 +4,7 @@
 #include "../components/stores/BurstTrieEliasFanoDynamicStore.cpp"
 #include "../components/searchers/RegexSearch.cpp"
 #include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/RadixSort.cpp"
+#include "../components/sorters/MergeSort.cpp"
 
 class Index10 {
 private:
@@ -13,7 +13,7 @@ private:
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
-    RadixSort sort;
+    MergeSort sort;
     Index index;
     std::string filename;
 
