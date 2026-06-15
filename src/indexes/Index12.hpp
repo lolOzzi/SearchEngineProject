@@ -3,14 +3,14 @@
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
-#include "../components/rankers/TFIDFRanker.h"
+#include "../components/rankers/RegexTFIDFRanker.h"
 #include "../components/sorters/MergeSort.h"
 #include "../components/searchers/RegexSearch.h"
 
 class Index12 {
 private:
     RegexSearch searcher;
-    TFIDFRANKER ranker;
+    RegexTFIDFRanker ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;

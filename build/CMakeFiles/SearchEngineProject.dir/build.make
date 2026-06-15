@@ -86,18 +86,738 @@ CMakeFiles/SearchEngineProject.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/Main.cpp -o CMakeFiles/SearchEngineProject.dir/src/Main.cpp.s
 
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/hashers/BasicHasher.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/hashers/BasicHasher.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/hashers/BasicHasher.cpp > CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/hashers/BasicHasher.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessor.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessor.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessor.cpp > CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessor.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp > CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp > CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp > CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/MostMatchesRanker.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/MostMatchesRanker.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/MostMatchesRanker.cpp > CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/MostMatchesRanker.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/RegexTFIDFRanker.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/RegexTFIDFRanker.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/RegexTFIDFRanker.cpp > CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/RegexTFIDFRanker.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp > CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/rankers/TFIDFRanker.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BasicSearcher.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BasicSearcher.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BasicSearcher.cpp > CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BasicSearcher.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp > CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/BooleanSearcher.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/RegexSearch.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/RegexSearch.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/RegexSearch.cpp > CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/searchers/RegexSearch.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/MergeSort.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/MergeSort.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/MergeSort.cpp > CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/MergeSort.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/RadixSort.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/RadixSort.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/RadixSort.cpp > CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/sorters/RadixSort.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BasicHashTable.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieEliasFanoStaticStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieRegexStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieRegexStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieRegexStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieRegexStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/BurstTrieStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompactTrieStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompactTrieStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompactTrieStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/CompactTrieStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithDocId.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DictionaryWithTrieAndDocId.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DocBlock.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DocBlock.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DocBlock.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DocBlock.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKS.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKS.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKS.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKS.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTree.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTree.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTree.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTree.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTreeRegex.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTreeRegex.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTreeRegex.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/DynamicFKSRadixTreeRegex.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyDynamicFKSRadixTree.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyTreeWrapper.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyTreeWrapper.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyTreeWrapper.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/FuzzyTreeWrapper.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericDATWithDocId.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericDATWithDocId.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericDATWithDocId.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericDATWithDocId.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericFKSRadixTree.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericFKSRadixTree.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericFKSRadixTree.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/GenericFKSRadixTree.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/LinearProbingTable.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/LinearProbingTable.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/LinearProbingTable.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/LinearProbingTable.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreDeltaEncoded.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreDeltaEncoded.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreDeltaEncoded.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreDeltaEncoded.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFano.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFano.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFano.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFano.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePacked.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePackedNHashed.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePackedNHashed.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePackedNHashed.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/ModularStorePackedNHashed.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStore.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStore.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStore.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RecSplitEliasFanoStaticStore.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RegexStoreComp.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RegexStoreComp.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RegexStoreComp.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/RegexStoreComp.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/TreeWrapper.cpp
+CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/TreeWrapper.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/TreeWrapper.cpp > CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/components/stores/TreeWrapper.cpp -o CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.s
+
+CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o: CMakeFiles/SearchEngineProject.dir/flags.make
+CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o: /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index5.cpp
+CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o -MF CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o.d -o CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o -c /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index5.cpp
+
+CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index5.cpp > CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.i
+
+CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ozzi/CLionProjects/Ozzi/SearchEngineProject/src/indexes/Index5.cpp -o CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.s
+
 # Object files for target SearchEngineProject
 SearchEngineProject_OBJECTS = \
-"CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o"
+"CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o" \
+"CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o"
 
 # External object files for target SearchEngineProject
 SearchEngineProject_EXTERNAL_OBJECTS =
 
 SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/Main.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/hashers/BasicHasher.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessor.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesPunctuation.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorHandlesWhitespaceChars.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/preprocessors/BasicPreprocessorWordCleaner.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/rankers/MostMatchesRanker.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/rankers/RegexTFIDFRanker.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/rankers/TFIDFRanker.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/searchers/BasicSearcher.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/searchers/BooleanSearcher.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/searchers/RegexSearch.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/sorters/MergeSort.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/sorters/RadixSort.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BasicHashTable.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieDeltaDynamicStoreRegex.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoDynamicStoreRegex.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieEliasFanoStaticStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieRegexStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/BurstTrieStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/CompactTrieStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithDocId.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DictionaryWithTrieAndDocId.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DocBlock.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKS.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTree.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/DynamicFKSRadixTreeRegex.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyDynamicFKSRadixTree.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/FuzzyTreeWrapper.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericDATWithDocId.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/GenericFKSRadixTree.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/LinearProbingTable.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreDeltaEncoded.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFano.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoNoBuffer.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStoreEliasFanoPackedBuffer.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePacked.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/ModularStorePackedNHashed.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/RecSplitEliasFanoStaticStore.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/RegexStoreComp.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/components/stores/TreeWrapper.cpp.o
+SearchEngineProject: CMakeFiles/SearchEngineProject.dir/src/indexes/Index5.cpp.o
 SearchEngineProject: CMakeFiles/SearchEngineProject.dir/build.make
 SearchEngineProject: CMakeFiles/SearchEngineProject.dir/compiler_depend.ts
 SearchEngineProject: CMakeFiles/SearchEngineProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SearchEngineProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ozzi/CLionProjects/Ozzi/SearchEngineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX executable SearchEngineProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SearchEngineProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

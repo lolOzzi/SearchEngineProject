@@ -1,9 +1,9 @@
 #include "TFIDFRanker.h"
 
-static int tf_idf(int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
+static float tf_idf(int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
   double tf = query_count_in_doc /(double) words_in_doc;
   double idf = log(num_docs /(double) num_docs_containing_query);
-  int score = tf*idf;
+  float score = tf*idf;
   return score;
 }
 std::vector<ScoredDoc> TFIDFRANKER::rank(const std::vector<Doc>& candidates,

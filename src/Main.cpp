@@ -2,14 +2,17 @@
 #include <iostream>
 #include <vector>
 
+#include "./indexes/Index12.hpp"
 #include "components/test/TestIndeces.cpp"
-/*
-*/
+#include "core/tui.hpp"
 
 
 int main(int argc, char* argv[]) {
     printf("m a i n \n");
     std::string filename = "data/WestburyLab.wikicorp.201004_1MB.txt";
+    Index12 index = Index12();
+    tui(index.index);
+    return 0;
     int iteration = 1;
 
     if (argc == 3) {
@@ -24,18 +27,6 @@ int main(int argc, char* argv[]) {
     TestIndex9(filename, iteration);
     TestIndex10(filename, iteration);
     TestIndex11(filename, iteration);
-    /*
-    printf("done \n");
-    std::string n = "";
-    while (true) {
-        std::cin >> n;
-        SearchQuery tmp;
-        tmp.q = n;
-        std::vector<Doc> res = index.search(tmp);
-        for (std::vector<Doc>::iterator it = res.begin(); it != res.end(); ++it) {
-            std::cout << it->title << " "  << std::endl;
-        }
-    }
-    */
+
     return 0;
 }

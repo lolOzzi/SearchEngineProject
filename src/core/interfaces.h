@@ -14,7 +14,7 @@ public:
 
 class ScoredDoc : public Doc {
 public:
-    int score{};
+    float score{};
 };
 class DocId {
 public:

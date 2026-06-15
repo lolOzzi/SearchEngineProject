@@ -4,7 +4,7 @@
 #include "../stores/BurstTrieRegexStore.h"
 #include "../stores/BurstTrieDeltaDynamicStoreRegex.h"
 #include "../stores/BurstTrieEliasFanoDynamicStoreRegex.h"
-#include "../stores//RecSplitEliasFanoStaticStoreRegex.h"
+#include "../stores/RecSplitEliasFanoStaticStoreRegex.h"
 
 
 std::string preprocess(std::string reg) {
