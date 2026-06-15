@@ -4,13 +4,13 @@
 #include "../components/sorters/MergeSort.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/BurstTrieEliasFanoDynamicStore.h"
-#include "../components/searchers/RegexSearch.h"
+#include "../components/searchers/BooleanSearcher.h"
 #include "../components/rankers/TFIDFRanker.h"
 
 
 class Index11 {
 private:
-    RegexSearch searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
