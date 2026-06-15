@@ -22,8 +22,15 @@ public:
     int get_num_items() const { return n; };
     int get_size() const { return size; };
     int get_item_size() { return sizeof(Item<T, U>); }
-
+    void clear();
 };
+
+template <typename T, typename U>
+void ChainedHashDictionary<T, U>::clear(){
+    delete[] buckets;
+    buckets = new ChainedItem<T, U>*[size]();
+    n = 0;
+}
 
 template <typename T, typename U>
 ChainedHashDictionary<T, U>::~ChainedHashDictionary()

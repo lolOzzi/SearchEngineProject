@@ -1,3 +1,6 @@
+#pragma once
+#include "BooleanSearcher.h"
+#include "BurstTrieEliasFanoDynamicStore.h"
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/sorters/MergeSort.h"
@@ -8,12 +11,12 @@
 
 class Index10 {
 private:
-    RegexSearch searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
 
-    BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
+    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
     MergeSort sort;
 
     std::string filename;

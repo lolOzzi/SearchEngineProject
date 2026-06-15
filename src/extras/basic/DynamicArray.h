@@ -65,6 +65,7 @@ public:
     }
 
     void clear() {
+        delete[] arr;
         arr = new T[size];
         n = 0;
     }

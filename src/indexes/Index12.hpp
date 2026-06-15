@@ -1,14 +1,13 @@
+#pragma once
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-
-#include "../components/sorters/MergeSort.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
-#include "../components/searchers/RegexSearch.h"
 #include "../components/rankers/TFIDFRanker.h"
+#include "../components/sorters/MergeSort.h"
+#include "../components/searchers/RegexSearch.h"
 
-
-class Index11 {
+class Index12 {
 private:
     RegexSearch searcher;
     TFIDFRANKER ranker;
@@ -16,7 +15,6 @@ private:
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
     MergeSort sort;
-
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
@@ -24,7 +22,7 @@ private:
 
 public:
     Index index;
-    Index11() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
+    Index12() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {
         filename = fn;
