@@ -1,26 +1,27 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/DictionaryWithDocId.cpp"
-#include "../components/searchers/BooleanSearcher.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/DictionaryWithDocId.h"
+#include "../components/searchers/BooleanSearcher.h"
+#include "../components/rankers/TFIDFRanker.h"
+#include "../components/sorters/MergeSort.h"
 
 class Index6 {
 private:
-    BooleanSearcher searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     DictionaryWithDocId dict_store = DictionaryWithDocId(4);
     MergeSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index6() : index(&dict_store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {

@@ -25,6 +25,7 @@ public:
             node = new Container{0, BinarySearchTree<T>()};
         }
     }
+    ~AccessTrie();
     T* search(Record word);
     T* insert(Record word, T value);
     void burst(int index);
@@ -89,4 +90,11 @@ inline void AccessTrie<T>::burst(int index) {
     }
 }
 
-
+template <typename T>
+AccessTrie<T>::~AccessTrie() {
+    for (auto& node : arr) {
+        std::visit([](auto* ptr) {
+            delete ptr;
+        }, node);
+    }
+}

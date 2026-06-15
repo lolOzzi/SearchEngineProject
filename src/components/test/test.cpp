@@ -8,10 +8,15 @@
 #include <regex>
 #include <cstdlib>
 #include <chrono>
+#include <malloc.h>
+
+#include "Index5.h"
+
+std::vector<std::string> wordsInFile = std::vector<std::string>();
 
 std::map<std::string, std::vector<std::string>> load_test(std::string data_filename) {
 
-    std::map<std::string, std::vector<std::string>> results = std::map<std::string, std::vector<std::string>>{};
+    std::map<std::string, std::vector<std::string>> fileresults = std::map<std::string, std::vector<std::string>>{};
     std::string partial_test_path = data_filename.substr(5);
     std::string filename = "src/components/test/TEST_";
     filename += partial_test_path;
@@ -28,7 +33,7 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
 
     if (!file.good()) {
         printf("Error reading file\n");
-        return results;
+        return fileresults;
     }
 
     std::string word;
@@ -46,7 +51,7 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
             continue;
         }
         if (take_next) {
-            results.insert({word, curr_vector});
+            fileresults.insert({word, curr_vector});
             word = line;
             curr_vector = std::vector<std::string>{};
             take_next = 0;
@@ -56,10 +61,22 @@ std::map<std::string, std::vector<std::string>> load_test(std::string data_filen
         curr_vector.push_back(line);
 
     }
-    results.insert({word, curr_vector});
+    fileresults.insert({word, curr_vector});
     file.close();
-
-    return results;
+    wordsInFile.clear();
+    int count = 0;
+    std::regex re(R"([\|\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
+    for (std::map<std::string, std::vector<std::string>>::iterator it = fileresults.begin(); it != fileresults.end(); ++it) {
+        if (it->first.empty()) continue;
+        if (std::regex_search(it->first, re)) continue;
+        if (it->first.length() < 2) continue;
+        count++;
+        if (count > 10000) break;
+        wordsInFile.push_back(it->first);
+    }
+    fileresults.clear();
+    malloc_trim(0);
+    return fileresults;
 }
 
 void CompareResult(std::string query, std::vector<Doc> index_res, std::vector<std::string> benchmark_res) {
@@ -126,49 +143,48 @@ void test_correctness(Index* index, std::string filename) {
     }
 }
 
-void test_time_of_search(Index* index1, Index* index2, std::string filename, int iterations) {
-    if (results.empty()) results = load_test(filename);
-    std::vector<std::string> some = std::vector<std::string>{};
-    int count = 0;
-    std::regex re(R"([0-9A-Z\"\(\)\$'\,#\;:\-\.\/!\*\?\<┬\+&\%=\>\@╬\[\]\\\^\_\`\├ù\Õ\Ó\┘\▒\Ç\©\Î\ê])");
-    for (std::map<std::string, std::vector<std::string>>::iterator it = results.begin(); it != results.end(); ++it) {
-        if (it->first.empty()) continue;
-        if (std::regex_search(it->first, re)) continue;
-        if (it->first.length() < 2) continue;
-        count++;
-        if (count > 100000) break;
-        some.push_back(it->first);
-    }
+
+long long test_time_of_search(Index* index, std::string filename, int iterations) {
+    if (wordsInFile.empty())
+        load_test(filename);
     SearchQuery tmp;
-    std::cout << "Will do " << count*iterations << " queries." << std::endl;
-    printf("Searching Index 1\n");
+    std::cout << "Will do " << wordsInFile.size()*iterations << " queries." << std::endl;
+    printf("Searching Index\n");
     auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {
-        for (const std::string& s : some) {
+        for (const std::string& s : wordsInFile) {
             tmp.q = s;
-            auto res = index1->search(tmp);
+            //std::cout << s << std::endl;
+            auto res = index->search(tmp);
         }
     }
     auto t1_i1 = std::chrono::steady_clock::now();
     auto i1_elapsed = duration_cast<std::chrono::nanoseconds>(t1_i1 - t0_i1).count();
 
-    printf("Searching Index 2\n");
-    auto t0_i2 = std::chrono::steady_clock::now();
+
+    std::cout << "Index used " << i1_elapsed << " nanoseconds." << std::endl;
+    return i1_elapsed;
+}
+
+long long test_time_of_search_index5(Index5* index, std::string filename, int iterations) {
+    if (wordsInFile.empty())
+        load_test(filename);
+
+    SearchQuery tmp;
+    std::cout << "Will do " << wordsInFile.size()*iterations << " queries." << std::endl;
+    printf("Searching Index\n");
+    auto t0_i1 = std::chrono::steady_clock::now();
     for (int i = 0; i < iterations; i++) {
-        for (const std::string& s : some) {
-            tmp.q = s;
-            auto res = index2->search(tmp);
+        for (const std::string& s : wordsInFile) {
+            auto res = index->search(s);
         }
     }
-    auto t1_i2 = std::chrono::steady_clock::now();
-    auto i2_elapsed = duration_cast<std::chrono::nanoseconds>(t1_i2 - t0_i2).count();
+    auto t1_i1 = std::chrono::steady_clock::now();
+    auto i1_elapsed = duration_cast<std::chrono::nanoseconds>(t1_i1 - t0_i1).count();
 
-    std::cout << "Index1 used " << i1_elapsed << " nanoseconds." << std::endl;
-    std::cout << "Index2 used " << i2_elapsed << " nanoseconds." << std::endl;
-    auto diff = i1_elapsed - i2_elapsed;
-    std::cout << "Difference between i1 and i2 is " << diff << " nanoseconds." << std::endl;
-    double percent = ((double)diff / i2_elapsed)*100;
-    std::cout << "Difference in percent between i1 and i2 is " << percent << "%." << std::endl;
+
+    std::cout << "Index used " << i1_elapsed << " nanoseconds." << std::endl;
+    return i1_elapsed;
 }
 
 void test_time_of_preprocess(Index* index1, Index* index2, std::string filename) {

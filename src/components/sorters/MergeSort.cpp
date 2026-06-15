@@ -1,10 +1,4 @@
-#include "../../core/interfaces.h"
-
-class MergeSort : public ISorter {
-public:
-  ~MergeSort() = default;
-  void sort(std::vector<ScoredDoc> &A) override;
-};
+#include "MergeSort.h"
 
 void _merge (std::vector<ScoredDoc>& A, int l, int m, int r, std::vector<ScoredDoc>& tmp) {
   int i = l;

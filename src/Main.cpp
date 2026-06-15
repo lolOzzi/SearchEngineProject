@@ -2,21 +2,29 @@
 #include <iostream>
 #include <vector>
 
-#include "extras/basic/recsplit/RecSplit.h"
-#include "indexes/Index9.hpp"
-//#include "indexes/Index8.hpp"
-#include "components/test/test.cpp"
+#include "components/test/TestIndeces.cpp"
 /*
 */
 
 
 int main(int argc, char* argv[]) {
     printf("m a i n \n");
-    std::string filename = "data/WestburyLab.wikicorp.201004.txt";
+    std::string filename = "data/WestburyLab.wikicorp.201004_1MB.txt";
+    int iteration = 1;
 
-    Index9 index;
-    index.preprocess(filename);
+    if (argc == 3) {
+        filename = argv[1];
+        iteration = std::stoi(argv[2]);
+    }
 
+    TestIndex5(filename, iteration);
+    TestIndex6(filename, iteration);
+    TestIndex7(filename, iteration);
+    TestIndex8(filename, iteration);
+    TestIndex9(filename, iteration);
+    TestIndex10(filename, iteration);
+    TestIndex11(filename, iteration);
+    /*
     printf("done \n");
     std::string n = "";
     while (true) {
@@ -28,6 +36,6 @@ int main(int argc, char* argv[]) {
             std::cout << it->title << " "  << std::endl;
         }
     }
-
+    */
     return 0;
 }

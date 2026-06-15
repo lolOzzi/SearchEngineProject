@@ -65,8 +65,9 @@ std::vector<Doc> BooleanSearcher::search(SearchQuery q, IStore* store) {
     printf("%lu",q.queries.size());
     std::vector<std::vector<Doc>> allDocs;
     for (auto& qu : q.queries) {
-        if (std::vector<Doc>* tmp = store->get(qu)) {
-            allDocs.push_back(*tmp);
+        std::vector<Doc> tmp = store->get(qu);
+        if (!tmp.empty()) {
+            allDocs.push_back(tmp);
         }
     }
 

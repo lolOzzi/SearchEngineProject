@@ -2,15 +2,17 @@
 
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/RecSplitEliasFanoStaticStore.cpp"
-#include "../components/searchers/BooleanSearcher.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
+
+#include "../components/sorters/MergeSort.h"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/RecSplitEliasFanoStaticStore.h"
+#include "../components/searchers/BooleanSearcher.h"
+#include "../components/rankers/TFIDFRanker.h"
+
 
 class Index9 {
 private:
-    BooleanSearcher searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;

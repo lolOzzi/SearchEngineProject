@@ -1,19 +1,20 @@
-#pragma once
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
-#include "../components/stores/FuzzyTreeWrapper.cpp"
-#include "../components/searchers/BooleanSearcher.h"
-#include "../components/rankers/TFIDFRanker.h"
-#include "../components/sorters/MergeSort.h"
 
-class Index7 {
+#include "../components/sorters/MergeSort.h"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
+#include "../components/searchers/RegexSearch.h"
+#include "../components/rankers/TFIDFRanker.h"
+
+
+class Index11 {
 private:
-    BooleanSearcherNS::BooleanSearcher searcher;
+    RegexSearch searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    FuzzyTreeWrapper store;
+    BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
     MergeSort sort;
 
     std::string filename;
@@ -23,7 +24,7 @@ private:
 
 public:
     Index index;
-    Index7() : store(&hasher), index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
+    Index11() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {
         filename = fn;

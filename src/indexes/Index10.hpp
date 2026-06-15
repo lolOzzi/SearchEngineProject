@@ -1,10 +1,10 @@
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/BurstTrieEliasFanoDynamicStore.cpp"
-#include "../components/searchers/RegexSearch.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
+#include "../components/sorters/MergeSort.h"
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
+#include "../components/searchers/RegexSearch.h"
+#include "../components/rankers/TFIDFRanker.h"
 
 class Index10 {
 private:
@@ -12,15 +12,17 @@ private:
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
+
+    BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
     MergeSort sort;
-    Index index;
+
     std::string filename;
 
     std::vector<Doc> lastSearchResults;
     SearchQuery lastSearchQuery;
 
 public:
+    Index index;
     Index10() : index(&store, &preprocessor, &hasher, &searcher, &ranker, &sort) {}
 
     void preprocess(std::string fn) {

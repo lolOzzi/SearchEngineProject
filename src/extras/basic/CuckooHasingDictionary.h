@@ -25,6 +25,7 @@ private:
     void rehash_add(T key, U val); // Add specific to rehash, since some assumptions can be made.
 public:
     CuckooHashingDictionary(int start_size, IHashFamily<T>* hash_family);
+    ~CuckooHashingDictionary();
     U* add(T key, U val) override;
     U* get(T key) override;
     void remove(T key) override;
@@ -39,6 +40,10 @@ public:
         delete[] T2;
         delete hash_family1;
         delete hash_family2;
+        T1 = nullptr;
+        T2 = nullptr;
+        hash_family1 = nullptr;
+        hash_family2 = nullptr;
         size = 0;
         n = 0;
     }
@@ -51,6 +56,14 @@ CuckooHashingDictionary<T, U>::CuckooHashingDictionary(int start_size, IHashFami
     hash_family1->get_new_hash();
     hash_family2 = hash_family->clone();
     hash_family2->get_new_hash();
+}
+
+template<typename T, typename U>
+CuckooHashingDictionary<T, U>::~CuckooHashingDictionary() {
+    delete[] T1;
+    delete[] T2;
+    delete hash_family1;
+    delete hash_family2;
 }
 
 template<typename T, typename U>

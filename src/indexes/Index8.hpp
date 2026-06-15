@@ -2,21 +2,22 @@
 
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
-#include "../components/preprocessors/BasicPreprocessorWordCleaner.cpp"
-#include "../components/stores/BurstTrieDeltaDynamicStoreRegex.cpp"
-#include "../components/searchers/RegexSearch.cpp"
-#include "../components/rankers/TFIDFRanker.cpp"
-#include "../components/sorters/MergeSort.cpp"
 
+#include "../components/sorters/MergeSort.h"
+
+#include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
+#include "../components/stores/BurstTrieDeltaDynamicStoreRegex.h"
+#include "../components/searchers/RegexSearch.h"
+#include "../components/rankers/TFIDFRanker.h"
 class Index8 {
 private:
     RegexSearch searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieDeltaDynamicStoreNS::BurstTrieDeltaDynamicStoreRegex store;
-    MergeSort sort;
 
+    BurstTrieDeltaDynamicStoreRegexNS::BurstTrieDeltaDynamicStoreRegex store;
+    MergeSort sort;
     std::string filename;
 
     std::vector<Doc> lastSearchResults;

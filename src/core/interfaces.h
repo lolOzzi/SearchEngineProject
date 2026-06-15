@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-#include "../extras/helpers/FileHelpers.cpp"
+#include "../extras/helpers/FileHelpers.hpp"
 const static std::string END = "---END.OF.DOCUMENT---";
 
 class Doc {

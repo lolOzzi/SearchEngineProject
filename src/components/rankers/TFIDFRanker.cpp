@@ -1,13 +1,5 @@
-#include "../../core/interfaces.h"
-#include <fstream>
-#include <istream>
-#include <iostream>
-#include <cmath>
-class TFIDFRANKER : public IRanker {
-public:
-    ~TFIDFRANKER() = default;
-    std::vector<ScoredDoc> rank(const std::vector<Doc>& candidates, SearchQuery& query, IStore* store, std::string& filename, ISorter* sorter) override;
-};
+#include "TFIDFRanker.h"
+
 static int tf_idf(int query_count_in_doc, int words_in_doc, int num_docs, int num_docs_containing_query) {
   double tf = query_count_in_doc /(double) words_in_doc;
   double idf = log(num_docs /(double) num_docs_containing_query);

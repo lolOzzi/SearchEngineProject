@@ -39,7 +39,7 @@ ChainedHashDictionary<T, U>::~ChainedHashDictionary()
         }
     }
     delete[] buckets;
-    delete hash_family;
+    //                                      delete hash_family;
 }
 
 template<typename T, typename U>

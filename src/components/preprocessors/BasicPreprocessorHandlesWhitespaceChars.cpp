@@ -1,6 +1,7 @@
 #include "../../core/interfaces.h"
 
 #include <fstream>
+#include <iostream>
 
 class BasicPreprocessorHandlesWhitespaceChars : public IPreprocessor {
 public:
