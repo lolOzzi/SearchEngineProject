@@ -1,3 +1,5 @@
+#include "BooleanSearcher.h"
+#include "BurstTrieEliasFanoDynamicStore.h"
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
@@ -8,11 +10,11 @@
 
 class Index10 {
 private:
-    RegexSearch searcher;
+    BooleanSearcherNS::BooleanSearcher searcher;
     TFIDFRANKER ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
-    BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
+    BurstTrieEliasFanoDynamicStoreNS::BurstTrieEliasFanoDynamicStore store;
     RadixSort sort;
 
     std::string filename;
