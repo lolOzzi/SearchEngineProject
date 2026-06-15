@@ -28,6 +28,7 @@ list(REMOVE_ITEM CORE_SRC_FILES
 add_executable(SearchEngineProject
         src/Main.cpp
         src/components/stores/RecSplitEliasFanoStaticStoreRegex.cpp
+        src/components/rankers/CombinedTFIDFRanker.cpp
         ${CORE_SRC_FILES}
 )
 

@@ -100,9 +100,11 @@ public:
     void preprocess(std::string filename) {
         preprocessor->preprocess(filename, this->store);
     }
-
     std::vector<Doc> search(SearchQuery q) {
         return searcher->search(q, this->store);
+    }
+    std::vector<Doc> searchInStore(SearchQuery q) {
+        return store->get(q.q);
     }
     std::vector<ScoredDoc> rank(std::vector<Doc>& docs, SearchQuery& q, std::string& fn) {
         return ranker->rank(docs, q, this->store, fn, this->sorter);

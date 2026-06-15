@@ -9,7 +9,8 @@
 #include <cctype>
 
 inline void printRegexHelp() {
-    std::cout << "\nregex tokens:\n";
+    std::cout << "\nIf you want search as regex start query with r \n";
+    std::cout << "regex tokens:\n";
     std::cout << "  abc   literal characters, matched exactly\n";
     std::cout << "  |     alternation: match the left OR right side (cat|dog)\n";
     std::cout << "  *     zero or more of the previous token (abcd*)\n";
@@ -94,7 +95,14 @@ inline void tui(Index& index) {
             std::getline(std::cin, q);
             SearchQuery query;
             query.q = q;
-            std::vector<Doc> res = index.search(query);
+            std::vector<Doc> res;
+            if (!q.starts_with("r ")) {
+                res = index.searchInStore(query);
+            }
+            else {
+                query.q = query.q.substr(2);
+                res = index.search(query);
+            }
             if (res.empty()) {
                 std::cout << "no results\n";
                 continue;
@@ -126,7 +134,14 @@ inline void tui(Index& index) {
             std::getline(std::cin, q);
             SearchQuery query;
             query.q = q;
-            std::vector<Doc> res = index.search(query);
+            std::vector<Doc> res;
+            if (!q.starts_with("r ")) {
+                res = index.searchInStore(query);
+            }
+            else {
+                query.q = query.q.substr(2);
+                res = index.search(query);
+            }
             if (res.empty()) {
                 std::cout << "no results\n";
                 continue;

@@ -1,16 +1,16 @@
 #pragma once
+#include "CombinedTFIDFRanker.h"
 #include "../core/interfaces.h"
 #include "../components/hashers/SimpleFingerprint.h"
 #include "../components/preprocessors/BasicPreprocessorWordCleaner.h"
 #include "../components/stores/BurstTrieEliasFanoDynamicStoreRegex.h"
-#include "../components/rankers/RegexTFIDFRanker.h"
 #include "../components/sorters/MergeSort.h"
 #include "../components/searchers/RegexSearch.h"
 
 class Index12 {
 private:
     RegexSearch searcher;
-    RegexTFIDFRanker ranker;
+    CombinedTFIDFRanker ranker;
     SimpleFingerprint hasher;
     BasicPreprocessorWordCleaner preprocessor;
     BurstTrieEliasFanoDynamicStoreRegexNS::BurstTrieEliasFanoDynamicStoreRegex store;
